@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header">
+      <div class="container">
+        <div class="header__wraper">
+          <!-- header logo -->
+          <a href="/"><img class="h-9" src="/images/Logo.svg" alt="logo" /></a>
+          <!-- header heart and notif icon -->
+          <div class="header__icon-wraper">
+            <a href="#" class="header__icon"
+              ><i class="iconsax t-1-bold" icon-name="heart"></i
+            ></a>
+            <a href="#" class="header__icon">
+              <i class="iconsax t-1-bold" icon-name="bell-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- search section -->
+    <section class="section-layout mt-0">
+      <!-- real search xd -->
+      <div class="search__wraper hidden">
+        <form action="search-page.html" class="search">
+          <i
+            class="iconsax return__icon return__icon--header"
+            icon-name="arrow-right"
+          ></i>
+
+          <input type="text" name="" class="search__input" />
+          <!-- this cross svg should be enable when user write somthing 🛑-->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="invisible text-neutral-900"
+          >
+            <path
+              d="M12.8819 1.70191C13.2713 1.31255 13.2713 0.681275 12.8819 0.291914C12.4926 -0.0974468 11.8613 -0.0974467 11.4719 0.291914L6.58691 5.17691L1.70191 0.291914C1.31255 -0.0974467 0.681275 -0.0974467 0.291914 0.291914C-0.0974467 0.681275 -0.0974467 1.31255 0.291914 1.70191L5.17691 6.58691L0.291914 11.4719C-0.0974467 11.8613 -0.0974467 12.4926 0.291914 12.8819C0.681275 13.2713 1.31255 13.2713 1.70191 12.8819L6.58691 7.99691L11.4719 12.8819C11.8613 13.2713 12.4926 13.2713 12.8819 12.8819C13.2713 12.4926 13.2713 11.8613 12.8819 11.4719L7.99691 6.58691L12.8819 1.70191Z"
+              fill="currentcolor"
+            />
+          </svg>
+        </form>
+        <!-- this page should show when no search result not found 🛑 -->
+        <div
+          class="bg-primary-50 absolute top-0 right-0 bottom-0 left-0 z-200 hidden"
+        >
+          <i
+            class="iconsax return__icon return__icon--header absolute top-0 right-0 m-4"
+            icon-name="arrow-right"
+          ></i>
+
+          <div class="flex h-full flex-col items-center justify-center gap-6">
+            <img src="images/notfound.png" alt="" />
+            <p class="t-5-bold">متاسفانه نتیجه ای یافت نشد</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- fake search -->
+      <div class="container">
+        <div class="search__fake">
+          <i class="iconsax t-1-bold" icon-name="search-normal-2"></i>
+          <button class="search__input-fake">
+            محصول مورد نظرتان را جستجو کنید.
+          </button>
+          <input
+            type="text"
+            class="search__input-fake"
+            name=""
+            disabled
+            placeholder=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- banner section -->
+    <section class="section-layout" data-section="banner">
+      <img src="/images/Banner.png" alt="banner" class="w-full" />
+    </section>
+
+    <!-- categories section -->
+    <section class="section-layout" data-section="categories">
+      <div class="container">
+        <h2 class="t-5-bold mb-5 text-neutral-900">دسته بندی پوشاک</h2>
+        <!-- categories -->
+        <div class="grid grid-cols-2 gap-4">
+          <a href="#" class="categories">
+            <img
+              class="rounded-2xl"
+              src="images/image-men-category.png"
+              alt=""
+            />
+            <h3 class="m-4">مردانه</h3>
+          </a>
+          <a href="/producs-female-category.html" class="categories">
+            <img
+              class="rounded-2xl"
+              src="images/image-women-category.png"
+              alt=""
+            />
+            <h3 class="m-4">زنانه</h3>
+          </a>
+          <a href="#" class="categories">
+            <img
+              class="rounded-2xl"
+              src="images/image-accessory-category.png"
+              alt=""
+            />
+            <h3 class="m-4">اکسسوری</h3>
+          </a>
+          <a href="#" class="categories">
+            <img
+              class="rounded-2xl"
+              src="images/image-childrens-category.png"
+              alt=""
+            />
+            <h3 class="m-4">کودکان</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wonderful Discount section -->
+    <section class="section-layout" data-section="discount">
+      <div class="wonderful-discount__wraper">
+        <!-- title and timer -->
+        <div dir="ltr" class="">
+          <h2 class="title-primary mb-4">تخفیف های شگفت انگیز</h2>
+          <p id="discount-timer" class="p-1-bold">۲ : ۰۵ : ۳۴ : ۴۸</p>
+          <p class="wonderful-discount__timer-tags">ثانیه دقیقه ساعت روز</p>
+        </div>
+
+        <!-- sider -->
+        <div class="offer-slider relative h-80 overflow-x-hidden">
+          <div class="swiper-wrapper">
+            <!-- discounts -->
+            <div class="swiper-slide">
+              <!-- product -->
+              <article class="product-card">
+                <a href="product-info.html">
+                  <img
+                    src="images/image-discount.png"
+                    alt=""
+                    class="product-card__image"
+                  />
+                  <span class="product-card__badge--discount"> 45% </span>
+
+                  <div class="product-card__body">
+                    <p class="p-5-bold">برند گوچی</p>
+                    <h2 class="p-2-bold flex">مانتو کتی مدل صدف</h2>
+                    <del class="product-price__discounted"
+                      ><span>2,000,000</span>تومان</del
+                    >
+                    <strong class="product-price__current"
+                      ><span>2,000,000</span>تومان</strong
+                    >
+                    <p class="product-card__stock">
+                      تنها <span class="p-5-bold">2</span> عدد موجود است
+                    </p>
+                  </div>
+                </a>
+
+                <button
+                  class="product-card__wishlist"
+                  aria-label="افزودن به علاقه‌مندی‌ها"
+                >
+                  <i class="iconsax" icon-name="heart"></i>
+                </button>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <!-- product -->
+              <article class="product-card">
+                <a href="#">
+                  <img
+                    src="images/Products.png"
+                    alt=""
+                    class="product-card__image"
+                  />
+                  <span class="product-card__badge--discount"> 35% </span>
+
+                  <div class="product-card__body">
+                    <p class="p-5-bold">برند زارا</p>
+                    <h2 class="p-2-bold">شلوار زنانه مازراتی</h2>
+                    <del class="product-price__discounted"
+                      ><span>1,000,000</span>تومان</del
+                    >
+                    <strong class="product-price__current"
+                      ><span>650,000</span>تومان</strong
+                    >
+                    <p class="product-card__stock">
+                      تنها <span class="p-5-bold">4</span> عدد موجود است
+                    </p>
+                  </div>
+                </a>
+                <button
+                  class="product-card__wishlist"
+                  aria-label="افزودن به علاقه‌مندی‌ها"
+                >
+                  <i class="iconsax" icon-name="heart"></i>
+                </button>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- product -->
+              <article class="product-card">
+                <a href="#">
+                  <img
+                    src="images/Products2.png"
+                    alt=""
+                    class="product-card__image"
+                  />
+                  <span class="product-card__badge--discount"> 35% </span>
+
+                  <div class="product-card__body">
+                    <p class="p-5-bold">برند لویی ویتو</p>
+                    <h2 class="p-2-bold">کفش مجلسی LV01</h2>
+                    <del class="product-price__discounted"
+                      ><span>4,800,000</span>تومان</del
+                    >
+                    <strong class="product-price__current"
+                      ><span>2,880,000</span>تومان</strong
+                    >
+                    <p class="product-card__stock">
+                      تنها <span class="p-5-bold">4</span> عدد موجود است
+                    </p>
+                  </div>
+                </a>
+                <button
+                  class="product-card__wishlist"
+                  aria-label="افزودن به علاقه‌مندی‌ها"
+                >
+                  <i class="iconsax" icon-name="heart"></i>
+                </button>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination offer"></div>
+
+          <div class="swiper-button-prev offer"></div>
+          <div class="swiper-button-next offer"></div>
+
+          <div class="swiper-scrollbar offer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- spectial discount banner section-->
+    <section class="section-layout">
+      <a href="#">
+        <img
+          src="images/colourful-packets-with-title 1.png"
+          alt=""
+          class="w-full"
+        />
+      </a>
+    </section>
+
+    <!-- top sales section-->
+    <section class="section-layout" data-section="top-sales">
+      <div class="container">
+        <div class="title-showmore">
+          <h2 class="title-primary">پرفروش ها</h2>
+          <a href="#" class="show-more">مشاهده بیشتر</a>
+        </div>
+      </div>
+
+      <div class="best-seller-slider overflow-x-hidden">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- product -->
+            <article class="product-card">
+              <a href="#">
+                <img
+                  src="images/image-discount.png"
+                  alt=""
+                  class="product-card__image"
+                />
+                <span class="product-card__badge--discount"> 45% </span>
+
+                <div class="product-card__body">
+                  <p class="p-5-bold">برند گوچی</p>
+                  <h2 class="p-2-bold flex">مانتو کتی مدل صدف</h2>
+                  <del class="product-price__discounted"
+                    ><span>2,000,000</span>تومان</del
+                  >
+                  <strong class="product-price__current"
+                    ><span>1,100,000</span>تومان</strong
+                  >
+                  <p class="product-card__stock">
+                    تنها <span class="p-5-bold">2</span> عدد موجود است
+                  </p>
+                </div>
+              </a>
+
+              <button
+                class="product-card__wishlist"
+                aria-label="افزودن به علاقه‌مندی‌ها"
+              >
+                <i class="iconsax" icon-name="heart"></i>
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <!-- product -->
+            <article class="product-card">
+              <a href="#">
+                <img
+                  src="images/Products.png"
+                  alt=""
+                  class="product-card__image"
+                />
+                <span class="product-card__badge--discount"> 35% </span>
+
+                <div class="product-card__body">
+                  <p class="p-5-bold">برند زارا</p>
+                  <h2 class="p-2-bold">شلوار زنانه مازراتی</h2>
+                  <del class="product-price__discounted"
+                    ><span>1,000,000</span>تومان</del
+                  >
+                  <strong class="product-price__current"
+                    ><span>650,000</span>تومان</strong
+                  >
+                  <p class="product-card__stock">
+                    تنها <span class="p-5-bold">4</span> عدد موجود است
+                  </p>
+                </div>
+              </a>
+              <button
+                class="product-card__wishlist"
+                aria-label="افزودن به علاقه‌مندی‌ها"
+              >
+                <i class="iconsax" icon-name="heart"></i>
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <!-- product -->
+            <article class="product-card">
+              <a href="#">
+                <img
+                  src="images/Products2.png"
+                  alt=""
+                  class="product-card__image"
+                />
+                <span class="product-card__badge--discount"> 35% </span>
+
+                <div class="product-card__body">
+                  <p class="p-5-bold">برند لویی ویتو</p>
+                  <h2 class="p-2-bold">کفش مجلسی LV01</h2>
+                  <del class="product-price__discounted"
+                    ><span>4,800,000</span>تومان</del
+                  >
+                  <strong class="product-price__current"
+                    ><span>2,880,000</span>تومان</strong
+                  >
+                  <p class="product-card__stock">
+                    تنها <span class="p-5-bold">4</span> عدد موجود است
+                  </p>
+                </div>
+              </a>
+              <button
+                class="product-card__wishlist"
+                aria-label="افزودن به علاقه‌مندی‌ها"
+              >
+                <i class="iconsax" icon-name="heart"></i>
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- brands section -->
+    <section class="section-layout" data-section="brands">
+      <div class="container">
+        <h2 class="title-primary mb-4">برند های محبوب</h2>
+        <div class="just flex flex-row-reverse justify-between py-3">
+          <a href="#"><img src="images/adidas.png" alt="adidas" /></a>
+          <a href="#"><img src="images/gucci.png" alt="gucci" /></a>
+          <a href="#"><img src="images/nike.png" alt="nike" /></a>
+          <a href="#"><img src="images/zara.png" alt="zara" /></a>
+        </div>
+      </div>
+      <a href="#" class="mt-6 flex items-center justify-center"
+        ><i
+          class="iconsax border-primary text-primary rounded-full border-[1.5px] p-1"
+          icon-name="arrow-down"
+        ></i
+      ></a>
+    </section>
+
+    <!-- headphon -->
+    <div class="section-layout container">
+      <a
+        href=""
+        class="bg-secondary-100 drop-shadow-ds-2-buttom fixed bottom-24 z-50 block w-fit rounded-2xl p-4"
+      >
+        <img src="images/headphon.svg" alt="" />
+      </a>
+    </div>
+
+    <!-- filler -->
+    <div class="my-41"></div>
+
+    <!-- footer section -->
+    <footer class="footer">
+      <!-- menu -->
+      <div class="container h-full">
+        <div class="flex h-full items-center justify-between">
+          <!-- menu btn -->
+          <a href="index.html" class="menu-btn active">
+            <div>
+              <i class="iconsax" icon-name="home-2"></i>
+            </div>
+            خانه
+          </a>
+          <!-- menu btn -->
+          <a href="categories.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="search-status-1"></i>
+            </div>
+            دسته بندی
+          </a>
+          <!-- menu btn -->
+          <a href="shopping-cart.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="shopping-cart"></i>
+            </div>
+            سبد خرید
+          </a>
+          <!-- menu btn -->
+          <a href="profile-signup.html" class="menu-btn">
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#B6BAC3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            مدیست من
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

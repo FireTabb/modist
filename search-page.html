@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header">
+      <div class="container">
+        <div class="header__wraper">
+          <!-- header logo -->
+          <a href="/"><img class="h-9" src="/images/Logo.svg" alt="logo" /></a>
+          <!-- header heart and notif icon -->
+          <div class="header__icon-wraper">
+            <a href="#" class="header__icon"
+              ><i class="iconsax t-1-bold" icon-name="heart"></i
+            ></a>
+            <a href="#" class="header__icon">
+              <i class="iconsax t-1-bold" icon-name="bell-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- search section -->
+    <section class="section-layout mt-0">
+      <!-- real search xd -->
+      <div class="search__wraper hidden">
+        <form action="search-page.html" class="search">
+          <i
+            class="iconsax return__icon return__icon--header"
+            icon-name="arrow-right"
+          ></i>
+
+          <input type="text" name="" class="search__input" />
+          <!-- this cross svg should be enable when user write somthing 🛑-->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="invisible text-neutral-900"
+          >
+            <path
+              d="M12.8819 1.70191C13.2713 1.31255 13.2713 0.681275 12.8819 0.291914C12.4926 -0.0974468 11.8613 -0.0974467 11.4719 0.291914L6.58691 5.17691L1.70191 0.291914C1.31255 -0.0974467 0.681275 -0.0974467 0.291914 0.291914C-0.0974467 0.681275 -0.0974467 1.31255 0.291914 1.70191L5.17691 6.58691L0.291914 11.4719C-0.0974467 11.8613 -0.0974467 12.4926 0.291914 12.8819C0.681275 13.2713 1.31255 13.2713 1.70191 12.8819L6.58691 7.99691L11.4719 12.8819C11.8613 13.2713 12.4926 13.2713 12.8819 12.8819C13.2713 12.4926 13.2713 11.8613 12.8819 11.4719L7.99691 6.58691L12.8819 1.70191Z"
+              fill="currentcolor"
+            />
+          </svg>
+        </form>
+        <!-- this page should show when no search result not found 🛑 -->
+        <div
+          class="bg-primary-50 absolute top-0 right-0 bottom-0 left-0 z-200 hidden"
+        >
+          <i
+            class="iconsax return__icon return__icon--header absolute top-0 right-0 m-4"
+            icon-name="arrow-right"
+          ></i>
+
+          <div class="flex h-full flex-col items-center justify-center gap-6">
+            <img src="images/notfound.png" alt="" />
+            <p class="t-5-bold">متاسفانه نتیجه ای یافت نشد</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- fake search -->
+      <div class="container">
+        <div class="search__fake">
+          <i class="iconsax t-1-bold" icon-name="search-normal-2"></i>
+          <button class="search__input-fake">
+            محصول مورد نظرتان را جستجو کنید.
+          </button>
+          <input
+            type="text"
+            class="search__input-fake"
+            name=""
+            disabled
+            placeholder=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- page title -->
+    <section class="section-layout">
+      <div class="container">
+        <div class="page-title">
+          <div class="page-title_wraper">
+            <a href="index.html">
+              <i class="iconsax return__icon" icon-name="arrow-right"></i>
+            </a>
+            <h2 class="title-primary">نتایج برای "سرچ شده"</h2>
+          </div>
+        </div>
+        <p class="inventory-stock">تعداد: <span>215</span></p>
+      </div>
+    </section>
+
+    <!-- filter and sort -->
+    <section class="section-layout">
+      <div class="container">
+        <div class="filter-and-sort__wraper">
+
+          <!-- filter btn -->
+          <a
+            href="filter-page.html"
+            id="filter__btn"
+            class="h-full w-full cursor-pointer p-4"
+          >
+            <div class="filter">
+              <i
+                class="iconsax t-2-bold text-neutral-800"
+                icon-name="filter-add"
+              ></i>
+              <p>فیلتر کردن</p>
+            </div>
+          </a>
+
+          <!-- sortby btn -->
+          <button id="sort__btn" class="h-full w-full cursor-pointer p-4">
+            <div class="sort">
+              <i class="iconsax t-2-bold text-neutral-800" icon-name="sort"></i>
+              <p>جدید ترین</p>
+            </div>
+          </button>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- sort window -->
+    <section>
+      <!-- ///// blur-lable ///// -->
+      <div
+        id="blur-lable"
+        class="fixed top-0 right-0 bottom-0 left-0 z-60 hidden bg-black/25 backdrop-blur-xs"
+      ></div>
+      <!-- ///// sort wraper ///// -->
+      <div
+        id="sort-wraper"
+        class="transition-primary fixed right-0 bottom-0 left-0 z-61 rounded-t-[28px] bg-white text-neutral-900"
+        style="transform: translateY(100%)"
+      >
+        <div class="container">
+          <!-- ///// sort drag handler ///// -->
+          <div
+            id="sort__drag-handler"
+            class="mb-8 flex w-full items-center justify-center p-4 text-center after:absolute after:h-1 after:w-8 after:rounded-2xl after:bg-neutral-500 after:content-['']"
+          ></div>
+          <!-- ///// form and sort options ///// -->
+          <form class="m-4" action="">
+            <ul class="p-1-bold m-4 mt-8 flex flex-col gap-4">
+              <p class="t-3-bold">مرتب سازی بر اساس...</p>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="lowest-to-highest" name="sort" />
+                <label for="lowest-to-highest">کمترین به بیشترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="highest-to-lowest" name="sort" />
+                <label for="highest-to-lowest">بیشترین به کمترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="newest" name="sort" />
+                <label for="newest">جدید ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-sale" name="sort" />
+                <label for="top-sale">پر فروش ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-view" name="sort" />
+                <label for="top-view">پر بازدید ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-discount" name="sort" />
+                <label for="top-discount">پر تخفیف ترین</label>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- products -->
+    <section class="section-layout">
+      <div class="container">
+        <div class="products-wrpaer">
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-1.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 45% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند زارا</p>
+                <h2 class="p-2-bold flex">مانتو مدل ساینا</h2>
+                <del class="product-price__discounted hide"
+                  ><span>2,000,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>1,100,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">2</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-2.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 35% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند گوچی</p>
+                <h2 class="p-2-bold">مانتو مدل ماریان</h2>
+                <del class="product-price__discounted hide"
+                  ><span>1,000,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>1,500,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">4</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-3.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 35% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند دولچه و گابانا</p>
+                <h2 class="p-2-bold">مانتو کتی مدل دایانا</h2>
+                <del class="product-price__discounted hide"
+                  ><span>4,800,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>2,300,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">4</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-1.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 45% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند زارا</p>
+                <h2 class="p-2-bold flex">مانتو مدل ساینا</h2>
+                <del class="product-price__discounted hide"
+                  ><span>2,000,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>1,100,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">2</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-2.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 35% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند گوچی</p>
+                <h2 class="p-2-bold">مانتو مدل ماریان</h2>
+                <del class="product-price__discounted hide"
+                  ><span>1,000,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>1,500,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">4</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+          <!-- product -->
+          <article class="product-card">
+            <a href="#">
+              <img
+                src="/images/Product-manto-3.png"
+                alt=""
+                class="product-card__image"
+              />
+              <span class="product-card__badge--discount hide"> 35% </span>
+
+              <div class="product-card__body">
+                <p class="p-5-bold">برند دولچه و گابانا</p>
+                <h2 class="p-2-bold">مانتو کتی مدل دایانا</h2>
+                <del class="product-price__discounted hide"
+                  ><span>4,800,000</span>تومان</del
+                >
+                <strong class="product-price__current"
+                  ><span>2,300,000</span>تومان</strong
+                >
+                <p class="product-card__stock hide">
+                  تنها <span class="p-5-bold">4</span> عدد موجود است
+                </p>
+              </div>
+            </a>
+            <button
+              class="product-card__wishlist"
+              aria-label="افزودن به علاقه‌مندی‌ها"
+            >
+              <i class="iconsax" icon-name="heart"></i>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- filler -->
+    <div class="my-41"></div>
+
+    <!-- footer section -->
+    <footer class="footer">
+      <!-- menu -->
+      <div class="container h-full">
+        <div class="flex h-full items-center justify-between">
+          <!-- menu btn -->
+          <a href="index.html" class="menu-btn active">
+            <div>
+              <i class="iconsax" icon-name="home-2"></i>
+            </div>
+            خانه
+          </a>
+          <!-- menu btn -->
+          <a href="categories.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="search-status-1"></i>
+            </div>
+            دسته بندی
+          </a>
+          <!-- menu btn -->
+          <a href="shopping-cart.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="shopping-cart"></i>
+            </div>
+            سبد خرید
+          </a>
+          <!-- menu btn -->
+          <a href="profile-signup.html" class="menu-btn">
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#B6BAC3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            مدیست من
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

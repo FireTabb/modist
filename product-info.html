@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header">
+      <div class="container">
+        <div class="header__wraper">
+          <!-- header logo -->
+          <a href="/"><img class="h-9" src="/images/Logo.svg" alt="logo" /></a>
+          <!-- header heart and notif icon -->
+          <div class="header__icon-wraper">
+            <a href="#" class="header__icon"
+              ><i class="iconsax t-1-bold" icon-name="heart"></i
+            ></a>
+            <a href="#" class="header__icon">
+              <i class="iconsax t-1-bold" icon-name="bell-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- page title -->
+    <section class="my-5">
+      <div class="container">
+        <div class="page-title">
+          <div class="page-title_wraper">
+            <a href="index.html">
+              <i class="iconsax return__icon" icon-name="arrow-right"></i>
+            </a>
+            <h2 class="title-primary">جزئیات مانتو</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- product images -->
+    <section class="">
+      <div class="thumb-swiper__styles bg-primary-50 p-6">
+        <div class="relative container">
+          <!-- icons -->
+          <div
+            class="absolute top-8 right-0 z-10 flex h-fit w-fit flex-col gap-2 *:flex"
+          >
+            <a href="#">
+              <i
+                class="iconsax bg-secondary t-2 rounded-full p-2 text-white"
+                icon-name="heart"
+              ></i>
+            </a>
+
+            <a href="#">
+              <i
+                class="iconsax bg-secondary t-2 rounded-full p-2 text-white"
+                icon-name="share"
+              ></i>
+            </a>
+            <a href="#">
+              <i
+                class="iconsax bg-secondary t-2 rounded-full p-2 text-white"
+                icon-name="scan-3"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Main (up) -->
+          <div class="main-swiper swiper">
+            <div class="swiper-wrapper mt-6 *:flex! *:justify-center!">
+              <div class="swiper-slide">
+                <img src="images/manto-green.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-1.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-2.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-3.png" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Thumbnails (down) -->
+          <div class="thumbs-swiper swiper my-6 *:flex! *:justify-center!">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/manto-green.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-1.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-2.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/manto-green-3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- main informations -->
+    <section class="section-layout">
+      <div class="container text-neutral-900">
+        <div class="product-info__name-and-price--wrapper">
+          <h2>مانتو کتی مدل صدف</h2>
+          <div class="product-info__price--wrapper">
+            <div>
+              <span> 45% </span>
+              <del>2,000,000 تومان</del>
+            </div>
+            <strong>1,100,000 تومان</strong>
+          </div>
+        </div>
+
+        <div class="product-info__code-and-score--wrapper">
+          <span>کد : 550834</span>
+          <div class="product-info__score">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.00887 2.04754L9.03554 4.10087C9.17554 4.38671 9.54887 4.66087 9.86387 4.71337L11.7247 5.02254C12.9147 5.22087 13.1947 6.08421 12.3372 6.93587L10.8905 8.38254C10.6455 8.62754 10.5114 9.10004 10.5872 9.43837L11.0014 11.2292C11.328 12.6467 10.5755 13.195 9.32137 12.4542L7.5772 11.4217C7.2622 11.235 6.74304 11.235 6.4222 11.4217L4.67804 12.4542C3.4297 13.195 2.67137 12.6409 2.99804 11.2292L3.4122 9.43837C3.48804 9.10004 3.35387 8.62754 3.10887 8.38254L1.6622 6.93587C0.810536 6.08421 1.0847 5.22087 2.2747 5.02254L4.13554 4.71337C4.4447 4.66087 4.81804 4.38671 4.95804 4.10087L5.9847 2.04754C6.5447 0.933372 7.4547 0.933372 8.00887 2.04754Z"
+                fill="#FCA311"
+              />
+            </svg>
+            4/5
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form section -->
+    <form action="" id="filter-form" class="form">
+      <!-- size -->
+      <section class="section-layout">
+        <div class="container">
+          <!-- ///// title ///// -->
+          <div class="title-showmore">
+            <h2 class="title-secondary">انتخاب سایز :</h2>
+            <div id="open__size-guide" class="show-more">سایز من چنده؟</div>
+          </div>
+          <!-- ///// options ///// -->
+          <div
+            dir="ltr"
+            class="p-3-bold grid grid-cols-6 gap-2 *:flex *:justify-center"
+          >
+            <!-- ///// XS ///// -->
+            <!-- ///// disabled for test ///// -->
+            <label class="text-neutral-900">
+              <input
+                disabled
+                type="checkbox"
+                name="xs"
+                id="size-xs"
+                class="peer hidden"
+              />
+
+              <span
+                class="filter__size-btn--product-info disable-style bg-white"
+                >XS</span
+              >
+            </label>
+            <!-- ///// S ///// -->
+            <label class="text-neutral-900">
+              <input type="checkbox" name="s" id="size-s" class="peer hidden" />
+              <span class="filter__size-btn--product-info bg-white">S</span>
+            </label>
+            <!-- ///// M ///// -->
+            <label class="text-neutral-900">
+              <input type="checkbox" name="m" id="size-m" class="peer hidden" />
+              <span class="filter__size-btn--product-info bg-white">M</span>
+            </label>
+            <!-- ///// L ///// -->
+            <!-- ///// disabled for test ///// -->
+            <label class="text-neutral-900">
+              <input
+                disabled
+                type="checkbox"
+                name="l"
+                id="size-l"
+                class="peer hidden"
+              />
+              <span
+                class="filter__size-btn--product-info disable-style bg-white"
+                >L</span
+              >
+            </label>
+            <!-- ///// XL ///// -->
+            <label class="text-neutral-900">
+              <input
+                type="checkbox"
+                name="xl"
+                id="size-xl"
+                class="peer hidden"
+              />
+              <span class="filter__size-btn--product-info bg-white">XL</span>
+            </label>
+            <!-- ///// XXL ///// -->
+            <label class="text-neutral-900">
+              <input
+                type="checkbox"
+                name="XXL"
+                id="size-XXL"
+                class="peer hidden"
+              />
+              <span class="filter__size-btn--product-info bg-white">XXL</span>
+            </label>
+          </div>
+
+          <!-- ///// giude window ///// -->
+          <dialog
+            id="size-guide"
+            type="button"
+            dir="ltr"
+            class="m-auto rounded-lg outline-none"
+          >
+            <div class="w-full p-3">
+              <div
+                onclick="document.getElementById('size-guide').close()"
+                class="w-fit"
+              >
+                <i class="iconsax t-2-bold" icon-name="x-circle"></i>
+              </div>
+              <img src="images/size-guide.png" alt="" class="m-auto" />
+            </div>
+          </dialog>
+        </div>
+      </section>
+
+      <!-- color -->
+      <section class="section-layout">
+        <!-- ///// title ///// -->
+        <div class="container">
+          <div class="title-showmore">
+            <h2 class="title-secondary">انتخاب رنگ :</h2>
+          </div>
+        </div>
+
+        <!-- ///// opsions ///// -->
+        <div>
+          <div class="grid grid-cols-4 gap-4">
+            <label
+              class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900"
+            >
+              <input
+                type="radio"
+                class="peer sr-only"
+                name="color"
+                id="purple"
+              />
+              <span class="filter__color-btn--product-info"
+                ><img src="public/images/manto-test-purple.png" alt="" class=""
+              /></span>
+              بنفش
+            </label>
+            <label
+              class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900"
+            >
+              <input
+                type="radio"
+                class="peer sr-only"
+                name="color"
+                id="black"
+              />
+              <span class="filter__color-btn--product-info"
+                ><img src="public/images/manto-test-black.png" alt="" class=""
+              /></span>
+              مشکی
+            </label>
+            <label
+              class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900"
+            >
+              <input
+                type="radio"
+                class="peer sr-only"
+                name="color"
+                id="green"
+              />
+              <span class="filter__color-btn--product-info"
+                ><img src="public/images/manto-test-green.png" alt="" class=""
+              /></span>
+              سبز
+            </label>
+            <label
+              class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900"
+            >
+              <input type="radio" class="peer sr-only" name="color" id="red" />
+              <span class="filter__color-btn--product-info"
+                ><img src="public/images/manto-test-red.png" alt="" class=""
+              /></span>
+              قرمز
+            </label>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <!-- tabs (detail, review, comments and QA) -->
+    <section>
+      <!-- ///// tabs ///// -->
+      <div class="bg-primary-50">
+        <div class="container">
+          <div
+            class="p-3-bold flex h-12 items-center justify-between text-nowrap"
+          >
+            <div class="tab__wrapper">
+              <button class="tab--active" data-tab="specs">مشخصات</button>
+            </div>
+            <div class="tab__wrapper" data-tab="reviews">
+              <button class="">بررسی محصول</button>
+            </div>
+            <div class="tab__wrapper" data-tab="comments">
+              <button class="">نظرات کاربران</button>
+            </div>
+            <div class="tab__wrapper" data-tab="qa">
+              <button class="">پرسش و پاسخ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ///// tab panels ///// -->
+      <!-- ///// specs panel ///// -->
+      <table data-panel="specs" class="tabs-specs__wrapper">
+        <tr>
+          <td class="title-td">جنس</td>
+          <td class="info-td">نخی</td>
+        </tr>
+        <tr>
+          <td class="title-td">طرح</td>
+          <td class="info-td">ساده</td>
+        </tr>
+        <tr>
+          <td class="title-td">یقه</td>
+          <td class="info-td">برگردان</td>
+        </tr>
+        <tr>
+          <td class="title-td">قد</td>
+          <td class="info-td">۱۰۰ سانتی متر</td>
+        </tr>
+        <tr>
+          <td class="title-td">مورد استفاده</td>
+          <td class="info-td">روزمره</td>
+        </tr>
+        <tr>
+          <td class="title-td">نحوه بسته شدن</td>
+          <td class="info-td">دکمه ای</td>
+        </tr>
+        <tr>
+          <td class="title-td">جزئیات</td>
+          <td class="info-td">
+            آستین بند‌دار<br />
+            قد آستین، بلند<br />
+            جیب‌نما<br />
+            دکمه پرسی
+          </td>
+        </tr>
+      </table>
+      <!-- ///// review panel ///// -->
+      <!-- ///// comments panel ///// -->
+      <!-- ///// qa panel ///// -->
+    </section>
+
+    <!-- filler -->
+    <div class="my-50"></div>
+
+    <!-- footer section -->
+    <footer class="footer border-t border-neutral-100 drop-shadow-none!">
+      <div class="container h-full py-3">
+        <div class="flex h-full w-full items-center justify-center gap-2">
+          <button
+            disabled
+            type="submit"
+            id="product__apply-btn"
+            class="form__apply-btn main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
+          >
+            <!-- will show by default  -->
+            <i
+              class="iconsax t-2-bold text-white"
+              icon-name="shopping-cart"
+            ></i>
+            <!-- will show when add one in shopping cart  -->
+            <i class="iconsax t-2-bold hidden text-white" icon-name="add"></i>
+            افزودن به سبد خرید
+            <!-- will show when add one in shopping cart  -->
+            <i
+              class="iconsax t-2-bold hidden text-red-500"
+              icon-name="trash"
+            ></i>
+          </button>
+          <strong class="t-5-bold text-nowrap">1,100,000 تومان</strong>
+        </div>
+      </div>
+
+      <!-- menu -->
+      <div class="container mt-2 h-full border-t border-t-neutral-100/30 pt-3">
+        <div class="flex h-full items-center justify-between">
+          <!-- menu btn -->
+          <a href="index.html" class="menu-btn active">
+            <div>
+              <i class="iconsax" icon-name="home-2"></i>
+            </div>
+            خانه
+          </a>
+          <!-- menu btn -->
+          <a href="categories.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="search-status-1"></i>
+            </div>
+            دسته بندی
+          </a>
+          <!-- menu btn -->
+          <a href="shopping-cart.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="shopping-cart"></i>
+            </div>
+            سبد خرید
+          </a>
+          <!-- menu btn -->
+          <a href="profile-signup.html" class="menu-btn">
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#B6BAC3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            مدیست من
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
