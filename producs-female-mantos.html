@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- header section -->
-    <header class="header">
+    <header class="header fixed top-0 z-70 w-full bg-white py-2 text-center">
       <div class="container">
         <div class="header__wraper">
           <!-- header logo -->
@@ -27,6 +27,9 @@
         </div>
       </div>
     </header>
+
+    <!-- filler -->
+    <div class="my-22"></div>
 
     <!-- search section -->
     <section class="section-layout mt-0">
@@ -100,6 +103,594 @@
           </div>
         </div>
         <p class="inventory-stock">تعداد مانتوها: <span>215</span></p>
+      </div>
+    </section>
+
+    <!-- filter and sort -->
+    <section class="section-layout">
+      <div class="container">
+        <div class="filter-and-sort__wraper">
+          <!-- filter btn -->
+          <button id="filter__btn" class="h-full w-full cursor-pointer p-4">
+            <div class="filter">
+              <i
+                class="iconsax t-2-bold text-neutral-800"
+                icon-name="filter-add"
+              ></i>
+              <p>فیلتر کردن</p>
+            </div>
+          </button>
+
+          <!-- sortby btn -->
+          <button id="sort__btn" class="h-full w-full cursor-pointer p-4">
+            <div class="sort">
+              <i class="iconsax t-2-bold text-neutral-800" icon-name="sort"></i>
+              <p>جدید ترین</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- sort window -->
+    <section>
+      <!-- ///// blur-lable ///// -->
+      <div
+        id="blur-lable"
+        class="fixed top-0 right-0 bottom-0 left-0 z-60 hidden bg-black/25 backdrop-blur-xs"
+      ></div>
+      <!-- ///// sort wraper ///// -->
+      <div
+        id="sort-wraper"
+        class="transition-primary fixed right-0 bottom-0 left-0 z-61 rounded-t-[28px] bg-white text-neutral-900"
+        style="transform: translateY(100%)"
+      >
+        <div class="container">
+          <!-- ///// sort drag handler ///// -->
+          <div
+            id="sort__drag-handler"
+            class="mb-8 flex w-full items-center justify-center p-4 text-center after:absolute after:h-1 after:w-8 after:rounded-2xl after:bg-neutral-500 after:content-['']"
+          ></div>
+          <!-- ///// form and sort options ///// -->
+          <form class="m-4" action="">
+            <ul class="p-1-bold m-4 mt-8 flex flex-col gap-4">
+              <p class="t-3-bold">مرتب سازی بر اساس...</p>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="lowest-to-highest" name="sort" />
+                <label for="lowest-to-highest">کمترین به بیشترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="highest-to-lowest" name="sort" />
+                <label for="highest-to-lowest">بیشترین به کمترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="newest" name="sort" />
+                <label for="newest">جدید ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-sale" name="sort" />
+                <label for="top-sale">پر فروش ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-view" name="sort" />
+                <label for="top-view">پر بازدید ترین</label>
+              </li>
+              <li class="flex items-center gap-3">
+                <input type="radio" id="top-discount" name="sort" />
+                <label for="top-discount">پر تخفیف ترین</label>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- filter window -->
+    <section>
+      <div
+        id="filter-window__open-btn"
+        class="fixed inset-0 z-60 hidden overflow-scroll bg-white"
+      >
+        <!-- filler -->
+        <div class="my-22"></div>
+        <!-- page title -->
+        <section class="section-layout">
+          <div class="container">
+            <div class="page-title">
+              <div class="page-title_wraper">
+                <button id="filter-window__close-btn">
+                  <i class="iconsax return__icon" icon-name="arrow-right"></i>
+                </button>
+                <h2 class="title-primary">فیلتر ها</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- big fat filter form -->
+        <form action="" id="filter__form" class="form">
+          <div class="container">
+            <!-- color -->
+            <div class="section-layout">
+              <!-- ///// title ///// -->
+              <div class="title-showmore">
+                <h2 class="title-secondary">فیلتر رنگ :</h2>
+                <!-- <a href="#" class="show-more">مشاهده بیشتر</a> -->
+              </div>
+              <!-- ///// options ///// -->
+              <div
+                class="p-3-bold grid grid-cols-4 gap-8 *:flex *:justify-center"
+              >
+                <!-- ///// color blue ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="blue"
+                    id="blue"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#1975FF]">آبی</span>
+                </label>
+                <!-- ///// color red ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="red"
+                    id="red"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-red-600">قرمز</span>
+                </label>
+                <!-- ///// color white ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="white"
+                    id="white"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-neutral-50">سفید</span>
+                </label>
+                <!-- ///// color black ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="black"
+                    id="black"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-neutral-800">مشکی</span>
+                </label>
+                <!-- ///// color purple ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="purple"
+                    id="purple"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#800080]">بنفش</span>
+                </label>
+                <!-- ///// color pink ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="pink"
+                    id="pink"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#FFC0CB]">صورتی</span>
+                </label>
+                <!-- ///// color green ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="green"
+                    id="green"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-green-500">سبز</span>
+                </label>
+                <!-- ///// color yellow ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="yellow"
+                    id="yellow"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#FFD02D]">زرد</span>
+                </label>
+                <!-- ///// color golden ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="golden"
+                    id="golden"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#BBAD49]">طلایی</span>
+                </label>
+                <!-- ///// color silver ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="silver"
+                    id="silver"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#C0C0C0]">نقره‌ای</span>
+                </label>
+                <!-- ///// color brown ///// -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="brown"
+                    id="brown"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#582E04]">قهوه‌ای</span>
+                </label>
+                <!-- ///// color navy-///// blue -->
+                <label class="text-neutral-50">
+                  <input
+                    type="checkbox"
+                    name="navy-blue"
+                    id="navy-blue"
+                    class="peer hidden"
+                  />
+                  <span class="filter__color-btn bg-[#000073]">سورمه‌ای</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- size -->
+            <div class="section-layout">
+              <!-- ///// title ///// -->
+              <div class="title-showmore">
+                <h2 class="title-secondary">فیلتر سایز :</h2>
+                <div id="open__size-guide" class="show-more">راهنمای سایز</div>
+              </div>
+              <!-- ///// options ///// -->
+              <div
+                dir="ltr"
+                class="p-3-bold grid grid-cols-3 gap-8 *:flex *:justify-center"
+              >
+                <!-- ///// XS ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="xs"
+                    id="size-xs"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">XS</span>
+                </label>
+                <!-- ///// S ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="s"
+                    id="size-s"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">S</span>
+                </label>
+                <!-- ///// M ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="m"
+                    id="size-m"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">M</span>
+                </label>
+                <!-- ///// L ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="l"
+                    id="size-l"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">L</span>
+                </label>
+                <!-- ///// XL ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="xl"
+                    id="size-xl"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">XL</span>
+                </label>
+                <!-- ///// XXL ///// -->
+                <label class="text-neutral-900">
+                  <input
+                    type="checkbox"
+                    name="XXL"
+                    id="size-XXL"
+                    class="peer hidden"
+                  />
+                  <span class="filter__size-btn bg-white">XXL</span>
+                </label>
+              </div>
+
+              <!-- ///// giude window ///// -->
+
+              <dialog
+                id="size-guide"
+                type="button"
+                dir="ltr"
+                class="m-auto rounded-lg outline-none"
+              >
+                <div class="w-full p-3">
+                  <div
+                    onclick="document.getElementById('size-guide').close()"
+                    class="w-fit"
+                  >
+                    <i class="iconsax t-2-bold" icon-name="x-circle"></i>
+                  </div>
+                  <img src="images/size-guide.png" alt="" class="m-auto" />
+                </div>
+              </dialog>
+            </div>
+
+            <!-- brand -->
+            <div class="section-layout">
+              <!-- ///// title ///// -->
+              <div class="title-showmore">
+                <h2 class="title-secondary">فیلتر برند :</h2>
+                <!-- <a href="#" class="show-more">مشاهده بیشتر</a> -->
+              </div>
+              <!-- ///// options ///// -->
+              <div
+                dir="ltr"
+                class="p-3-bold grid grid-cols-4 gap-8 *:flex *:justify-center"
+              >
+                <!-- ///// adidads ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="adidas"
+                    id="adidas"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-adidas.png" alt="adidas"
+                  /></span>
+                </label>
+                <!-- ///// gucci ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="gucci"
+                    id="gucci"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-gucci.png" alt="gucci"
+                  /></span>
+                </label>
+                <!-- ///// nike ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="nike"
+                    id="nike"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-nike.png" alt="nike"
+                  /></span>
+                </label>
+                <!-- ///// zari ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="zari"
+                    id="zari"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-zari.png" alt="zari"
+                  /></span>
+                </label>
+                <!-- ///// mango ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="mango"
+                    id="mango"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-mango.png" alt="mango"
+                  /></span>
+                </label>
+                <!-- ///// louisVuitton ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="louisVuitton"
+                    id="louisVuitton"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img
+                      src="images/filter-brands-louisVuitton.png"
+                      alt="louisVuitton"
+                  /></span>
+                </label>
+                <!-- ///// dolceGabbana ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="dolceGabbana"
+                    id="dolceGabbana"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img
+                      src="images/filter-brands-dolceGabbana.jpg"
+                      alt="dolceGabbana"
+                  /></span>
+                </label>
+                <!-- ///// chanel ///// -->
+                <label>
+                  <input
+                    type="checkbox"
+                    name="chanel"
+                    id="chanel"
+                    class="peer hidden"
+                  />
+                  <span class="filter__brand-btn bg-white"
+                    ><img src="images/filter-brands-chanel.png" alt="chanel"
+                  /></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- price -->
+            <div class="section-layout">
+              <!-- ///// title ///// -->
+              <div class="title-showmore mb-2!">
+                <h2 class="title-secondary">بازه قیمت :</h2>
+                <!-- <a href="#" class="show-more">مشاهده بیشتر</a> -->
+              </div>
+
+              <!-- ///// options ///// -->
+              <div class="filter-price__wrapper">
+                <label class="w-fit cursor-pointer">
+                  <input
+                    class="price-radio mx-4"
+                    type="radio"
+                    name="price-option"
+                    id="100to500"
+                  />
+                  از 100 تا 500 هزار تومان
+                </label>
+                <label class="w-fit cursor-pointer">
+                  <input
+                    class="price-radio mx-4"
+                    type="radio"
+                    name="price-option"
+                    id="500to1000"
+                  />
+                  از 500 هزار تا 1 میلیون تومان
+                </label>
+                <label class="w-fit cursor-pointer">
+                  <input
+                    class="price-radio mx-4"
+                    type="radio"
+                    name="price-option"
+                    id="1000to2000"
+                  />
+                  از ۱ ملیون تا ۲ ملیون تومان
+                </label>
+                <label class="w-fit cursor-pointer">
+                  <input
+                    class="price-radio mx-4"
+                    type="radio"
+                    name="price-option"
+                    id="price-range"
+                  />
+                  بازه قیمتی پیشنهادی...
+                </label>
+                <div class="flex flex-col gap-3 text-neutral-200">
+                  <div class="relative">
+                    از
+                    <div class="input-overlay absolute inset-0"></div>
+                    <input
+                      type="number"
+                      id="price-range__start"
+                      disabled
+                      class="price-range__number-input"
+                      placeholder="شروع قیمت"
+                    />
+                    تومان
+                  </div>
+
+                  <div class="relative">
+                    از
+                    <div class="input-overlay absolute inset-0"></div>
+                    <input
+                      type="number"
+                      id="price-range__end"
+                      disabled
+                      class="price-range__number-input"
+                      placeholder="پایان قیمت"
+                    />
+                    تومان
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- discount & avalable -->
+            <div class="section-layout">
+              <div
+                class="p-2-bold flex flex-col gap-4 text-neutral-800 *:flex *:cursor-pointer *:items-center *:gap-4"
+              >
+                <label class="just__discount-and-available bg-secondary-50"
+                  ><input
+                    type="checkbox"
+                    class="h-5 w-5 rounded-xs border-2"
+                    name="just-discounts"
+                    id=""
+                  />فقط تخفیف دار ها</label
+                >
+                <label class="just__discount-and-available bg-primary-50"
+                  ><input
+                    type="checkbox"
+                    class="h-5 w-5"
+                    name="just-available"
+                    id=""
+                  />فقط کالا های موجود</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- filler -->
+          <div class="my-27"></div>
+
+          <!-- footer section (footer is unic for filter)-->
+          <div
+            class="drop-shadow-ds-2-top fixed bottom-0 z-50 w-full bg-white py-2 text-center"
+          >
+            <div class="container h-full">
+              <div class="flex h-full w-full items-center justify-center gap-2">
+                <button
+                  disabled
+                  type="submit"
+                  id="filter__apply-btn"
+                  class="form__apply-btn main-btn p-2-bold bg-primary text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
+                >
+                  <i
+                    class="iconsax t-2-bold text-white"
+                    icon-name="filter-add"
+                  ></i>
+                  اعمال فیلتر
+                </button>
+                <button
+                  disabled
+                  type="reset"
+                  id="filter__reset-btn"
+                  class="main-btn p-2-bold text-primary border-primary w-2/3 border-2 px-5 disabled:border-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
+                >
+                  <i
+                    class="iconsax t-2-bold text-primary pointer-events-none!"
+                    icon-name="filter-add"
+                  ></i>
+                  حذف فیلتر
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
 

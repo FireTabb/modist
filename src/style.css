@@ -138,7 +138,7 @@
     --breakpoint-desktop: 1280px;
 }
 
-:root{
+:root {
     scroll-behavior: smooth
 }
 
@@ -326,6 +326,10 @@ p[data="backend"]{
 
 .filter__brand-btn {
     @apply filter-btn p-0 w-12 h-12 rounded-full overflow-hidden
+}
+
+.filter-price__wrapper {
+    @apply p-2-bold flex flex-col gap-5 text-neutral-800 *:flex *:items-center
 }
 
 .price-range__number-input {
@@ -688,6 +692,10 @@ p[data="backend"]{
             @apply p-3-bold
         }
     }
+}
+
+.product-shopping-card-quantity__wrapper {
+    @apply p-1-bold bg-primary flex flex-col items-center justify-center gap-2 rounded-full p-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400
 }
 
 .menu-btn {

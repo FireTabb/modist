@@ -22,6 +22,12 @@ const disableFormBtns = function () {
 let formsApplyed = 0;
 form?.addEventListener("click", function (e) {
   const input = e.target.closest("input");
+  const customPrice = e.target.closest(".price-range__number-input");
+
+  if (customPrice) {
+    formsApplyed = 2;
+  }
+
   if (!input) return;
 
   if (formsApplyed < 0) {
@@ -32,6 +38,7 @@ form?.addEventListener("click", function (e) {
 
   disableFormBtns();
 });
+
 // reset forms
 filterReset?.addEventListener("click", function (e) {
   const resetBtn = e.target.closest("#filter__reset-btn");

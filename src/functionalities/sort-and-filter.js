@@ -4,26 +4,37 @@ const bluredLable = document.querySelector("#blur-lable");
 const sortWindow = document.querySelector("#sort-wraper");
 const sortDrag = document.querySelector("#sort__drag-handler");
 
+const filterWindowOpen = document.querySelector("#filter-window__open-btn");
+const filterWindowClose = document.querySelector("#filter-window__close-btn");
+
 // filter and sortby wraper
 filterAndSortWraper?.addEventListener("click", function (e) {
   const sortBtn = e.target.closest("#sort__btn");
-  // const filterBtn = e.target.closest("#filter__btn");
-
-  if (!sortBtn) return;
+  const filterBtn = e.target.closest("#filter__btn");
 
   if (sortBtn) {
     sortWindow.style.transform = `translateY(0)`;
     bluredLable.classList.remove("hidden");
   }
 
+  if (filterBtn) {
+    filterWindowOpen.classList.remove("hidden");
+  }
+
   document.body.classList.add("no-scroll");
 });
 
+// close sort window
 bluredLable?.addEventListener("click", function () {
   sortWindow.style.transform = `translateY(100%)`;
   bluredLable.classList.add("hidden");
   document.body.classList.remove("no-scroll");
 });
+
+// close filter window
+filterWindowClose?.addEventListener("click", function(){
+      filterWindowOpen.classList.add("hidden");
+})
 
 // drag to dismiss
 let startY = 0;

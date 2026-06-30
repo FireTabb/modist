@@ -9,6 +9,30 @@
     <title>modist</title>
   </head>
   <body>
+    <!-- empty cart page -->
+    <section class="hidden">
+      <!-- ‼️ when its not hidden, continue shopping btn should be hidden ‼️ -->
+      <div class="fixed inset-0 z-55 bg-white">
+        <div class="container">
+          <h2 class="title-primary mt-5">سبد خرید</h2>
+
+          <div
+            class="mt-[20vh] flex flex-col items-center justify-center gap-15"
+          >
+            <img class="w-fit" src="public/images/no-product.png" alt="" />
+            <p class="p-1-bold text-neutral-900">
+              کالایی به سبد خرید شما اضافه نشده است.
+            </p>
+            <a href="categories.html" class="w-full">
+              <button class="main-btn p-2-bold bg-primary text-white">
+                مشاهده محصولات
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- page title -->
     <section class="shopping-layout">
       <div class="container">
@@ -165,10 +189,9 @@
               >
             </div>
           </div>
-
-          <!-- we need to organize these shit holes 👇 -->
+          <!-- ///// shopping cart remove edit change-quantity///// -->
           <div class="flex flex-col items-center justify-center gap-4">
-            <button>
+            <button class="product-shopping-card__remove">
               <svg
                 width="32"
                 height="32"
@@ -199,7 +222,7 @@
                 />
               </svg>
             </button>
-            <button>
+            <button class="product__edit-details">
               <svg
                 width="32"
                 height="32"
@@ -223,18 +246,24 @@
                 />
               </svg>
             </button>
-            <button
-              type="submit"
-              id="product__apply-btn"
-              class="p-1-bold bg-primary flex flex-col justify-center gap-2 rounded-full p-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
-            >
-              <i class="iconsax text-white" icon-name="add"></i>
-              <span class="">1</span>
-
-              <i class="iconsax text-red-500" icon-name="trash"></i>
-            </button>
+            <div class="product-shopping-card-quantity__wrapper">
+              <button
+                type="submit"
+                id=""
+                class="product-shopping-card__add-quantity"
+              >
+                <i class="iconsax text-white" icon-name="add"></i>
+              </button>
+              <span class="w-f">1</span>
+              <button
+                type="submit"
+                id=""
+                class="product-shopping-card__remove-quantity"
+              >
+                <i class="iconsax text-red-500" icon-name="trash"></i>
+              </button>
+            </div>
           </div>
-          <!-- we need to organize these shit holes 👆 -->
         </div>
       </div>
     </article>
@@ -302,17 +331,20 @@
             <div class="p-3-regular">
               <p>مبلغ کل خرید :</p>
               <p>مبلغ تخفیف روی کالا :</p>
-              <p id="discounted__title-and-percentage" class="hidden">
+
+              <p class="code-discounte__title hidden">
                 مبلغ تخفیف با کد تخفیف <span class="text-success">15%</span> :
               </p>
               <p>مبلغ کل با احتساب تخفیف :</p>
             </div>
             <div class="p-3-bold">
               <h3>2,000,000 تومان</h3>
-              <h3 class="text-success">900,000 تومان</h3>
-              <h3 id="discounted__price" class="text-success hidden">
+              <h3 class="text-success">900,0 00 تومان</h3>
+
+              <h3 class="text-success code-discounte__price hidden">
                 165,000 تومان
               </h3>
+
               <h3>1,100,000 تومان</h3>
             </div>
           </div>
@@ -330,8 +362,12 @@
     <div class="my-50"></div>
 
     <!-- footer section -->
-    <footer class="footer border-t border-neutral-100 drop-shadow-none!">
-      <div class="container h-full py-3">
+    <footer class="footer z-60! drop-shadow-none!">
+      <!-- ‼️ this btn should hide whene there is no shopping cart product ‼️ -->
+      <div
+        id="continue-shopping"
+        class="relative! z-10! container hidden h-full border-t border-neutral-100 py-4"
+      >
         <div class="flex h-full w-full items-center justify-center gap-2">
           <button
             type="submit"
@@ -344,7 +380,9 @@
         </div>
       </div>
       <!-- menu -->
-      <div class="container mt-2 h-full border-t border-t-neutral-100/30 pt-3">
+      <div
+        class="inset-0 z-60! container h-full border-t border-t-neutral-100/50 pt-3"
+      >
         <div class="flex h-full items-center justify-between">
           <!-- menu btn -->
           <a href="index.html" class="menu-btn">
