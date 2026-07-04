@@ -13,7 +13,7 @@
       <!-- enter phone form -->
       <div
         id="enter-phone__wraper"
-        class="signin_wraper transition-primary absolute inset-0"
+        class="signup_wraper transition-primary absolute inset-0"
         style="transform: translateX(0%)"
       >
         <!-- ///// page title ///// -->
@@ -42,10 +42,12 @@
                   <div class="w-full">
                     <div class="relative w-full">
                       <input
+                        required
                         type="tel"
                         id="phone__input"
                         class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
                         placeholder=" "
+                        pattern="09[0-9]{9}"
                       />
                       <label
                         for="phone__input"
@@ -97,7 +99,7 @@
       <!-- enter code form -->
       <div
         id="enter-code__wraper"
-        class="signin_wraper transition-primary absolute inset-0"
+        class="signup_wraper transition-primary absolute inset-0"
         style="transform: translateX(-100%)"
       >
         <!-- ///// page title ///// -->
@@ -217,7 +219,7 @@
       <!-- success page -->
       <div
         id="success-page__wraper"
-        class="signin_wraper transition-primary absolute inset-0 gap-8"
+        class="signup_wraper transition-primary absolute inset-0 gap-8"
         style="transform: translateX(-200%)"
       >
         <!-- ///// success ///// -->

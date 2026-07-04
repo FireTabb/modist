@@ -8,3 +8,4 @@ import "./functionalities/search.js";
 import "./pages/sign-up.js";
 import "./pages/sign-in.js";
 import "./pages/cart.js"
+import "./pages/shopping-personal-info.js"

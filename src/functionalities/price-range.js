@@ -1,3 +1,8 @@
+import {
+  disableFormBtns,
+  formsApplyed as frm,
+} from "./forms-submit-activate.js";
+
 const priceRangeRadio = document.querySelector("#price-range");
 const priceRangeStart = document.querySelector("#price-range__start");
 const priceRangeEnd = document.querySelector("#price-range__end");
@@ -29,5 +34,7 @@ priceInputOverlays.forEach((priceTextBox) =>
     priceRangeRadio.checked = true;
     activatePriceRange();
     priceTextBox.classList.add("hidden");
+
+    disableFormBtns(true);
   }),
 );

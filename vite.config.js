@@ -10,8 +10,9 @@ export default defineConfig({
       input:{
         main:resolve(__dirname,'index.html'),
         categories:resolve(__dirname,'categories.html'),
-        productspage:resolve(__dirname,'products.html'),
+        // productspage:resolve(__dirname,'products.html'),
         shoppingCart:resolve(__dirname,'shopping-cart.html'),
+        shoppingPersonalInfo:resolve(__dirname,'shpping-personal-info.html'),
 
         searchPage:resolve(__dirname,'search-page.html'),
         filterPage:resolve(__dirname,'filter-page.html'),

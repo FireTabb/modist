@@ -11,7 +11,7 @@ const formApply = document.querySelector(".form__apply-btn");
 
 // phon number enable send code btn & number check
 phonNumberInput?.addEventListener("input", function () {
-  if (this.value !== "" && this.value.length >= 11) {
+  if (this.checkValidity()) {
     document.querySelector("#phone-error").classList.add("hidden");
     formApply.removeAttribute("disabled");
   } else {
@@ -23,12 +23,12 @@ phonNumberInput?.addEventListener("input", function () {
 // submit and go to code page
 enterPhoneSubmit?.addEventListener("click", function (e) {
   e.preventDefault();
-  changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
+  changeTranslateX(document.querySelectorAll(".signup_wraper"), 2);
 });
 // back to enter number page
 editPhoneBtn?.addEventListener("click", function (e) {
   e.preventDefault();
-  changeTranslateX(document.querySelectorAll(".signin_wraper"), 1);
+  changeTranslateX(document.querySelectorAll(".signup_wraper"), 1);
 });
 
 // go next or previous code input

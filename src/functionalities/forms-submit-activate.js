@@ -7,7 +7,9 @@ const formSizeGuide = document.querySelector("#size-guide");
 const filterReset = document.querySelector("#filter__reset-btn");
 
 // disable form buttons function
-const disableFormBtns = function () {
+const disableFormBtns = function (activate = false) {
+  if (activate) formsApplyed++;
+
   if (formsApplyed > 0) {
     formApply.removeAttribute("disabled");
     filterReset?.removeAttribute("disabled");
@@ -60,3 +62,5 @@ formSizeGuide?.addEventListener("click", function (e) {
     formSizeGuide.close();
   }
 });
+
+export { disableFormBtns, formsApplyed };

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- shoppin stages -->
+    <section class="fixed top-25 right-0 left-0">
+      <div class="container">
+        <!-- ///// shopping cart ///// -->
+        <div
+          class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
+        >
+          <div
+            class="flex flex-col items-center justify-center gap-2 text-neutral-900"
+          >
+            <div>
+              <img src="icons/shopping-cart.svg" alt="shopping-cart" />
+            </div>
+            سبد خرید
+          </div>
+
+          <!-- ///// unactive divider ///// -->
+          <svg
+            width="49"
+            height="2"
+            viewBox="0 0 49 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hidden"
+          >
+            <path
+              d="M48 1L0.999999 1"
+              stroke="#9399A6"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="4 4"
+            />
+          </svg>
+          <!-- ///// active divider ///// -->
+          <svg
+            width="49"
+            height="2"
+            viewBox="0 0 49 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M48 1L0.999999 1"
+              stroke="#14213D"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <div
+            class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+          >
+            <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+            <div>
+              <img src="icons/user-edit.svg" alt="user-etid" />
+            </div>
+            اطلاعات ارسال
+          </div>
+
+          <!-- ///// unactive divider ///// -->
+          <svg
+            width="49"
+            height="2"
+            viewBox="0 0 49 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M48 1L0.999999 1"
+              stroke="#9399A6"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="4 4"
+            />
+          </svg>
+          <!-- ///// active divider ///// -->
+          <svg
+            width="49"
+            height="2"
+            viewBox="0 0 49 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hidden"
+          >
+            <path
+              d="M48 1L0.999999 1"
+              stroke="#14213D"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <div
+            class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+          >
+            <div class="absolute inset-0 bg-neutral-50/60"></div>
+            <div>
+              <img src="icons/card-tick.svg" alt="card-tick" />
+            </div>
+            پرداخت
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- big fat form -->
+    <form action="" id="shopping-send-info-form" class="forms">
+      <div class="fixed inset-0">
+        <!-- personal info -->
+        <section>
+          <!-- ///// page title ///// -->
+          <div class="container mt-6">
+            <div class="page-title">
+              <div class="page-title_wraper">
+                <a href="shopping-cart.html">
+                  <i class="iconsax return__icon" icon-name="arrow-right"></i>
+                </a>
+                <h2 class="title-primary">ارسال اطلاعات</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- filler -->
+          <div class="my-45"></div>
+
+          <!-- ///// for myself or a present ///// -->
+          <div class="container">
+            <div
+              class="p-1-bold flex items-center justify-around text-neutral-800 *:flex *:items-center *:gap-3"
+            >
+              <label>
+                <input type="radio" checked id="myself" name="subject" />
+                برای خودم
+              </label>
+              <label>
+                <input required type="radio" id="present" name="subject" />
+                هدیه به یک عزیز
+              </label>
+            </div>
+          </div>
+
+          <!-- myself panel -->
+          <div class="container">
+            <div class="mt-12 flex flex-col items-start justify-center gap-6">
+              <p class="p-2-bold">مشخصات تحویل گیرنده</p>
+
+              <div class="w-full">
+                <div class="relative w-full">
+                  <input
+                    type="text"
+                    id="shopping-full-name__input"
+                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    placeholder=" "
+                  />
+                  <label
+                    for="shopping-full-name__input"
+                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  >
+                    نام و نام خانوادگی
+                  </label>
+                </div>
+                <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+              </div>
+
+              <div class="w-full">
+                <div class="relative w-full">
+                  <input
+                    required
+                    type="tel"
+                    id="shopping-phone__input"
+                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    placeholder=" "
+                    pattern="09[0-9]{9}"
+                  />
+                  <label
+                    for="shopping-phone__input"
+                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  >
+                    شماره موبایل
+                  </label>
+                </div>
+                <!-- <div id="phone-error" class="hidden text-red-500">
+                  شماره موبایل نامعتبر است
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- present panel -->
+                     <div class="container">
+            <div class="mt-12 flex flex-col items-start justify-center gap-6">
+
+              <div class="w-full">
+                <div class="relative w-full">
+                  <input
+                    type="text"
+                    id="shopping-full-name__input"
+                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    placeholder=" "
+                  />
+                  <label
+                    for="shopping-full-name__input"
+                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  >
+                    نام و نام خانوادگی
+                  </label>
+                </div>
+                <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+              </div>
+
+              <div class="w-full">
+                <div class="relative w-full">
+                  <input
+                    required
+                    type="tel"
+                    id="shopping-phone__input"
+                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    placeholder=" "
+                    pattern="09[0-9]{9}"
+                  />
+                  <label
+                    for="shopping-phone__input"
+                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  >
+                    شماره موبایل
+                  </label>
+                </div>
+                <!-- <div id="phone-error" class="hidden text-red-500">
+                  شماره موبایل نامعتبر است
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- filler -->
+        <div class="my-50"></div>
+
+        <!-- footer section -->
+        <footer class="footer z-60! drop-shadow-none!">
+          <div
+            id="personal-info__next-step"
+            class="continue-shopping__wrapper container"
+          >
+            <button
+              disabled
+              id="goto-address-section"
+              class="continue-shopping__btn"
+              type="submit"
+            >
+              ادامه خرید
+              <i class="iconsax t-2-bold text-white" icon-name="arrow-left"></i>
+            </button>
+          </div>
+
+          <div id="" class="continue-shopping__wrapper container hidden">
+            <a href="#">
+              <button
+                type="submit"
+                disabled
+                id=""
+                class="continue-shopping__btn"
+              >
+                ادامه خرید
+                <i
+                  class="iconsax t-2-bold text-white"
+                  icon-name="arrow-left"
+                ></i>
+              </button>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </form>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
