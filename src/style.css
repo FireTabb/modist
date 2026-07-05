@@ -213,6 +213,19 @@ p[data="backend"]{
 
 /****************************** 
 
+            forms
+
+******************************/
+
+.form-input {
+  @apply p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none;
+}
+.form-lable {
+  @apply peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs;
+}
+
+/****************************** 
+
             header
 
 ******************************/
@@ -441,6 +454,13 @@ shopping  cart, info and payment
 
 .continue-shopping__btn {
   @apply main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400;
+}
+
+.continue-shopping__radio {
+  @apply flex cursor-pointer items-center justify-center rounded-xl text-nowrap peer-checked:outline-2 peer-checked:outline-amber-500;
+}
+.continue-shopping__radio--lable {
+  @apply p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900;
 }
 
 /****************************** 

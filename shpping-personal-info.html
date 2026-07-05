@@ -9,149 +9,151 @@
     <title>modist</title>
   </head>
   <body>
-    <!-- shoppin stages -->
-    <section class="fixed top-25 right-0 left-0">
-      <div class="container">
-        <!-- ///// shopping cart ///// -->
-        <div
-          class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
-        >
-          <div
-            class="flex flex-col items-center justify-center gap-2 text-neutral-900"
-          >
-            <div>
-              <img src="icons/shopping-cart.svg" alt="shopping-cart" />
-            </div>
-            سبد خرید
-          </div>
-
-          <!-- ///// unactive divider ///// -->
-          <svg
-            width="49"
-            height="2"
-            viewBox="0 0 49 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="hidden"
-          >
-            <path
-              d="M48 1L0.999999 1"
-              stroke="#9399A6"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-dasharray="4 4"
-            />
-          </svg>
-          <!-- ///// active divider ///// -->
-          <svg
-            width="49"
-            height="2"
-            viewBox="0 0 49 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M48 1L0.999999 1"
-              stroke="#14213D"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-
-          <div
-            class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
-          >
-            <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
-            <div>
-              <img src="icons/user-edit.svg" alt="user-etid" />
-            </div>
-            اطلاعات ارسال
-          </div>
-
-          <!-- ///// unactive divider ///// -->
-          <svg
-            width="49"
-            height="2"
-            viewBox="0 0 49 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M48 1L0.999999 1"
-              stroke="#9399A6"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-dasharray="4 4"
-            />
-          </svg>
-          <!-- ///// active divider ///// -->
-          <svg
-            width="49"
-            height="2"
-            viewBox="0 0 49 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="hidden"
-          >
-            <path
-              d="M48 1L0.999999 1"
-              stroke="#14213D"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-
-          <div
-            class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
-          >
-            <div class="absolute inset-0 bg-neutral-50/60"></div>
-            <div>
-              <img src="icons/card-tick.svg" alt="card-tick" />
-            </div>
-            پرداخت
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- big fat form -->
     <form action="" id="shopping-send-info-form" class="forms">
-      <div class="fixed inset-0">
+      <!-- send info wrapper (all x changes happen here ◄ ►) -->
+      <div class="fixed inset-0 overflow-hidden">
         <!-- personal info -->
-        <section>
-          <!-- ///// page title ///// -->
-          <div class="container mt-6">
-            <div class="page-title">
-              <div class="page-title_wraper">
-                <a href="shopping-cart.html">
-                  <i class="iconsax return__icon" icon-name="arrow-right"></i>
-                </a>
-                <h2 class="title-primary">ارسال اطلاعات</h2>
+        <section
+          class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
+          style="transform: translateX(-100%)"
+        >
+          <div class="container">
+            <!-- ///// page title ///// -->
+            <div class="shopping-layout">
+              <div class="page-title">
+                <div class="page-title_wraper">
+                  <a href="shopping-cart.html">
+                    <i class="iconsax return__icon" icon-name="arrow-right"></i>
+                  </a>
+                  <h2 class="title-primary">ارسال اطلاعات</h2>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- filler -->
-          <div class="my-45"></div>
+            <!-- ///// shoppin stages ///// -->
+            <div class="shopping-layout">
+              <!-- ///// shopping cart ///// -->
+              <div
+                class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
+              >
+                <div
+                  class="flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div>
+                    <img src="icons/shopping-cart.svg" alt="shopping-cart" />
+                  </div>
+                  سبد خرید
+                </div>
 
-          <!-- ///// for myself or a present ///// -->
-          <div class="container">
-            <div
-              class="p-1-bold flex items-center justify-around text-neutral-800 *:flex *:items-center *:gap-3"
-            >
-              <label>
-                <input type="radio" checked id="myself" name="subject" />
-                برای خودم
-              </label>
-              <label>
-                <input required type="radio" id="present" name="subject" />
-                هدیه به یک عزیز
-              </label>
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/user-edit.svg" alt="user-etid" />
+                  </div>
+                  اطلاعات ارسال
+                </div>
+
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/card-tick.svg" alt="card-tick" />
+                  </div>
+                  پرداخت
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- myself panel -->
-          <div class="container">
+            <!-- ///// myself or a present ///// -->
+            <div
+              class="shopping-layout mt-10"
+              id="myself-present__radio-wrapper"
+            >
+              <div
+                class="p-1-bold flex items-center justify-around text-neutral-800 *:flex *:items-center *:gap-3"
+              >
+                <label>
+                  <input type="radio" checked id="myself" name="subject" />
+                  برای خودم
+                </label>
+                <label>
+                  <input required type="radio" id="present" name="subject" />
+                  هدیه به یک عزیز
+                </label>
+              </div>
+            </div>
+
+            <!-- myself panel -->
             <div class="mt-12 flex flex-col items-start justify-center gap-6">
               <p class="p-2-bold">مشخصات تحویل گیرنده</p>
 
@@ -160,13 +162,11 @@
                   <input
                     type="text"
                     id="shopping-full-name__input"
-                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    class="form-input peer"
                     placeholder=" "
+                    required
                   />
-                  <label
-                    for="shopping-full-name__input"
-                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
-                  >
+                  <label for="shopping-full-name__input" class="form-lable">
                     نام و نام خانوادگی
                   </label>
                 </div>
@@ -181,14 +181,11 @@
                     required
                     type="tel"
                     id="shopping-phone__input"
-                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    class="form-input peer"
                     placeholder=" "
                     pattern="09[0-9]{9}"
                   />
-                  <label
-                    for="shopping-phone__input"
-                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
-                  >
+                  <label for="shopping-phone__input" class="form-lable">
                     شماره موبایل
                   </label>
                 </div>
@@ -197,25 +194,46 @@
                 </div> -->
               </div>
             </div>
-          </div>
 
-          <!-- present panel -->
-                     <div class="container">
-            <div class="mt-12 flex flex-col items-start justify-center gap-6">
+            <!-- present panel -->
+            <div
+              class="mt-8 flex hidden flex-col items-start justify-center gap-6"
+              id="present-panel"
+            >
+              <div class="w-full">
+                <div class="relative w-full">
+                  <textarea
+                    name
+                    type="text"
+                    id="shopping-present-message__input"
+                    class="form-input peer h-28"
+                    placeholder=" "
+                    disabled
+                  ></textarea>
+                  <label
+                    for="shopping-present-message__input"
+                    class="form-lable"
+                  >
+                    متن روی بسته
+                  </label>
+                </div>
+                <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+              </div>
 
               <div class="w-full">
                 <div class="relative w-full">
                   <input
                     type="text"
-                    id="shopping-full-name__input"
-                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
+                    id="shopping-from__input"
+                    class="form-input peer"
                     placeholder=" "
+                    required
+                    disabled
                   />
-                  <label
-                    for="shopping-full-name__input"
-                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
-                  >
-                    نام و نام خانوادگی
+                  <label for="shopping-from__input" class="form-lable">
+                    از طرف :
                   </label>
                 </div>
                 <!-- <div id="username-error" class="hidden text-red-500">
@@ -223,69 +241,435 @@
                 </div> -->
               </div>
 
-              <div class="w-full">
-                <div class="relative w-full">
-                  <input
-                    required
-                    type="tel"
-                    id="shopping-phone__input"
-                    class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-800 outline-none"
-                    placeholder=" "
-                    pattern="09[0-9]{9}"
-                  />
-                  <label
-                    for="shopping-phone__input"
-                    class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-400 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
-                  >
-                    شماره موبایل
+              <!-- paper style -->
+              <div class="shopping-layout">
+                <!-- ///// title ///// -->
+                <h2 class="title-secondary mb-4">انتخاب طرح کاغذ کادو :</h2>
+                <!-- ///// opstions ///// -->
+                <div
+                  class="p-3-bold grid grid-cols-4 gap-8 *:flex *:justify-center"
+                >
+                  <!-- ///// green paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="green"
+                      class="peer hidden"
+                      required
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-green.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>سبز</span>
+                  </label>
+                  <!-- ///// red paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="red"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-red.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>قرمز</span>
+                  </label>
+                  <!-- ///// blue paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="blue"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-blue.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>آبی</span>
+                  </label>
+                  <!-- ///// orange paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="orange"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-orange.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>نارنجی</span>
+                  </label>
+                  <!-- ///// style-1 paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="style-1"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-style-1.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>طرحدار 1</span>
+                  </label>
+                  <!-- ///// style-2 paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="style-2"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-style-2.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>طرحدار 2</span>
+                  </label>
+                  <!-- ///// style-3 paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="style-3"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-style-3.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>طرحدار 3</span>
+                  </label>
+                  <!-- ///// style-4 paper ///// -->
+                  <label class="continue-shopping__radio--lable">
+                    <input
+                      type="radio"
+                      name="paper-radio"
+                      id="style-4"
+                      class="peer hidden"
+                      disabled
+                    />
+                    <img
+                      src="public/images/paper-style-4.png"
+                      alt=""
+                      class="continue-shopping__radio"
+                    />
+                    <span>طرحدار 4</span>
                   </label>
                 </div>
-                <!-- <div id="phone-error" class="hidden text-red-500">
-                  شماره موبایل نامعتبر است
-                </div> -->
+              </div>
+            </div>
+
+            <!-- filler -->
+            <div class="my-50"></div>
+          </div>
+        </section>
+
+        <!-- address -->
+        <section
+          class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
+          style="transform: translateX(-00%)"
+        >
+          <div class="container">
+            <!-- ///// page title ///// -->
+            <div class="shopping-layout">
+              <div class="page-title">
+                <div class="page-title_wraper">
+                  <i class="iconsax return__icon" icon-name="arrow-right"></i>
+
+                  <h2 class="title-primary">نشانی</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- ///// shoppin stages ///// -->
+            <div class="shopping-layout">
+              <!-- ///// shopping cart ///// -->
+              <div
+                class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
+              >
+                <div
+                  class="flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div>
+                    <img src="icons/shopping-cart.svg" alt="shopping-cart" />
+                  </div>
+                  سبد خرید
+                </div>
+
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/user-edit.svg" alt="user-etid" />
+                  </div>
+                  اطلاعات ارسال
+                </div>
+
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/card-tick.svg" alt="card-tick" />
+                  </div>
+                  پرداخت
+                </div>
+              </div>
+            </div>
+
+            <!-- ///// selected addresses ///// -->
+            <div class="shopping-layout">
+              <p class="title-secondary">نشانی های منتخب</p>
+              <div class="mt-4 flex flex-col items-center gap-8">
+                <img
+                  src="public/images/no-address.png"
+                  alt="no-selected-adress"
+                />
+                <p class="p-1-bold">هیچ نشانی ذخیره شده ای ندارید!</p>
+              </div>
+            </div>
+
+            <!-- ///// new addresses ///// -->
+            <div class="shopping-layout">
+              <p class="title-secondary">نشانی گیرنده جدید</p>
+              <div>
+                <details>
+                  mamad
+                </details>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- filler -->
-        <div class="my-50"></div>
+        <!-- how to send -->
+        <section
+          class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
+          style="transform: translateX(-200%)"
+        >
+          <div class="container">
+            <!-- ///// page title ///// -->
+            <div class="shopping-layout">
+              <div class="page-title">
+                <div class="page-title_wraper">
+                  <i class="iconsax return__icon" icon-name="arrow-right"></i>
+                  <h2 class="title-primary">تکمیل اطلاعات ارسال</h2>
+                </div>
+              </div>
+            </div>
 
-        <!-- footer section -->
-        <footer class="footer z-60! drop-shadow-none!">
-          <div
-            id="personal-info__next-step"
-            class="continue-shopping__wrapper container"
-          >
-            <button
-              disabled
-              id="goto-address-section"
-              class="continue-shopping__btn"
-              type="submit"
-            >
-              ادامه خرید
-              <i class="iconsax t-2-bold text-white" icon-name="arrow-left"></i>
-            </button>
-          </div>
-
-          <div id="" class="continue-shopping__wrapper container hidden">
-            <a href="#">
-              <button
-                type="submit"
-                disabled
-                id=""
-                class="continue-shopping__btn"
+            <!-- ///// shoppin stages ///// -->
+            <div class="shopping-layout">
+              <!-- ///// shopping cart ///// -->
+              <div
+                class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
               >
-                ادامه خرید
-                <i
-                  class="iconsax t-2-bold text-white"
-                  icon-name="arrow-left"
-                ></i>
-              </button>
-            </a>
+                <div
+                  class="flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div>
+                    <img src="icons/shopping-cart.svg" alt="shopping-cart" />
+                  </div>
+                  سبد خرید
+                </div>
+
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/user-edit.svg" alt="user-etid" />
+                  </div>
+                  اطلاعات ارسال
+                </div>
+
+                <!-- ///// unactive divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#9399A6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-dasharray="4 4"
+                  />
+                </svg>
+                <!-- ///// active divider ///// -->
+                <svg
+                  width="49"
+                  height="2"
+                  viewBox="0 0 49 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="hidden"
+                >
+                  <path
+                    d="M48 1L0.999999 1"
+                    stroke="#14213D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <div
+                  class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+                >
+                  <div class="absolute inset-0 bg-neutral-50/60"></div>
+                  <div>
+                    <img src="icons/card-tick.svg" alt="card-tick" />
+                  </div>
+                  پرداخت
+                </div>
+              </div>
+            </div>
           </div>
-        </footer>
+        </section>
       </div>
+
+      <!-- footer section -->
+      <footer class="footer z-60! drop-shadow-none!">
+        <div
+          id="personal-info__next-step"
+          class="continue-shopping__wrapper container"
+        >
+          <button
+            disabled
+            id="send-info__submit"
+            class="continue-shopping__btn"
+            type="submit"
+          >
+            <span>ادامه خرید</span>
+            <i class="iconsax t-2-bold text-white" icon-name="arrow-left"></i>
+          </button>
+        </div>
+      </footer>
     </form>
     <script type="module" src="/src/main.js"></script>
   </body>

@@ -3,11 +3,14 @@ import changeTranslateX from "./../functionalities/changeX.js";
 const shoppingPersonalInfoForm = document.querySelector(
   "#shopping-send-info-form",
 );
+const sendInfoSubmit = document.querySelector("#send-info__submit");
+const sendInfoWrappers = document.querySelectorAll(".send-info__wrapper");
 
-const myselfRadio = document.querySelector("#myself");
-const presentRadio = document.querySelector("#present");
-
-const goToAdressSection = document.querySelector("#goto-address-section");
+const myselfAndPresentWrapper = document.querySelector(
+  "#myself-present__radio-wrapper",
+);
+const presentPanel = document.querySelector("#present-panel");
+const presentPanelInputs = presentPanel?.querySelectorAll("input, textarea");
 
 const shoppingFullNameInput = document.querySelector(
   "#shopping-full-name__input",
@@ -15,12 +18,41 @@ const shoppingFullNameInput = document.querySelector(
 
 shoppingPersonalInfoForm?.addEventListener("input", function () {
   this.checkValidity()
-    ? goToAdressSection.removeAttribute("disabled")
-    : goToAdressSection.setAttribute("disabled", "");
+    ? sendInfoSubmit.removeAttribute("disabled")
+    : sendInfoSubmit.setAttribute("disabled", "");
 });
 
-presentRadio.addEventListener("change", function(){
-    this.checked ? x.classList.remove('hidden') : x.classList.add('hidden') 
-})
+myselfAndPresentWrapper?.addEventListener("change", function (e) {
+  const presentRadio = e.target.closest("#present");
+  const myselfRadio = e.target.closest("#myself");
 
-shoppingPersonalInfoForm?.addEventListener("change", function () {});
+  if (!presentRadio && !myselfRadio) return;
+  if (presentRadio) {
+    presentPanel.classList.remove("hidden");
+    presentPanelInputs.forEach((el) => el.removeAttribute("disabled"));
+  }
+  if (myselfRadio) {
+    presentPanel.classList.add("hidden");
+    presentPanelInputs.forEach((el) => el.setAttribute("disabled", ""));
+  }
+});
+
+let currentPage = 1;
+shoppingPersonalInfoForm?.addEventListener("submit", function (e) {
+  if (currentPage < 3) {
+    e.preventDefault();
+    currentPage++;
+    changeTranslateX(sendInfoWrappers, currentPage);
+  }
+  if (currentPage === 3) {
+    sendInfoSubmit.querySelector("span").innerText = "تایید اطلاعات ارسال";
+  }
+});
+
+document.querySelectorAll(".return__icon").forEach((returnBtn) =>
+  returnBtn.addEventListener("click", function () {
+    currentPage--;
+    changeTranslateX(sendInfoWrappers, currentPage);
+    sendInfoSubmit.querySelector("span").innerText = "ادامه خرید";
+  }),
+);
