@@ -16,7 +16,7 @@
         <!-- personal info -->
         <section
           class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
-          style="transform: translateX(-100%)"
+          style="transform: translateX(100%)"
         >
           <div class="container">
             <!-- ///// page title ///// -->
@@ -390,7 +390,7 @@
         <!-- address -->
         <section
           class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
-          style="transform: translateX(-00%)"
+          style="transform: translateX(-0%)"
         >
           <div class="container">
             <!-- ///// page title ///// -->
@@ -522,12 +522,197 @@
             <!-- ///// new addresses ///// -->
             <div class="shopping-layout">
               <p class="title-secondary">نشانی گیرنده جدید</p>
-              <div>
-                <details>
-                  mamad
-                </details>
+              <div id="address-form__wrapper" class="mt-4 flex flex-col gap-4">
+                <!-- ///// province ///// -->
+                <div
+                  id="province-select__wrapper"
+                  class="select__wrapper relative right-0 left-0"
+                >
+                  <button
+                    type="button"
+                    id="province-button"
+                    class="open-select-list__button"
+                  >
+                    <span>استان</span>
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="transition-primary"
+                    >
+                      <path
+                        d="M5.44006 11.9332L14.1334 20.6265C15.1601 21.6532 16.8401 21.6532 17.8667 20.6265L26.5601 11.9332"
+                        stroke="#2F2F2F"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  <ul id="province-selection__list" class="select__list hide">
+                    <!-- these should fill from a database with js -->
+                    <li data-value="tehran">تهران</li>
+                    <li data-value="tabriz">تبریز</li>
+                    <li data-value="esfahan">اصفهان</li>
+                    <li data-value="mashhad">مشهد</li>
+                    <li data-value="yazd">یزد</li>
+                    <li data-value="shiraz">شیراز</li>
+                    <li data-value="qom">قم</li>
+                  </ul>
+
+                  <input
+                    type="hidden"
+                    name="province"
+                    id="province-input"
+                    required
+                  />
+                </div>
+
+                <!-- ///// city ///// -->
+                <div
+                  id="city-select__wrapper"
+                  class="select__wrapper relative right-0 left-0"
+                >
+                  <button
+                    type="button"
+                    id="city-button"
+                    class="open-select-list__button"
+                    disabled
+                  >
+                    <span>شهر</span>
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="transition-primary"
+                    >
+                      <path
+                        d="M5.44006 11.9332L14.1334 20.6265C15.1601 21.6532 16.8401 21.6532 17.8667 20.6265L26.5601 11.9332"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  <ul id="city-selection__list" class="select__list hide">
+                    <!-- these should fill from a database with js -->
+                    <li data-value="tehran">خمینی شهر</li>
+                    <li data-value="tabriz">نجف آباد</li>
+                    <li data-value="esfahan">اصفهان</li>
+                    <li data-value="mashhad">قدرجان</li>
+                    <li data-value="yazd">تهرانجی</li>
+                    <li data-value="shiraz">کاشان</li>
+                    <li data-value="qom">نطنز</li>
+                  </ul>
+
+                  <input type="hidden" name="city" id="city-input" required />
+                </div>
+
+                <!-- ///// address ///// -->
+                <div class="w-full">
+                  <div class="relative w-full">
+                    <textarea
+                      name=""
+                      type="text"
+                      id="shopping-address__input"
+                      class="form-input peer h-28"
+                      placeholder=" "
+                    ></textarea>
+                    <label for="shopping-address__input" class="form-lable">
+                      آدرس
+                    </label>
+                  </div>
+                  <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+                </div>
+
+                <!-- ///// postal code ///// -->
+                <div class="w-full">
+                  <div class="relative w-full">
+                    <input
+                      name=""
+                      type="number"
+                      id="shopping-postal-code__input"
+                      class="form-input peer"
+                      placeholder=" "
+                      dir="ltr"
+                    />
+                    <label for="shopping-postal-code__input" class="form-lable">
+                      کد پستی
+                    </label>
+                  </div>
+                  <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+                </div>
+
+                <!-- ///// additional information ///// -->
+                <div class="w-full">
+                  <div class="relative w-full">
+                    <textarea
+                      name=""
+                      type="text"
+                      id="shopping-additional-info__input"
+                      class="form-input peer h-28"
+                      placeholder=" "
+                    ></textarea>
+                    <label
+                      for="shopping-additional-info__input"
+                      class="form-lable"
+                    >
+                      توضیحات تکمیلی (اختیاری)
+                    </label>
+                  </div>
+                  <!-- <div id="username-error" class="hidden text-red-500">
+                  نام کاربری خالی است
+                </div> -->
+                </div>
+
+                <div class="flex flex-col gap-4">
+                  <label
+                    class="p-2-regular flex w-fit cursor-pointer gap-4 p-4 text-neutral-800"
+                  >
+                    <input
+                      class="h-5 w-5 cursor-pointer"
+                      type="checkbox"
+                      name=""
+                      id="address-name__checkbox"
+                    />
+                    برای خریدهای بعدی نشانی ذخیره شود.
+                  </label>
+
+                  <!-- ///// discount code input ///// -->
+                  <div class="hidden w-full" id="address-name__wrapper">
+                    <div class="relative w-full">
+                      <input
+                        type="text"
+                        id="address-name__input"
+                        class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-900 outline-none"
+                        placeholder=" "
+                      />
+                      <label
+                        for="address-name__input"
+                        class="peer-focus:text-primary absolute top-1/2 right-3 -translate-y-1/2 bg-white px-1 text-neutral-800 transition-all duration-200 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                      >
+                        عنوان نشانی منتخب
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- filler -->
+            <div class="my-50"></div>
           </div>
         </section>
 
