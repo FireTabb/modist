@@ -12,7 +12,8 @@ export default defineConfig({
         categories:resolve(__dirname,'categories.html'),
         // productspage:resolve(__dirname,'products.html'),
         shoppingCart:resolve(__dirname,'shopping-cart.html'),
-        shoppingPersonalInfo:resolve(__dirname,'shpping-personal-info.html'),
+        shoppingPersonalInfo:resolve(__dirname,'shopping-personal-info.html'),
+        payment:resolve(__dirname,'payment-page.html'),
 
         searchPage:resolve(__dirname,'search-page.html'),
         filterPage:resolve(__dirname,'filter-page.html'),

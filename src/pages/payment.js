@@ -1,0 +1,1 @@
+import submitHandler from "./../functionalities/form-activate-with-all-inputs.js";

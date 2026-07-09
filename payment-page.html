@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- big fat form -->
+    <form action="" id="shopping-send-info-form" class="">
+      <div class="container">
+        <!-- ///// page title ///// -->
+        <div class="shopping-layout">
+          <div class="page-title">
+            <div class="page-title_wraper">
+              <a href="shopping-cart.html">
+                <i class="iconsax return__icon" icon-name="arrow-right"></i>
+              </a>
+              <h2 class="title-primary">پرداخت</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- ///// shoppin stages ///// -->
+        <section class="shopping-layout">
+          <!-- ///// shopping cart ///// -->
+          <div
+            class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
+          >
+            <div
+              class="flex flex-col items-center justify-center gap-2 text-neutral-900"
+            >
+              <div>
+                <img src="icons/shopping-cart.svg" alt="shopping-cart" />
+              </div>
+              سبد خرید
+            </div>
+
+            <!-- ///// unactive divider ///// -->
+            <svg
+              width="49"
+              height="2"
+              viewBox="0 0 49 2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden"
+            >
+              <path
+                d="M48 1L0.999999 1"
+                stroke="#9399A6"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-dasharray="4 4"
+              />
+            </svg>
+            <!-- ///// active divider ///// -->
+            <svg
+              width="49"
+              height="2"
+              viewBox="0 0 49 2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M48 1L0.999999 1"
+                stroke="#14213D"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <div
+              class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+            >
+              <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+              <div>
+                <img src="icons/user-edit.svg" alt="user-etid" />
+              </div>
+              اطلاعات ارسال
+            </div>
+
+            <!-- ///// unactive divider ///// -->
+            <svg
+              width="49"
+              height="2"
+              viewBox="0 0 49 2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden"
+            >
+              <path
+                d="M48 1L0.999999 1"
+                stroke="#9399A6"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-dasharray="4 4"
+              />
+            </svg>
+            <!-- ///// active divider ///// -->
+            <svg
+              width="49"
+              height="2"
+              viewBox="0 0 49 2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M48 1L0.999999 1"
+                stroke="#14213D"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <div
+              class="relative flex flex-col items-center justify-center gap-2 text-neutral-900"
+            >
+              <div class="absolute inset-0 hidden bg-neutral-50/60"></div>
+              <div>
+                <img src="icons/card-tick.svg" alt="card-tick" />
+              </div>
+              پرداخت
+            </div>
+          </div>
+        </section>
+
+        <!-- bill -->
+        <section class="section-layout drop-shadow-ds-1 rounded-lg bg-white">
+          <!-- ///// these informations will fill from shopping form ///// -->
+          <!-- ///// bill info ///// -->
+          <div id="bill-info__wrapper">
+            <div>
+              <div class="bill-info__title">
+                <h4 class="">اطلاعات ثبت شده</h4>
+                <i class="iconsax" icon-name="edit-1"></i>
+              </div>
+              <p>نام و نام خانوادگی : <span class="">مریم صادقی</span></p>
+              <p>شماره موبایل : <span>۰۹۱۲۹۸۷۶۵۴۳</span></p>
+            </div>
+            <div>
+              <div class="bill-info__title">
+                <h4>نشانی گیرنده</h4>
+                <i class="iconsax" icon-name="edit-1"></i>
+              </div>
+              <p>
+                نشانی :
+                <span
+                  >تهران،خیابان مقدس اردبیلی، خیابان الف پلاک ۱۸ مجتمع سهند واحد
+                  ۵</span
+                >
+              </p>
+              <p>کد پستی : <span>۲۲۸۴۵۶۷۸۹۰</span></p>
+              <p>
+                توضیحات :
+                <span>لطفا در صورت نبودن ایشون به نگهبانی تحویل داده شود.</span>
+              </p>
+            </div>
+            <div>
+              <div class="bill-info__title">
+                <h4>شیوه ارسال</h4>
+                <i class="iconsax" icon-name="edit-1"></i>
+              </div>
+              <p>شیوه ارسال : <span>پیک موتوری</span></p>
+            </div>
+          </div>
+
+          <svg
+            width="100%"
+            height="1"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="0"
+              y1="0.5"
+              x2="100%"
+              y2="0.5"
+              stroke="#707070"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+              stroke-dasharray="4 4"
+            />
+          </svg>
+
+          <!-- ///// bill prices ///// -->
+          <div id="bill-price__wrapper">
+            <div class="bill-price__title">
+              <div>
+                <p>مبلغ کل خرید :</p>
+                <h3>2,000,000 تومان</h3>
+              </div>
+              <div>
+                <p>مبلغ تخفیف روی کالا :</p>
+                <h3 class="discounted">900,000 تومان</h3>
+              </div>
+              <div>
+                <p>مبلغ تخفیف با کد تخفیف <span> 15% </span> :</p>
+                <h3 class="discounted">165,000 تومان</h3>
+              </div>
+
+              <div>
+                <p>مبلغ کل با احتساب تخفیف :</p>
+                <h3>935,000 تومان</h3>
+              </div>
+              <div>
+                <p>هزینه ارسال(پیک موتوری) :</p>
+                <h3>50,000 تومان</h3>
+              </div>
+            </div>
+            <div
+              class="bg-primary p-2-bold mt-6 flex items-center rounded-lg p-2 text-white"
+            >
+              <p>مبلغ قابل پرداخت :</p>
+              <h3 class="p-2-bold!">985,000 تومان</h3>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- filler -->
+      <div class="my-50"></div>
+
+      <!-- footer section -->
+      <footer class="footer z-60! drop-shadow-none!">
+        <div
+          id="personal-info__next-step"
+          class="continue-shopping__wrapper container"
+        >
+          <button
+            disabled
+            id="send-info__submit"
+            class="continue-shopping__btn"
+            type="submit"
+          >
+            <span>ادامه خرید</span>
+            <i class="iconsax t-2-bold text-white" icon-name="arrow-left"></i>
+          </button>
+        </div>
+      </footer>
+    </form>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

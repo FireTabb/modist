@@ -444,7 +444,7 @@ p[data="backend"]{
 
 /****************************** 
 
-shopping  cart, info and payment
+shopping  cart, info and send
 
 ******************************/
 
@@ -469,6 +469,71 @@ shopping  cart, info and payment
 
 .select__list {
   @apply drop-shadow-ds-4 p-1-regular absolute top-[calc(100%+8px)] right-0 z-50 flex max-h-80 w-full flex-col overflow-y-auto rounded-lg bg-white p-4 text-neutral-900 *:py-3;
+}
+
+.how-to-send__radio {
+  @apply peer-checked:border-secondary-300 peer-checked:bg-secondary-50 flex cursor-pointer items-center rounded-xl border border-neutral-500 p-4 text-neutral-900 peer-checked:border;
+  .send-description__wrapper {
+    @apply p-3-bold flex w-2/3 flex-col gap-2 text-neutral-800;
+  }
+  h3 {
+    @apply p-2-bold;
+  }
+  span {
+    @apply p-3-regular;
+  }
+  .send-price__tag {
+    @apply bg-secondary-300 w-fit rounded-sm px-1;
+  }
+}
+
+/****************************** 
+
+          payment page
+
+******************************/
+#bill-info__wrapper {
+  @apply p-3-regular p-3;
+  .bill-info__title {
+    @apply mb-6 flex! items-center justify-between;
+  }
+
+  h4 {
+    @apply p-3-bold rounded-sm bg-neutral-50 px-2 py-1;
+  }
+
+  i {
+    @apply t-3-bold text-secondary;
+  }
+
+  p {
+    @apply mb-4 flex justify-between px-2 text-left;
+  }
+
+  span {
+    @apply p-3-bold max-w-1/2;
+  }
+}
+
+#bill-price__wrapper {
+  @apply p-3-regular p-3;
+  div {
+    @apply flex justify-between w-full;
+  }
+  .bill-price__title {
+    @apply p-3-regular mt-6 flex flex-col px-3 gap-4;
+  }
+  .discounted {
+    @apply text-success;
+  }
+
+  h3 {
+    @apply p-3-bold;
+  }
+
+  span {
+    @apply text-success mx-1;
+  }
 }
 
 /****************************** 

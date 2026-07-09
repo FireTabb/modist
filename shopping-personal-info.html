@@ -16,7 +16,9 @@
         <!-- personal info -->
         <section
           class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
-          style="transform: translateX(100%)"
+          id="wrapper-1"
+          style="transform: translateX(0%)"
+          data-page="1"
         >
           <div class="container">
             <!-- ///// page title ///// -->
@@ -143,11 +145,22 @@
                 class="p-1-bold flex items-center justify-around text-neutral-800 *:flex *:items-center *:gap-3"
               >
                 <label>
-                  <input type="radio" checked id="myself" name="subject" />
+                  <input
+                    type="radio"
+                    checked
+                    id="myself"
+                    name="subject"
+                    class="usless-radio"
+                  />
                   برای خودم
                 </label>
                 <label>
-                  <input required type="radio" id="present" name="subject" />
+                  <input
+                    type="radio"
+                    id="present"
+                    name="subject"
+                    class="usless-radio"
+                  />
                   هدیه به یک عزیز
                 </label>
               </div>
@@ -208,7 +221,6 @@
                     id="shopping-present-message__input"
                     class="form-input peer h-28"
                     placeholder=" "
-                    disabled
                   ></textarea>
                   <label
                     for="shopping-present-message__input"
@@ -390,7 +402,9 @@
         <!-- address -->
         <section
           class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
-          style="transform: translateX(-0%)"
+          style="transform: translateX(-100%)"
+          id="wrapper-2"
+          data-page="2"
         >
           <div class="container">
             <!-- ///// page title ///// -->
@@ -532,6 +546,7 @@
                     type="button"
                     id="province-button"
                     class="open-select-list__button"
+                    tabindex="-1"
                   >
                     <span>استان</span>
                     <svg
@@ -553,7 +568,10 @@
                     </svg>
                   </button>
 
-                  <ul id="province-selection__list" class="select__list hide">
+                  <ul
+                    id="province-selection__list"
+                    class="select__list hide z-51!"
+                  >
                     <!-- these should fill from a database with js -->
                     <li data-value="tehran">تهران</li>
                     <li data-value="tabriz">تبریز</li>
@@ -563,12 +581,13 @@
                     <li data-value="shiraz">شیراز</li>
                     <li data-value="qom">قم</li>
                   </ul>
-
                   <input
                     type="hidden"
                     name="province"
                     id="province-input"
+                    tabindex="-1"
                     required
+                    disabled
                   />
                 </div>
 
@@ -614,7 +633,16 @@
                     <li data-value="qom">نطنز</li>
                   </ul>
 
-                  <input type="hidden" name="city" id="city-input" required />
+                  <input
+                    type="text"
+                    name="city"
+                    id="city-input"
+                    class="pointer-events-none absolute size-0 opacity-0"
+                    value=""
+                    readonly
+                    required
+                    disabled
+                  />
                 </div>
 
                 <!-- ///// address ///// -->
@@ -626,6 +654,8 @@
                       id="shopping-address__input"
                       class="form-input peer h-28"
                       placeholder=" "
+                      required
+                      disabled
                     ></textarea>
                     <label for="shopping-address__input" class="form-lable">
                       آدرس
@@ -646,6 +676,8 @@
                       class="form-input peer"
                       placeholder=" "
                       dir="ltr"
+                      required
+                      disabled
                     />
                     <label for="shopping-postal-code__input" class="form-lable">
                       کد پستی
@@ -665,6 +697,7 @@
                       id="shopping-additional-info__input"
                       class="form-input peer h-28"
                       placeholder=" "
+                      disabled
                     ></textarea>
                     <label
                       for="shopping-additional-info__input"
@@ -678,6 +711,7 @@
                 </div> -->
                 </div>
 
+                <!-- ///// discount code checkbox ///// -->
                 <div class="flex flex-col gap-4">
                   <label
                     class="p-2-regular flex w-fit cursor-pointer gap-4 p-4 text-neutral-800"
@@ -687,6 +721,7 @@
                       type="checkbox"
                       name=""
                       id="address-name__checkbox"
+                      disabled
                     />
                     برای خریدهای بعدی نشانی ذخیره شود.
                   </label>
@@ -695,10 +730,12 @@
                   <div class="hidden w-full" id="address-name__wrapper">
                     <div class="relative w-full">
                       <input
+                        disabled
                         type="text"
                         id="address-name__input"
                         class="peer p-1-regular! focus:border-primary! block w-full rounded-md border border-neutral-400 p-4 text-neutral-900 outline-none"
                         placeholder=" "
+                        required
                       />
                       <label
                         for="address-name__input"
@@ -720,6 +757,8 @@
         <section
           class="send-info__wrapper transition-primary absolute inset-0 overflow-auto"
           style="transform: translateX(-200%)"
+          id="wrapper-3"
+          data-page="3"
         >
           <div class="container">
             <!-- ///// page title ///// -->
@@ -734,10 +773,10 @@
 
             <!-- ///// shoppin stages ///// -->
             <div class="shopping-layout">
-              <!-- ///// shopping cart ///// -->
               <div
                 class="flex items-center justify-between rounded-lg bg-neutral-50 p-4"
               >
+                <!-- ///// shopping cart ///// -->
                 <div
                   class="flex flex-col items-center justify-center gap-2 text-neutral-900"
                 >
@@ -746,7 +785,6 @@
                   </div>
                   سبد خرید
                 </div>
-
                 <!-- ///// unactive divider ///// -->
                 <svg
                   width="49"
@@ -828,9 +866,168 @@
                 >
                   <div class="absolute inset-0 bg-neutral-50/60"></div>
                   <div>
-                    <img src="icons/card-tick.svg" alt="card-tick" />
+                    <img src="public/icons/card-tick.svg" alt="card-tick" />
                   </div>
                   پرداخت
+                </div>
+              </div>
+            </div>
+
+            <!-- ///// how to send options ///// -->
+            <div class="shopping-layout mt-9">
+              <p class="title-secondary">انتخاب شیوه ارسال</p>
+              <div id="how-to-send__wrapper" class="mt-4 flex flex-col gap-4">
+                <div class="flex flex-col gap-4">
+                  <!-- ///// motorcycle courier ///// -->
+                  <label>
+                    <input
+                      type="radio"
+                      name="send"
+                      id="motorcycle"
+                      class="peer sr-only"
+                      value=""
+                      disabled
+                      required
+                    />
+                    <div class="how-to-send__radio">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-1/3 text-center"
+                      >
+                        <path
+                          d="M6.33984 14.8799L23.9998 25.0999L41.5398 14.9399"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M24 43.2201V25.0801"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19.8598 4.96007L9.17979 10.8801C6.75979 12.2201 4.77979 15.5801 4.77979 18.3401V29.6401C4.77979 32.4001 6.75979 35.7601 9.17979 37.1001L19.8598 43.0401C22.1398 44.3001 25.8798 44.3001 28.1598 43.0401L38.8398 37.1001C41.2598 35.7601 43.2398 32.4001 43.2398 29.6401V18.3401C43.2398 15.5801 41.2598 12.2201 38.8398 10.8801L28.1598 4.94007C25.8598 3.68007 22.1398 3.68007 19.8598 4.96007Z"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <div class="send-description__wrapper">
+                        <h3>پیک موتوری (فقط تهران)</h3>
+                        <p>زمان ارسال سفارشات</p>
+                        <p><span>قبل از ساعت 12 ظهر : </span>همان روز</p>
+                        <p><span>بعد از ساعت 12 ظهر : </span>صبح فردا</p>
+                        <p>هزینه بسته بندی و ارسال (ثابت) :</p>
+                        <div class="send-price__tag">50,000 تومان</div>
+                      </div>
+                    </div>
+                  </label>
+                  <!-- ///// pishtaz ///// -->
+                  <label>
+                    <input
+                      type="radio"
+                      name="send"
+                      id="pishtaz"
+                      class="peer sr-only"
+                      value=""
+                      disabled
+                    />
+                    <div class="how-to-send__radio">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-1/3 text-center"
+                      >
+                        <path
+                          d="M6.33984 14.8799L23.9998 25.0999L41.5398 14.9399"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M24 43.2201V25.0801"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19.8598 4.96007L9.17979 10.8801C6.75979 12.2201 4.77979 15.5801 4.77979 18.3401V29.6401C4.77979 32.4001 6.75979 35.7601 9.17979 37.1001L19.8598 43.0401C22.1398 44.3001 25.8798 44.3001 28.1598 43.0401L38.8398 37.1001C41.2598 35.7601 43.2398 32.4001 43.2398 29.6401V18.3401C43.2398 15.5801 41.2598 12.2201 38.8398 10.8801L28.1598 4.94007C25.8598 3.68007 22.1398 3.68007 19.8598 4.96007Z"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <div class="send-description__wrapper">
+                        <h3>پیشتاز</h3>
+                        <p><span>زمان دریافت مرسوله : </span>3 تا 6 روز کاری</p>
+                        <p>هزینه بسته بندی و ارسال (ثابت) :</p>
+                        <div class="send-price__tag">60,000 تومان</div>
+                      </div>
+                    </div>
+                  </label>
+                  <!-- ///// tipax ///// -->
+                  <label>
+                    <input
+                      type="radio"
+                      name="send"
+                      id="tipax"
+                      class="peer sr-only"
+                      disabled
+                      value=""
+                    />
+                    <div class="how-to-send__radio">
+                      <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-1/3 text-center"
+                      >
+                        <path
+                          d="M6.33984 14.8799L23.9998 25.0999L41.5398 14.9399"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M24 43.2201V25.0801"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19.8598 4.96007L9.17979 10.8801C6.75979 12.2201 4.77979 15.5801 4.77979 18.3401V29.6401C4.77979 32.4001 6.75979 35.7601 9.17979 37.1001L19.8598 43.0401C22.1398 44.3001 25.8798 44.3001 28.1598 43.0401L38.8398 37.1001C41.2598 35.7601 43.2398 32.4001 43.2398 29.6401V18.3401C43.2398 15.5801 41.2598 12.2201 38.8398 10.8801L28.1598 4.94007C25.8598 3.68007 22.1398 3.68007 19.8598 4.96007Z"
+                          stroke="#14213D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <div class="send-description__wrapper">
+                        <h3>تیپاکس</h3>
+                        <p><span>زمان دریافت مرسوله : </span>1 تا 3 روز کاری</p>
+                        <p>هزینه بسته بندی و ارسال (ثابت) :</p>
+                        <div class="send-price__tag">70,000 تومان</div>
+                      </div>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
