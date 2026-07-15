@@ -1,7 +1,5 @@
 const sendInfoSubmit = document.querySelector("#send-info__submit");
-const shoppingPersonalInfoForm = document.querySelector(
-  "#shopping-send-info-form",
-);
+const form = document.querySelector(".all-required-form");
 
 // submit handler
 function submitHandler(form) {
@@ -21,7 +19,7 @@ function checkValidities(form) {
       i.getAttribute("type") === "radio" &&
       i.getAttribute("disabled") !== ""
     ) {
-      status = shoppingPersonalInfoForm?.checkValidity();
+      status = form?.checkValidity();
     }
 
     if (

@@ -9,8 +9,15 @@
     <title>modist</title>
   </head>
   <body>
-    <!-- big fat form -->
-    <form action="" id="shopping-send-info-form" class="">
+    <!-- toast container -->
+    <div
+      id="toast-container"
+      aria-live="polite"
+      aria-atomic="true"
+      class="toast-wrapper"
+    ></div>
+    <!-- midsize form -->
+    <form action="" id="payment-form" class="form">
       <div class="container">
         <!-- ///// page title ///// -->
         <div class="shopping-layout">
@@ -131,7 +138,7 @@
         <section class="section-layout drop-shadow-ds-1 rounded-lg bg-white">
           <!-- ///// these informations will fill from shopping form ///// -->
           <!-- ///// bill info ///// -->
-          <div id="bill-info__wrapper">
+          <div id="bill-info__wrapper" class="bill-info__wrapper">
             <div>
               <div class="bill-info__title">
                 <h4 class="">اطلاعات ثبت شده</h4>
@@ -186,7 +193,7 @@
           </svg>
 
           <!-- ///// bill prices ///// -->
-          <div id="bill-price__wrapper">
+          <div id="bill-price__wrapper" class="bill-price__wrapper">
             <div class="bill-price__title">
               <div>
                 <p>مبلغ کل خرید :</p>
@@ -218,6 +225,295 @@
             </div>
           </div>
         </section>
+
+        <!-- pay method -->
+        <section class="section-layout">
+          <div class="flex flex-col gap-4 text-neutral-800">
+            <h2 class="t-5-bold text-neutral-900">شیوه پرداخت</h2>
+
+            <!-- gateway -->
+            <label class="payment-method__lable" id="payment-gateway">
+              <input
+                type="radio"
+                name="payment"
+                id="payment-gateway__input"
+                class="peer sr-only"
+                value=""
+                checked
+              />
+              <div class="payment-method__title">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg "
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="5"
+                    fill="#14213D"
+                    class="opacity-0"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="#14213D"
+                    stroke-width="2"
+                  />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.4"
+                    d="M22 9V16.46C22 18.75 20.14 20.6 17.85 20.6H6.15C3.86 20.6 2 18.75 2 16.46V9H22Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M22 7.5399V8.9999H2V7.5399C2 5.2499 3.86 3.3999 6.15 3.3999H17.85C20.14 3.3999 22 5.2499 22 7.5399Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M8 17.25H6C5.59 17.25 5.25 16.91 5.25 16.5C5.25 16.09 5.59 15.75 6 15.75H8C8.41 15.75 8.75 16.09 8.75 16.5C8.75 16.91 8.41 17.25 8 17.25Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M14.5 17.25H10.5C10.09 17.25 9.75 16.91 9.75 16.5C9.75 16.09 10.09 15.75 10.5 15.75H14.5C14.91 15.75 15.25 16.09 15.25 16.5C15.25 16.91 14.91 17.25 14.5 17.25Z"
+                    fill="#14213D"
+                  />
+                </svg>
+                <span class="mr-2">پرداخت آنلاین</span>
+              </div>
+              <!-- ///// gateway options ///// -->
+              <div class="payment-method__content">
+                <label>
+                  <input
+                    type="radio"
+                    name="gateway-radio"
+                    id="melat"
+                    class="peer gateway-radio sr-only"
+                    value=""
+                    required
+                  />
+                  <div class="payment-method__gateway">
+                    <img src="public/images/mellat.png" alt="" />
+                    <p class="text-nowrap">بانک ملت</p>
+                  </div>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gateway-radio"
+                    id="saman"
+                    class="peer gateway-radio sr-only"
+                    value=""
+                  />
+                  <div class="payment-method__gateway">
+                    <img src="public/images/saman.png" alt="" />
+                    <p class="text-nowrap">بانک ملت</p>
+                  </div>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gateway-radio"
+                    id="zarinpal"
+                    class="peer gateway-radio sr-only"
+                    value=""
+                  />
+                  <div class="payment-method__gateway">
+                    <img src="public/images/zarinpal.png" alt="" />
+                    <p class="text-nowrap">بانک ملت</p>
+                  </div>
+                </label>
+              </div>
+            </label>
+
+            <!-- card to card -->
+            <label class="payment-method__lable" id="payment-cardtocard">
+              <input
+                type="radio"
+                name="payment"
+                id="payment-cardtocard__input"
+                class="peer sr-only"
+                value=""
+              />
+              <div class="payment-method__title">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg "
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="5"
+                    fill="#14213D"
+                    class="opacity-0"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="#14213D"
+                    stroke-width="2"
+                  />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.4"
+                    d="M19 10.2798V17.4298C18.97 20.2798 18.19 20.9998 15.22 20.9998H5.78003C2.76003 20.9998 2 20.2498 2 17.2698V10.2798C2 7.5798 2.63 6.7098 5 6.5698C5.24 6.5598 5.50003 6.5498 5.78003 6.5498H15.22C18.24 6.5498 19 7.2998 19 10.2798Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M22 6.73V13.72C22 16.42 21.37 17.29 19 17.43V10.28C19 7.3 18.24 6.55 15.22 6.55H5.78003C5.50003 6.55 5.24 6.56 5 6.57C5.03 3.72 5.81003 3 8.78003 3H18.22C21.24 3 22 3.75 22 6.73Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M6.96027 18.5601H5.24023C4.83023 18.5601 4.49023 18.2201 4.49023 17.8101C4.49023 17.4001 4.83023 17.0601 5.24023 17.0601H6.96027C7.37027 17.0601 7.71027 17.4001 7.71027 17.8101C7.71027 18.2201 7.38027 18.5601 6.96027 18.5601Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M12.5504 18.5601H9.11035C8.70035 18.5601 8.36035 18.2201 8.36035 17.8101C8.36035 17.4001 8.70035 17.0601 9.11035 17.0601H12.5504C12.9604 17.0601 13.3004 17.4001 13.3004 17.8101C13.3004 18.2201 12.9704 18.5601 12.5504 18.5601Z"
+                    fill="#14213D"
+                  />
+                  <path d="M19 11.8599H2V13.3599H19V11.8599Z" fill="#14213D" />
+                </svg>
+                <span class="mr-2">کارت به کارت</span>
+              </div>
+
+              <!-- ///// card to card info ///// -->
+              <div class="payment-method__content">
+                <div
+                  class="p-3-regular flex flex-col items-center gap-2 text-neutral-900"
+                >
+                  <p>لطفا مبلغ قابل پرداخت را به شماره کارت زیر واریز کنید:</p>
+                  <p class="flex items-center gap-2">
+                    <button type="button">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.6668 8.59992V11.3999C10.6668 13.7333 9.7335 14.6666 7.40016 14.6666H4.60016C2.26683 14.6666 1.3335 13.7333 1.3335 11.3999V8.59992C1.3335 6.26659 2.26683 5.33325 4.60016 5.33325H7.40016C9.7335 5.33325 10.6668 6.26659 10.6668 8.59992Z"
+                          fill="#FCA311"
+                        />
+                        <path
+                          d="M11.3998 1.33325H8.59984C6.67914 1.33325 5.71152 1.97018 5.42907 3.49252C5.32748 4.04009 5.79484 4.49992 6.35175 4.49992H7.39984C10.1998 4.49992 11.4998 5.79992 11.4998 8.59992V9.64802C11.4998 10.2049 11.9597 10.6723 12.5072 10.5707C14.0296 10.2882 14.6665 9.32062 14.6665 7.39992V4.59992C14.6665 2.26659 13.7332 1.33325 11.3998 1.33325Z"
+                          fill="#FCA311"
+                        />
+                      </svg>
+                    </button>
+                    ۶۰۳۷ ۹۹۷۲ ۲۳۱۴ ۶۵۹۴
+                  </p>
+                  <p>بانک ملی - رضا قاسمی</p>
+                  <p>
+                    لطفا پس از واریز هزینه، اطلاعات فیش واریزی را ثبت نمایید.
+                  </p>
+                </div>
+              </div>
+            </label>
+
+            <!-- wallet -->
+            <label class="payment-method__lable" id="payment-wallet">
+              <input
+                type="radio"
+                name="payment"
+                id="payment-wallet__input"
+                class="peer sr-only"
+                value=""
+              />
+              <div class="payment-method__title">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg "
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="5"
+                    fill="#14213D"
+                    class="opacity-0"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="#14213D"
+                    stroke-width="2"
+                  />
+                </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.4"
+                    d="M22 9V16.46C22 18.75 20.14 20.6 17.85 20.6H6.15C3.86 20.6 2 18.75 2 16.46V9H22Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M22 7.5399V8.9999H2V7.5399C2 5.2499 3.86 3.3999 6.15 3.3999H17.85C20.14 3.3999 22 5.2499 22 7.5399Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M8 17.25H6C5.59 17.25 5.25 16.91 5.25 16.5C5.25 16.09 5.59 15.75 6 15.75H8C8.41 15.75 8.75 16.09 8.75 16.5C8.75 16.91 8.41 17.25 8 17.25Z"
+                    fill="#14213D"
+                  />
+                  <path
+                    d="M14.5 17.25H10.5C10.09 17.25 9.75 16.91 9.75 16.5C9.75 16.09 10.09 15.75 10.5 15.75H14.5C14.91 15.75 15.25 16.09 15.25 16.5C15.25 16.91 14.91 17.25 14.5 17.25Z"
+                    fill="#14213D"
+                  />
+                </svg>
+                <span class="mr-2">کیف پول</span>
+              </div>
+
+              <!-- ///// wallet info ///// -->
+              <div class="payment-method__content">
+                <div
+                  class="p-3-regular flex w-full flex-col items-center gap-3 text-neutral-900"
+                >
+                  <div class="flex w-full justify-between">
+                    <p>اعتبار شما <span class="text-error">(ناکافی)</span> :</p>
+                    <span class="p-3-bold">325,000 تومان</span>
+                  </div>
+                  <p class="flex w-full justify-between">
+                    اعتبار لازم برای پرداخت :
+                    <span class="p-3-bold">660,000 تومان</span>
+                  </p>
+                  <a href="#" class="text-secondary p-2-bold mt-2 flex">
+                    <i class="iconsax t-1-bold" icon-name="add"></i>
+                    <p>افزایش اعتبار</p>
+                  </a>
+                </div>
+              </div>
+            </label>
+          </div>
+        </section>
       </div>
 
       <!-- filler -->
@@ -231,8 +527,8 @@
         >
           <button
             disabled
-            id="send-info__submit"
-            class="continue-shopping__btn"
+            id="payment__submit"
+            class="pay-submit__btn form__apply-btn"
             type="submit"
           >
             <span>ادامه خرید</span>

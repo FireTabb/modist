@@ -492,7 +492,7 @@ shopping  cart, info and send
           payment page
 
 ******************************/
-#bill-info__wrapper {
+.bill-info__wrapper {
   @apply p-3-regular p-3;
   .bill-info__title {
     @apply mb-6 flex! items-center justify-between;
@@ -515,13 +515,13 @@ shopping  cart, info and send
   }
 }
 
-#bill-price__wrapper {
+.bill-price__wrapper {
   @apply p-3-regular p-3;
   div {
-    @apply flex justify-between w-full;
+    @apply flex w-full justify-between;
   }
   .bill-price__title {
-    @apply p-3-regular mt-6 flex flex-col px-3 gap-4;
+    @apply p-3-regular mt-6 flex flex-col gap-4 px-3;
   }
   .discounted {
     @apply text-success;
@@ -534,6 +534,59 @@ shopping  cart, info and send
   span {
     @apply text-success mx-1;
   }
+}
+
+.payment-method__lable {
+  .payment-method__title {
+    @apply peer-checked:bg-primary-100 p-3-bold bg-primary-50 flex cursor-pointer items-center gap-2 rounded-sm p-4 text-neutral-900 peer-checked:[&_circle:first-child]:opacity-100;
+  }
+  .payment-method__content {
+    @apply transition-primary flex max-h-0 flex-wrap justify-evenly gap-4 overflow-hidden rounded-b-sm bg-neutral-50 text-center duration-300 peer-checked:max-h-96 peer-checked:p-4;
+    .payment-method__gateway {
+      @apply peer-checked:border-secondary-300 peer-checked:bg-secondary-50 flex h-full w-fit cursor-pointer flex-col items-center rounded-xl border border-white bg-white p-4 text-neutral-900 peer-checked:border;
+    }
+  }
+}
+
+.pay-submit__btn {
+  @apply main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400;
+}
+
+/****************************** 
+
+            profile
+
+******************************/
+.top-section__wrapper {
+  @apply p-2-bold flex justify-between gap-2;
+  a {
+    @apply block w-full;
+  }
+
+  div {
+    @apply bg-secondary-50 drop-shadow-ds-1 flex h-full flex-col items-center justify-center gap-2 rounded-lg p-2 text-center;
+  }
+}
+
+.profile-sections__wrapper {
+  ul {
+    @apply flex flex-col gap-4;
+  }
+  a {
+    @apply p-2-bold flex justify-between rounded-lg bg-neutral-50 px-4 py-3;
+  }
+  div {
+    @apply flex items-center gap-2;
+  }
+}
+
+/****************************** 
+
+            next purchases
+
+******************************/
+.add-to-shopping__wrapper {
+  @apply relative! z-10! h-full border-t border-neutral-100 py-4;
 }
 
 /****************************** 
@@ -561,6 +614,10 @@ shopping  cart, info and send
 
 .inventory-stock {
   @apply mr-10;
+}
+
+.toast-wrapper {
+  @apply fixed top-4 right-4 left-4 z-100 flex flex-col gap-2;
 }
 
 @utility transition-primary {
@@ -760,8 +817,9 @@ shopping  cart, info and send
   @apply grid grid-cols-2 gap-4;
 }
 
-/* product shopping card */
-.product-shopping-card {
+/* product shopping & next purchase card */
+.product-shopping-card,
+.product-next-purchases-card {
   @apply bg-primary-50 flex justify-between gap-2 rounded-lg p-4 text-neutral-900;
 
   img {
@@ -769,7 +827,8 @@ shopping  cart, info and send
   }
 }
 
-.product-shopping-card__details {
+.product-shopping-card__details,
+.product-next-purchases-card__details {
   @apply flex flex-col gap-1;
 
   h2 {

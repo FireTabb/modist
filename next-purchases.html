@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" href="/images/Logotype.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- <link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet" /> -->
+    <title>modist</title>
+  </head>
+  <body>
+    <!-- toast container -->
+    <div
+      id="toast-container"
+      aria-live="polite"
+      aria-atomic="true"
+      class="toast-wrapper"
+    ></div>
+
+    <!-- empty next purchase page -->
+    <section class="hidden">
+      <!-- ‼️ when its not hidden, continue shopping btn should be hidden ‼️ -->
+      <div class="fixed inset-0 z-55 bg-white">
+        <div class="container">
+          <h2 class="title-primary mt-5">سبد خرید</h2>
+
+          <div
+            class="mt-[20vh] flex flex-col items-center justify-center gap-15"
+          >
+            <img class="w-fit" src="images/no-product.png" alt="" />
+            <p class="p-1-bold text-neutral-900">
+              کالایی به سبد خرید شما اضافه نشده است.
+            </p>
+            <a href="categories.html" class="w-full">
+              <button class="main-btn p-2-bold bg-primary text-white">
+                مشاهده محصولات
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- page title -->
+    <section class="section-layout">
+      <div class="container">
+        <div class="page-title">
+          <div class="page-title_wraper">
+            <a href="profile.html">
+              <i class="iconsax return__icon" icon-name="arrow-right"></i>
+            </a>
+            <h2 class="title-primary">خرید های بعدی</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- product shopping cart -->
+    <article class="shopping-layout">
+      <div class="container">
+        <!-- ///// main wrapper ///// -->
+        <div
+          class="bg-primary-50 flex flex-col gap-5 rounded-lg p-4 text-neutral-900"
+        >
+          <!-- ///// top section wrapper ///// -->
+          <div class="flex justify-between gap-2">
+            <div>
+              <img
+                class="h-full rounded-sm"
+                src="images/next-purchases-red-skirt.png"
+                alt=""
+              />
+            </div>
+            <div class="product-shopping-card__details">
+              <h2>دامن بلند مدل رز</h2>
+              <div>
+                <span>برند : </span>
+                <p>زارا</p>
+              </div>
+              <div>
+                <span>رنگ : </span>
+                <p>قرمز</p>
+              </div>
+              <div>
+                <span>سایز : </span>
+                <p>Medium</p>
+              </div>
+              <div>
+                <span>کد کالا : </span>
+                <p>۸۷۶۰۹۱</p>
+              </div>
+
+              <div class="mt-2 flex flex-col gap-1">
+                <del
+                  class="hidden rounded-sm bg-neutral-100 text-center text-neutral-700 decoration-neutral-900 decoration-2"
+                  >2,000,000 تومان</del
+                >
+                <strong
+                  class="bg-secondary-300 rounded-sm text-center text-neutral-900"
+                  >1,100,000 تومان</strong
+                >
+              </div>
+            </div>
+            <!-- ///// next purchase remove, copy link and share ///// -->
+            <div class="flex h-full flex-col items-center justify-center gap-4">
+              <button class="product-next-purchases__remove">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.9998 29.3332C23.3332 29.3332 29.3332 23.3332 29.3332 15.9998C29.3332 8.6665 23.3332 2.6665 15.9998 2.6665C8.6665 2.6665 2.6665 8.6665 2.6665 15.9998C2.6665 23.3332 8.6665 29.3332 15.9998 29.3332Z"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.2266 19.7732L19.7732 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M19.7732 19.7732L12.2266 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="product-next-purchases__copy-link">
+                <i
+                  class="iconsax t-1-black text-neutral-800"
+                  icon-name="link-1"
+                ></i>
+              </button>
+              <button class="product-next-purchases__share">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.1582 11.2582L12.8499 14.5748M12.8415 5.42485L7.1582 8.74151M17.5 4.1665C17.5 5.54722 16.3807 6.6665 15 6.6665C13.6193 6.6665 12.5 5.54722 12.5 4.1665C12.5 2.78579 13.6193 1.6665 15 1.6665C16.3807 1.6665 17.5 2.78579 17.5 4.1665ZM7.5 9.99984C7.5 11.3805 6.38071 12.4998 5 12.4998C3.61929 12.4998 2.5 11.3805 2.5 9.99984C2.5 8.61913 3.61929 7.49984 5 7.49984C6.38071 7.49984 7.5 8.61913 7.5 9.99984ZM17.5 15.8332C17.5 17.2139 16.3807 18.3332 15 18.3332C13.6193 18.3332 12.5 17.2139 12.5 15.8332C12.5 14.4525 13.6193 13.3332 15 13.3332C16.3807 13.3332 17.5 14.4525 17.5 15.8332Z"
+                    stroke="#3E3E3E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            class="main-btn bg-primary text-white"
+            id="next-purchases__one-add-to-cart--btn"
+          >
+            <i class="iconsax t-2-black text-white" icon-name="add"></i>
+            افزودن به سبد خرید
+          </button>
+        </div>
+      </div>
+    </article>
+    <article class="shopping-layout">
+      <div class="container">
+        <!-- ///// main wrapper ///// -->
+        <div
+          class="bg-primary-50 flex flex-col gap-5 rounded-lg p-4 text-neutral-900"
+        >
+          <!-- ///// top section wrapper ///// -->
+          <div class="flex justify-between gap-2">
+            <div>
+              <img
+                class="h-full rounded-sm"
+                src="images/next-purchases-red-skirt.png"
+                alt=""
+              />
+            </div>
+            <div class="product-shopping-card__details">
+              <h2>دامن بلند مدل رز</h2>
+              <div>
+                <span>برند : </span>
+                <p>زارا</p>
+              </div>
+              <div>
+                <span>رنگ : </span>
+                <p>قرمز</p>
+              </div>
+              <div>
+                <span>سایز : </span>
+                <p>Medium</p>
+              </div>
+              <div>
+                <span>کد کالا : </span>
+                <p>۸۷۶۰۹۱</p>
+              </div>
+
+              <div class="mt-2 flex flex-col gap-1">
+                <del
+                  class="hidden rounded-sm bg-neutral-100 text-center text-neutral-700 decoration-neutral-900 decoration-2"
+                  >2,000,000 تومان</del
+                >
+                <strong
+                  class="bg-secondary-300 rounded-sm text-center text-neutral-900"
+                  >1,100,000 تومان</strong
+                >
+              </div>
+            </div>
+            <!-- ///// next purchase remove, copy link and share ///// -->
+            <div class="flex h-full flex-col items-center justify-center gap-4">
+              <button class="product-next-purchases__remove">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.9998 29.3332C23.3332 29.3332 29.3332 23.3332 29.3332 15.9998C29.3332 8.6665 23.3332 2.6665 15.9998 2.6665C8.6665 2.6665 2.6665 8.6665 2.6665 15.9998C2.6665 23.3332 8.6665 29.3332 15.9998 29.3332Z"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.2266 19.7732L19.7732 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M19.7732 19.7732L12.2266 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="product-next-purchases__copy-link">
+                <i
+                  class="iconsax t-1-black text-neutral-800"
+                  icon-name="link-1"
+                ></i>
+              </button>
+              <button class="product-next-purchases__share">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.1582 11.2582L12.8499 14.5748M12.8415 5.42485L7.1582 8.74151M17.5 4.1665C17.5 5.54722 16.3807 6.6665 15 6.6665C13.6193 6.6665 12.5 5.54722 12.5 4.1665C12.5 2.78579 13.6193 1.6665 15 1.6665C16.3807 1.6665 17.5 2.78579 17.5 4.1665ZM7.5 9.99984C7.5 11.3805 6.38071 12.4998 5 12.4998C3.61929 12.4998 2.5 11.3805 2.5 9.99984C2.5 8.61913 3.61929 7.49984 5 7.49984C6.38071 7.49984 7.5 8.61913 7.5 9.99984ZM17.5 15.8332C17.5 17.2139 16.3807 18.3332 15 18.3332C13.6193 18.3332 12.5 17.2139 12.5 15.8332C12.5 14.4525 13.6193 13.3332 15 13.3332C16.3807 13.3332 17.5 14.4525 17.5 15.8332Z"
+                    stroke="#3E3E3E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            class="main-btn bg-primary text-white"
+            id="next-purchases__one-add-to-cart--btn"
+          >
+            <i class="iconsax t-2-black text-white" icon-name="add"></i>
+            افزودن به سبد خرید
+          </button>
+        </div>
+      </div>
+    </article>
+    <article class="shopping-layout">
+      <div class="container">
+        <!-- ///// main wrapper ///// -->
+        <div
+          class="bg-primary-50 flex flex-col gap-5 rounded-lg p-4 text-neutral-900"
+        >
+          <!-- ///// top section wrapper ///// -->
+          <div class="flex justify-between gap-2">
+            <div>
+              <img
+                class="h-full rounded-sm"
+                src="images/next-purchases-red-skirt.png"
+                alt=""
+              />
+            </div>
+            <div class="product-shopping-card__details">
+              <h2>دامن بلند مدل رز</h2>
+              <div>
+                <span>برند : </span>
+                <p>زارا</p>
+              </div>
+              <div>
+                <span>رنگ : </span>
+                <p>قرمز</p>
+              </div>
+              <div>
+                <span>سایز : </span>
+                <p>Medium</p>
+              </div>
+              <div>
+                <span>کد کالا : </span>
+                <p>۸۷۶۰۹۱</p>
+              </div>
+
+              <div class="mt-2 flex flex-col gap-1">
+                <del
+                  class="hidden rounded-sm bg-neutral-100 text-center text-neutral-700 decoration-neutral-900 decoration-2"
+                  >2,000,000 تومان</del
+                >
+                <strong
+                  class="bg-secondary-300 rounded-sm text-center text-neutral-900"
+                  >1,100,000 تومان</strong
+                >
+              </div>
+            </div>
+            <!-- ///// next purchase remove, copy link and share ///// -->
+            <div class="flex h-full flex-col items-center justify-center gap-4">
+              <button class="product-next-purchases__remove">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.9998 29.3332C23.3332 29.3332 29.3332 23.3332 29.3332 15.9998C29.3332 8.6665 23.3332 2.6665 15.9998 2.6665C8.6665 2.6665 2.6665 8.6665 2.6665 15.9998C2.6665 23.3332 8.6665 29.3332 15.9998 29.3332Z"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.2266 19.7732L19.7732 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M19.7732 19.7732L12.2266 12.2266"
+                    stroke="#FF1919"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="product-next-purchases__copy-link">
+                <i
+                  class="iconsax t-1-black text-neutral-800"
+                  icon-name="link-1"
+                ></i>
+              </button>
+              <button class="product-next-purchases__share">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.1582 11.2582L12.8499 14.5748M12.8415 5.42485L7.1582 8.74151M17.5 4.1665C17.5 5.54722 16.3807 6.6665 15 6.6665C13.6193 6.6665 12.5 5.54722 12.5 4.1665C12.5 2.78579 13.6193 1.6665 15 1.6665C16.3807 1.6665 17.5 2.78579 17.5 4.1665ZM7.5 9.99984C7.5 11.3805 6.38071 12.4998 5 12.4998C3.61929 12.4998 2.5 11.3805 2.5 9.99984C2.5 8.61913 3.61929 7.49984 5 7.49984C6.38071 7.49984 7.5 8.61913 7.5 9.99984ZM17.5 15.8332C17.5 17.2139 16.3807 18.3332 15 18.3332C13.6193 18.3332 12.5 17.2139 12.5 15.8332C12.5 14.4525 13.6193 13.3332 15 13.3332C16.3807 13.3332 17.5 14.4525 17.5 15.8332Z"
+                    stroke="#3E3E3E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            class="main-btn bg-primary text-white"
+            id="next-purchases__one-add-to-cart--btn"
+          >
+            <i class="iconsax t-2-black text-white" icon-name="add"></i>
+            افزودن به سبد خرید
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- filler -->
+    <div class="my-50"></div>
+
+    <!-- footer section -->
+    <footer class="footer border-t border-neutral-100 drop-shadow-none!">
+      <div class="container h-full py-3">
+        <div class="flex h-full w-full items-center justify-center gap-2">
+          <button
+            type="submit"
+            id="next-purchases__all-add-to-cart--btn"
+            class="main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
+          >
+            <!-- will show by default  -->
+            <i
+              class="iconsax t-2-bold text-white"
+              icon-name="shopping-cart"
+            ></i>
+            <!-- will show when add one in shopping cart  -->
+            <i class="iconsax t-2-bold hidden text-white" icon-name="add"></i>
+            انتقال همه سبد خرید
+            <!-- will show when add one in shopping cart  -->
+            <i
+              class="iconsax t-2-bold hidden text-red-500"
+              icon-name="trash"
+            ></i>
+          </button>
+          <div class="t-1-bold flex gap-2">
+            <button
+              type="button"
+              class="cursor-pointer"
+              id="next-purchases__delete-all--btn"
+            >
+              <i
+                class="iconsax text-primary rounded-full border p-2"
+                icon-name="link-1"
+              ></i>
+            </button>
+            <button class="cursor-pointer" id="next-purchases__share--btn">
+              <i
+                class="iconsax text-error rounded-full border p-2"
+                icon-name="trash"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- menu -->
+      <div class="container mt-2 h-full border-t border-t-neutral-100/30 pt-3">
+        <div class="flex h-full items-center justify-between">
+          <!-- menu btn -->
+          <a href="index.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="home-2"></i>
+            </div>
+            خانه
+          </a>
+          <!-- menu btn -->
+          <a href="categories.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="search-status-1"></i>
+            </div>
+            دسته بندی
+          </a>
+          <!-- menu btn -->
+          <a href="shopping-cart.html" class="menu-btn">
+            <div>
+              <i class="iconsax" icon-name="shopping-cart"></i>
+            </div>
+            سبد خرید
+          </a>
+          <!-- menu btn -->
+          <a href="profile-signup.html" class="menu-btn active">
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z"
+                  stroke="#9399A6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#B6BAC3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            مدیست من
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

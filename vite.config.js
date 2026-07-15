@@ -14,11 +14,12 @@ export default defineConfig({
         shoppingCart:resolve(__dirname,'shopping-cart.html'),
         shoppingPersonalInfo:resolve(__dirname,'shopping-personal-info.html'),
         payment:resolve(__dirname,'payment-page.html'),
+        nextPurchases:resolve(__dirname,'next-purchases.html'),
 
         searchPage:resolve(__dirname,'search-page.html'),
         filterPage:resolve(__dirname,'filter-page.html'),
         
-        personalInfo:resolve(__dirname,'personal-info.html'),
+        profie:resolve(__dirname,'profile.html'),
 
         profileSignin:resolve(__dirname,'profile-signin.html'),
         profileSignup:resolve(__dirname,'profile-signup.html'),
