@@ -11,3 +11,6 @@ import "./pages/sign-in.js";
 import "./pages/cart.js"
 import "./pages/shopping-personal-info.js"
 import "./pages/payment.js"
+
+import "./js/model.js"
+import "./js/controller.js"

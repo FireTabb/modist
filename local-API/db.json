@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": 1,
+
+      "code": "381624",
+
+      "title": "مانتو کتان زنانه",
+
+      "slug": "classic-cotton-manto",
+
+      "categoryId": 5,
+
+      "brandId": 2,
+
+      "price": 1890000,
+
+      "discount": 20,
+
+      "rating": 4.7,
+
+      "salesCount": 352,
+
+      "stock": 45,
+
+      "thumbnail": "/images/products/1/thumb.webp",
+
+      "gallery": [
+        "/images/products/1/1.webp",
+        "/images/products/1/2.webp",
+        "/images/products/1/3.webp"
+      ],
+
+      "colors": [
+        {
+          "id": 1,
+          "name": "مشکی",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "کرم",
+          "hex": "#d8ccb5"
+        }
+      ],
+
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "L",
+          "stock": 15
+        },
+        {
+          "size": "XL",
+          "stock": 13
+        }
+      ],
+
+      "description": "مانتو کتان مناسب استفاده روزمره.",
+
+      "specifications": {
+        "جنس": "کتان",
+        "قد": "بلند",
+        "نوع یقه": "برگردان",
+        "آستین": "بلند",
+        "مناسب فصل": "بهار، تابستان"
+      }
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "زنانه", "parentId": null },
+    { "id": 2, "name": "مردانه", "parentId": null },
+    { "id": 3, "name": "کودکان", "parentId": null },
+    { "id": 4, "name": "اکسسوری", "parentId": null },
+
+    { "id": 5, "name": "مانتو", "parentId": 1 },
+    { "id": 6, "name": "دامن", "parentId": 1 },
+    { "id": 7, "name": "شلوار", "parentId": 1 },
+    { "id": 8, "name": "کفش", "parentId": 1 },
+
+    { "id": 9, "name": "تیشرت", "parentId": 2 },
+    { "id": 10, "name": "هودی", "parentId": 2 },
+    { "id": 11, "name": "کفش", "parentId": 2 },
+
+    { "id": 12, "name": "لباس نوزادی", "parentId": 3 },
+
+    { "id": 13, "name": "کیف", "parentId": 4 },
+    { "id": 14, "name": "کمربند", "parentId": 4 }
+  ],
+  "brands": [
+    { "id": 1, "name": "Nike" },
+    { "id": 2, "name": "Zara" },
+    { "id": 3, "name": "Adidas" },
+    { "id": 4, "name": "LC Waikiki" }
+  ]
+}
