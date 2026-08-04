@@ -208,7 +208,7 @@ p[data="backend"]{
 }
 
 .disable-style {
-  @apply bg-primary-50 text-primary opacity-70 shadow-none;
+  @apply peer-disabled:bg-primary-50 peer-disabled:text-primary peer-disabled:opacity-70 peer-disabled:shadow-none;
 }
 
 /****************************** 

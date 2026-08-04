@@ -12,6 +12,9 @@ const creatProductObj = function (data) {
     brandId: data.brandId,
     price: data.price,
     discount: data.discount,
+    discountedPrice: data.discount
+      ? (data.price * (100 - data.discount)) / 100
+      : undefined,
     rating: data.rating,
     salesCount: data.salesCount,
     stock: data.stock,
@@ -24,7 +27,7 @@ const creatProductObj = function (data) {
   };
 };
 
-export const loadProduct = (async function (id = 1) {
+export const loadProduct = async function (id) {
   try {
     const res = await fetch("http://localhost:3000/products");
     const data = (await res.json()).find((products) => +products.id === id);
@@ -32,4 +35,4 @@ export const loadProduct = (async function (id = 1) {
   } catch (err) {
     console.log(err);
   }
-});
+};

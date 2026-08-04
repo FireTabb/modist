@@ -1,4 +1,4 @@
-const sendInfoSubmit = document.querySelector("#send-info__submit");
+const sendInfoSubmit = document.querySelector('button[type="submit"]');
 const form = document.querySelector(".all-required-form");
 
 // submit handler
@@ -11,21 +11,18 @@ function submitHandler(form) {
 }
 // submit function
 function checkValidities(form) {
-  let status = true;
-  form.querySelectorAll("input, textarea").forEach((i) => {
-    if (
-      (i.getAttribute("name") === "paper-radio" ||
-        i.getAttribute("name") === "send") &&
-      i.getAttribute("type") === "radio" &&
-      i.getAttribute("disabled") !== ""
-    ) {
-      status = form?.checkValidity();
-    }
+  let status = form?.checkValidity();
 
-    if (
-      i.getAttribute("disabled") !== "" &&
-      i.getAttribute("required") === ""
-    ) {
+  const shouldCheckFormValidity = form.querySelector("[data-check-validity]");
+
+  if (shouldCheckFormValidity) {
+    status = form.checkValidity();
+    console.log('checked');
+    
+  }
+
+  form.querySelectorAll("input, textarea").forEach((i) => {
+    if (!i.disabled && i.getAttribute("required") === "") {
       if (!i.value) {
         status = false;
       }

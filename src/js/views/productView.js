@@ -1,11 +1,21 @@
 import View from "./View.js";
 
 export class productView extends View {
-  _data;
-
   _parent = document.querySelector("main");
+
+  _sizeCheck(sizeValue) {
+    return this._data.sizes.find((size) => size.size === sizeValue)
+      ? ""
+      : "disabled";
+  }
+
+  addFormEvent(handler) {
+    this._form.addEventListener("change", function () {
+      handler(this);
+    });
+  }
+
   _generateMarkup() {
-    console.log("mmd");
     return `
     <!-- toast container -->
     <div id="toast-container" aria-live="polite" aria-atomic="true" class="toast-wrapper"></div>
@@ -85,28 +95,34 @@ export class productView extends View {
     <section class="section-layout">
       <div class="container text-neutral-900">
         <div class="product-info__name-and-price--wrapper">
-          <h2>مانتو کتی مدل صدف</h2>
+          <h2>${this._data.title}</h2>
           <div class="product-info__price--wrapper">
-            <div>
-              <span> 45% </span>
-              <del>2,000,000 تومان</del>
-            </div>
-            <strong>1,100,000 تومان</strong>
+          ${
+            this._data.discount
+              ? `<div>
+                   <span> ${this._data.discount}% </span>
+                   <del>${this._data.price.toLocaleString()} تومان</del>
+                 </div>
+                <strong>${this._data.discountedPrice.toLocaleString()} تومان</strong>`
+              : `<div>
+                 <strong>${this._data.price.toLocaleString()} تومان</strong>
+                </div>`
+          }
+            
           </div>
         </div>
 
         <div class="product-info__code-and-score--wrapper">
-          <span>کد : 550834</span>
+          <span>کد : ${this._data.code}}</span>
           <div class="product-info__score">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.00887 2.04754L9.03554 4.10087C9.17554 4.38671 9.54887 4.66087 9.86387 4.71337L11.7247 5.02254C12.9147 5.22087 13.1947 6.08421 12.3372 6.93587L10.8905 8.38254C10.6455 8.62754 10.5114 9.10004 10.5872 9.43837L11.0014 11.2292C11.328 12.6467 10.5755 13.195 9.32137 12.4542L7.5772 11.4217C7.2622 11.235 6.74304 11.235 6.4222 11.4217L4.67804 12.4542C3.4297 13.195 2.67137 12.6409 2.99804 11.2292L3.4122 9.43837C3.48804 9.10004 3.35387 8.62754 3.10887 8.38254L1.6622 6.93587C0.810536 6.08421 1.0847 5.22087 2.2747 5.02254L4.13554 4.71337C4.4447 4.66087 4.81804 4.38671 4.95804 4.10087L5.9847 2.04754C6.5447 0.933372 7.4547 0.933372 8.00887 2.04754Z" fill="#FCA311"></path>
             </svg>
-            4/5
+            ${this._data.rating}
           </div>
         </div>
       </div>
     </section>
-
     <!-- form section -->
     <form action="" id="filter-form" class="form">
       <!-- size -->
@@ -120,37 +136,35 @@ export class productView extends View {
           <!-- ///// options ///// -->
           <div dir="ltr" class="p-3-bold grid grid-cols-6 gap-2 *:flex *:justify-center">
             <!-- ///// XS ///// -->
-            <!-- ///// disabled for test ///// -->
             <label class="text-neutral-900">
-              <input disabled="" type="checkbox" name="xs" id="size-xs" class="peer hidden">
+              <input  ${this._sizeCheck("XS")} required type="radio" name="size" id="size-xs" class="peer hidden">
 
               <span class="filter__size-btn--product-info disable-style bg-white">XS</span>
             </label>
             <!-- ///// S ///// -->
             <label class="text-neutral-900">
-              <input type="checkbox" name="s" id="size-s" class="peer hidden">
-              <span class="filter__size-btn--product-info bg-white">S</span>
+              <input ${this._sizeCheck("S")}  type="radio" name="size" id="size-s" class="peer hidden">
+              <span class="filter__size-btn--product-info disable-style bg-white">S</span>
             </label>
             <!-- ///// M ///// -->
             <label class="text-neutral-900">
-              <input type="checkbox" name="m" id="size-m" class="peer hidden">
-              <span class="filter__size-btn--product-info bg-white">M</span>
+              <input ${this._sizeCheck("M")}  type="radio" name="size" id="size-m" class="peer hidden">
+              <span class="filter__size-btn--product-info disable-style bg-white">M</span>
             </label>
             <!-- ///// L ///// -->
-            <!-- ///// disabled for test ///// -->
             <label class="text-neutral-900">
-              <input disabled="" type="checkbox" name="l" id="size-l" class="peer hidden">
+              <input ${this._sizeCheck("L")}  type="radio" name="size" id="size-l" class="peer hidden">
               <span class="filter__size-btn--product-info disable-style bg-white">L</span>
             </label>
             <!-- ///// XL ///// -->
             <label class="text-neutral-900">
-              <input type="checkbox" name="xl" id="size-xl" class="peer hidden">
-              <span class="filter__size-btn--product-info bg-white">XL</span>
+              <input ${this._sizeCheck("XL")}  type="radio" name="size" id="size-xl" class="peer hidden">
+              <span class="filter__size-btn--product-info disable-style bg-white">XL</span>
             </label>
             <!-- ///// XXL ///// -->
             <label class="text-neutral-900">
-              <input type="checkbox" name="XXL" id="size-XXL" class="peer hidden">
-              <span class="filter__size-btn--product-info bg-white">XXL</span>
+              <input ${this._sizeCheck("XXL")} type="radio" name="size" id="size-XXL" class="peer hidden">
+              <span class="filter__size-btn--product-info disable-style bg-white">XXL</span>
             </label>
           </div>
 
@@ -179,22 +193,22 @@ export class productView extends View {
         <div>
           <div class="grid grid-cols-4 gap-4">
             <label class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900">
-              <input type="radio" class="peer sr-only" name="color" id="purple">
+              <input data-check-validity required type="radio" class="peer sr-only" name="color" id="purple">
               <span class="filter__color-btn--product-info"><img src="public/images/manto-test-purple.png" alt="" class=""></span>
               بنفش
             </label>
             <label class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900">
-              <input type="radio" class="peer sr-only" name="color" id="black">
+              <input data-check-validity type="radio" class="peer sr-only" name="color" id="black">
               <span class="filter__color-btn--product-info"><img src="public/images/manto-test-black.png" alt="" class=""></span>
               مشکی
             </label>
             <label class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900">
-              <input type="radio" class="peer sr-only" name="color" id="green">
+              <input data-check-validity type="radio" class="peer sr-only" name="color" id="green">
               <span class="filter__color-btn--product-info"><img src="public/images/manto-test-green.png" alt="" class=""></span>
               سبز
             </label>
             <label class="p-4-bold flex flex-col items-center justify-center gap-3 text-neutral-900">
-              <input type="radio" class="peer sr-only" name="color" id="red">
+              <input data-check-validity type="radio" class="peer sr-only" name="color" id="red">
               <span class="filter__color-btn--product-info"><img src="public/images/manto-test-red.png" alt="" class=""></span>
               قرمز
             </label>
