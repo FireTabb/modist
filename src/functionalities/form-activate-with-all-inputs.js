@@ -18,7 +18,6 @@ function checkValidities(form) {
   if (shouldCheckFormValidity) {
     status = form.checkValidity();
     console.log('checked');
-    
   }
 
   form.querySelectorAll("input, textarea").forEach((i) => {

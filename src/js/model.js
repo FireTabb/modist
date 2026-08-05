@@ -1,5 +1,9 @@
+import { API_URL } from "./config";
+import { AJAX } from "./helper";
+
 export const state = {
-  produc: {},
+  product: {},
+  products: [],
 };
 
 const creatProductObj = function (data) {
@@ -29,10 +33,23 @@ const creatProductObj = function (data) {
 
 export const loadProduct = async function (id) {
   try {
-    const res = await fetch("http://localhost:3000/products");
-    const data = (await res.json()).find((products) => +products.id === id);
-    state.produc = creatProductObj(data);
+    const data = await AJAX(API_URL);
+    const product = data.find((products) => +products.id === id);
+
+    state.product = creatProductObj(product);
+    
   } catch (err) {
     console.log(err);
+    throw err;
+  }
+};
+
+export const loadDiscountProducts = async function () {
+  const data = await AJAX(API_URL);
+  state.products.length = 0;
+
+  const discountProducts = data.filter((product) => product.discount > 0);
+  for (let i = 0; i < 3; i++) {
+    state.products.push(discountProducts[i]);
   }
 };

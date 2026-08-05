@@ -5,13 +5,11 @@ import "./functionalities/price-range.js";
 import "./functionalities/forms-submit-activate.js";
 import "./functionalities/search.js";
 import "./functionalities/showMessage.js";
-import "./pages/sign-up.js";
-import "./pages/sign-in.js";
-import "./pages/cart.js";
-import "./pages/shopping-personal-info.js";
-import "./pages/payment.js";
 
-import "./js/controller.js";
+import "./page-loader.js"
+
+
+import "./controller-loader.js";
 
 document.addEventListener("controllerDone", function () {
   import ("./slider.js");

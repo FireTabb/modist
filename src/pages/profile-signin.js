@@ -1,4 +1,4 @@
-import changeTranslateX from "./../functionalities/changeX.js"
+import changeTranslateX from "../functionalities/changeX.js"
 
 const showPass = document.querySelector("#show-password");
 const usernameInput = document.querySelector("#username__input");
@@ -6,7 +6,7 @@ const passwordInput = document.querySelector("#password__input");
 const signinBtn = document.querySelector("#signin__apply-btn");
 
 // show password when signing in
-showPass?.addEventListener("input", function () {
+showPass.addEventListener("input", function () {
   if (this.checked) {
     passwordInput.type = "text";
   } else {
@@ -15,7 +15,7 @@ showPass?.addEventListener("input", function () {
 });
 
 // enable and disable signin btn and show error for username
-usernameInput?.addEventListener("input", function () {
+usernameInput.addEventListener("input", function () {
   this.value === ""
     ? document.querySelector("#username-error").classList.remove("hidden")
     : document.querySelector("#username-error").classList.add("hidden");
@@ -27,7 +27,7 @@ usernameInput?.addEventListener("input", function () {
   }
 });
 // enable and disable signin btn and show error for password
-passwordInput?.addEventListener("input", function () {
+passwordInput.addEventListener("input", function () {
   this.value === ""
     ? document.querySelector("#password-error").classList.remove("hidden")
     : document.querySelector("#password-error").classList.add("hidden");
@@ -40,7 +40,7 @@ passwordInput?.addEventListener("input", function () {
 });
 
 // if username and password was correct go to success page
-signinBtn?.addEventListener("click", function (e) {
+signinBtn.addEventListener("click", function (e) {
   e.preventDefault();
   changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
 });

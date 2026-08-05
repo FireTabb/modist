@@ -1,4 +1,4 @@
-import changeTranslateX from "./../functionalities/changeX.js"
+import changeTranslateX from "../functionalities/changeX.js"
 
 const phonNumberInput = document.querySelector("#phone__input");
 
@@ -10,7 +10,7 @@ const codeInputs = document.querySelectorAll(".phone__input");
 const formApply = document.querySelector(".form__apply-btn");
 
 // phon number enable send code btn & number check
-phonNumberInput?.addEventListener("input", function () {
+phonNumberInput.addEventListener("input", function () {
   if (this.checkValidity()) {
     document.querySelector("#phone-error").classList.add("hidden");
     formApply.removeAttribute("disabled");
@@ -21,18 +21,18 @@ phonNumberInput?.addEventListener("input", function () {
 });
 
 // submit and go to code page
-enterPhoneSubmit?.addEventListener("click", function (e) {
+enterPhoneSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   changeTranslateX(document.querySelectorAll(".signup_wraper"), 2);
 });
 // back to enter number page
-editPhoneBtn?.addEventListener("click", function (e) {
+editPhoneBtn.addEventListener("click", function (e) {
   e.preventDefault();
   changeTranslateX(document.querySelectorAll(".signup_wraper"), 1);
 });
 
 // go next or previous code input
-codeInputs?.forEach((input, i) => {
+codeInputs.forEach((input, i) => {
   input.addEventListener("input", () => {
     if (input.value && i < codeInputs.length - 1) {
       codeInputs[i + 1].focus();

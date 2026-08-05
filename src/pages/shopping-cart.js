@@ -6,7 +6,7 @@ const discountCodeApplyBtn = document.querySelector(
 );
 
 // add discount code input if user had a discount code
-discountCodeCheckbox?.addEventListener("change", function () {
+discountCodeCheckbox.addEventListener("change", function () {
   if (this.checked) {
     discountCodeWrapper.classList.toggle("hidden");
     discountCodeApplyBtn.classList.toggle("hidden");
@@ -17,7 +17,7 @@ discountCodeCheckbox?.addEventListener("change", function () {
 });
 
 // enable apply discount btn when there was a something in discount code input
-discountCodeInput?.addEventListener("input", function (e) {
+discountCodeInput.addEventListener("input", function (e) {
   const textbox = e.target.closest("input");
 
   this.value !== ""

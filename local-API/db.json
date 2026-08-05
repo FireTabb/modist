@@ -23,7 +23,7 @@
 
       "stock": 45,
 
-      "thumbnail": "/images/products/1/thumb.webp",
+      "thumbnail": "images/image-discount.png",
 
       "gallery": [
         "/images/products/1/1.webp",
@@ -71,6 +71,576 @@
         "نوع یقه": "برگردان",
         "آستین": "بلند",
         "مناسب فصل": "بهار، تابستان"
+      }
+    },
+    {
+      "id": 2,
+      "code": "724581",
+      "title": "پالتو پشمی زنانه",
+      "slug": "women-woolen-coat",
+      "categoryId": 5,
+      "brandId": 3,
+      "price": 4250000,
+      "discount": 0,
+      "rating": 4.8,
+      "salesCount": 187,
+      "stock": 28,
+      "thumbnail": "/images/products/2/thumb.webp",
+      "gallery": [
+        "/images/products/2/1.webp",
+        "/images/products/2/2.webp",
+        "/images/products/2/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "مشکی",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "name": "خاکستری",
+          "hex": "#808080"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 4
+        },
+        {
+          "size": "M",
+          "stock": 10
+        },
+        {
+          "size": "L",
+          "stock": 8
+        },
+        {
+          "size": "XL",
+          "stock": 6
+        }
+      ],
+      "description": "پالتو پشمی گرم و شیک مناسب فصل سرد.",
+      "specifications": {
+        "جنس": "پشم",
+        "قد": "بلند",
+        "نوع یقه": "ایستاده",
+        "آستین": "بلند",
+        "مناسب فصل": "پاییز، زمستان"
+      }
+    },
+    {
+      "id": 3,
+      "code": "852361",
+      "title": "بلوز ابریشمی مجلسی",
+      "slug": "silk-party-blouse",
+      "categoryId": 5,
+      "brandId": 1,
+      "price": 2850000,
+      "discount": 0,
+      "rating": 4.5,
+      "salesCount": 243,
+      "stock": 32,
+      "thumbnail": "/images/products/3/thumb.webp",
+      "gallery": [
+        "/images/products/3/1.webp",
+        "/images/products/3/2.webp",
+        "/images/products/3/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "طلایی",
+          "hex": "#ffd700"
+        },
+        {
+          "id": 2,
+          "name": "نقره‌ای",
+          "hex": "#c0c0c0"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 8
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "L",
+          "stock": 7
+        },
+        {
+          "size": "XL",
+          "stock": 5
+        }
+      ],
+      "description": "بلوز ابریشمی با طراحی مجلسی و درخشان.",
+      "specifications": {
+        "جنس": "ابریشم",
+        "قد": "کوتاه",
+        "نوع یقه": "هفت",
+        "آستین": "سه‌چهارم",
+        "مناسب فصل": "بهار، تابستان"
+      }
+    },
+    {
+      "id": 4,
+      "code": "936472",
+      "title": "دامن ماکسی چیندار",
+      "slug": "pleated-maxi-skirt",
+      "categoryId": 5,
+      "brandId": 4,
+      "price": 1650000,
+      "discount": 25,
+      "rating": 4.3,
+      "salesCount": 419,
+      "stock": 50,
+      "thumbnail": "images/Products.png",
+      "gallery": [
+        "/images/products/4/1.webp",
+        "/images/products/4/2.webp",
+        "/images/products/4/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "نیلی",
+          "hex": "#1a237e"
+        },
+        {
+          "id": 2,
+          "name": "سبز زیتونی",
+          "hex": "#556b2f"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 10
+        },
+        {
+          "size": "M",
+          "stock": 15
+        },
+        {
+          "size": "L",
+          "stock": 15
+        },
+        {
+          "size": "XL",
+          "stock": 10
+        }
+      ],
+      "description": "دامن بلند چیندار با پارچه لطیف و خنک.",
+      "specifications": {
+        "جنس": "ویسکوز",
+        "قد": "ماکسی",
+        "نوع کمر": "کشسان",
+        "آستین": "بدون آستین",
+        "مناسب فصل": "بهار، تابستان"
+      }
+    },
+    {
+      "id": 5,
+      "code": "514783",
+      "title": "کت اسپورت زنانه",
+      "slug": "women-sports-jacket",
+      "categoryId": 5,
+      "brandId": 6,
+      "price": 3200000,
+      "discount": 30,
+      "rating": 4.9,
+      "salesCount": 567,
+      "stock": 75,
+      "thumbnail": "images/Products2.png",
+      "gallery": [
+        "/images/products/5/1.webp",
+        "/images/products/5/2.webp",
+        "/images/products/5/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "بنفش",
+          "hex": "#6a1b9a"
+        },
+        {
+          "id": 2,
+          "name": "سورم‌های",
+          "hex": "#1a237e"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 15
+        },
+        {
+          "size": "M",
+          "stock": 20
+        },
+        {
+          "size": "L",
+          "stock": 25
+        },
+        {
+          "size": "XL",
+          "stock": 15
+        }
+      ],
+      "description": "کت اسپورت ضدآب با کلاه دار، مناسب ورزش و پیاده‌روی.",
+      "specifications": {
+        "جنس": "پلی‌استر",
+        "قد": "متوسط",
+        "نوع یقه": "آمریکن",
+        "آستین": "بلند",
+        "مناسب فصل": "همه فصل"
+      }
+    },
+    {
+      "id": 6,
+      "code": "647291",
+      "title": "شلوار پارچه‌ای زنانه",
+      "slug": "women-linen-trousers",
+      "categoryId": 5,
+      "brandId": 2,
+      "price": 1980000,
+      "discount": 0,
+      "rating": 4.4,
+      "salesCount": 298,
+      "stock": 40,
+      "thumbnail": "/images/products/6/thumb.webp",
+      "gallery": [
+        "/images/products/6/1.webp",
+        "/images/products/6/2.webp",
+        "/images/products/6/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "کرم",
+          "hex": "#d8ccb5"
+        },
+        {
+          "id": 2,
+          "name": "سفید",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 8
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "L",
+          "stock": 12
+        },
+        {
+          "size": "XL",
+          "stock": 8
+        }
+      ],
+      "description": "شلوار پارچه‌ای خنک با برش راحت و مدرن.",
+      "specifications": {
+        "جنس": "کتان",
+        "قد": "بلند",
+        "نوع کمر": "کشسان با بند",
+        "آستین": "بدون آستین",
+        "مناسب فصل": "بهار، تابستان"
+      }
+    },
+    {
+      "id": 7,
+      "code": "389154",
+      "title": "پیراهن دکمه‌دار زنانه",
+      "slug": "women-button-up-shirt",
+      "categoryId": 5,
+      "brandId": 3,
+      "price": 1750000,
+      "discount": 12,
+      "rating": 4.6,
+      "salesCount": 334,
+      "stock": 55,
+      "thumbnail": "/images/products/7/thumb.webp",
+      "gallery": [
+        "/images/products/7/1.webp",
+        "/images/products/7/2.webp",
+        "/images/products/7/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "آبی آسمانی",
+          "hex": "#87ceeb"
+        },
+        {
+          "id": 2,
+          "name": "صورتی",
+          "hex": "#ffb6c1"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 10
+        },
+        {
+          "size": "M",
+          "stock": 15
+        },
+        {
+          "size": "L",
+          "stock": 18
+        },
+        {
+          "size": "XL",
+          "stock": 12
+        }
+      ],
+      "description": "پیراهن دکمه‌دار از جنس نخ با طرح ساده و کلاسیک.",
+      "specifications": {
+        "جنس": "نخ",
+        "قد": "متوسط",
+        "نوع یقه": "برگردان",
+        "آستین": "بلند",
+        "مناسب فصل": "بهار، پاییز"
+      }
+    },
+    {
+      "id": 8,
+      "code": "726413",
+      "title": "مانتو مخمل مجلسی",
+      "slug": "velvet-party-manto",
+      "categoryId": 5,
+      "brandId": 1,
+      "price": 5600000,
+      "discount": 0,
+      "rating": 4.9,
+      "salesCount": 156,
+      "stock": 18,
+      "thumbnail": "/images/products/8/thumb.webp",
+      "gallery": [
+        "/images/products/8/1.webp",
+        "/images/products/8/2.webp",
+        "/images/products/8/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "بنفش تیره",
+          "hex": "#4a148c"
+        },
+        {
+          "id": 2,
+          "name": "زرشکی",
+          "hex": "#880e4f"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 3
+        },
+        {
+          "size": "M",
+          "stock": 6
+        },
+        {
+          "size": "L",
+          "stock": 5
+        },
+        {
+          "size": "XL",
+          "stock": 4
+        }
+      ],
+      "description": "مانتو مخمل لوکس با طراحی خاص و مجلسی.",
+      "specifications": {
+        "جنس": "مخمل",
+        "قد": "بلند",
+        "نوع یقه": "هفت",
+        "آستین": "بلند",
+        "مناسب فصل": "پاییز، زمستان"
+      }
+    },
+    {
+      "id": 9,
+      "code": "958372",
+      "title": "سارافون تابستانی",
+      "slug": "summer-sundress",
+      "categoryId": 5,
+      "brandId": 4,
+      "price": 1450000,
+      "discount": 0,
+      "rating": 4.2,
+      "salesCount": 478,
+      "stock": 62,
+      "thumbnail": "/images/products/9/thumb.webp",
+      "gallery": [
+        "/images/products/9/1.webp",
+        "/images/products/9/2.webp",
+        "/images/products/9/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "زرد",
+          "hex": "#ffeb3b"
+        },
+        {
+          "id": 2,
+          "name": "نارنجی",
+          "hex": "#ff9800"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 12
+        },
+        {
+          "size": "M",
+          "stock": 18
+        },
+        {
+          "size": "L",
+          "stock": 20
+        },
+        {
+          "size": "XL",
+          "stock": 12
+        }
+      ],
+      "description": "سارافون گل‌دار خنک برای روزهای گرم تابستان.",
+      "specifications": {
+        "جنس": "پنبه",
+        "قد": "میدی",
+        "نوع یقه": "گرد",
+        "آستین": "بدون آستین",
+        "مناسب فصل": "تابستان"
+      }
+    },
+    {
+      "id": 10,
+      "code": "465831",
+      "title": "کت و دامن ست اداری",
+      "slug": "office-skirt-suit",
+      "categoryId": 5,
+      "brandId": 6,
+      "price": 6800000,
+      "discount": 0,
+      "rating": 4.7,
+      "salesCount": 203,
+      "stock": 25,
+      "thumbnail": "/images/products/10/thumb.webp",
+      "gallery": [
+        "/images/products/10/1.webp",
+        "/images/products/10/2.webp",
+        "/images/products/10/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "خاکستری",
+          "hex": "#808080"
+        },
+        {
+          "id": 2,
+          "name": "سورم‌های",
+          "hex": "#1a237e"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 8
+        },
+        {
+          "size": "L",
+          "stock": 7
+        },
+        {
+          "size": "XL",
+          "stock": 5
+        }
+      ],
+      "description": "ست اداری شامل کت و دامن با پارچه شیک و رسمی.",
+      "specifications": {
+        "جنس": "پشم-پلی‌استر",
+        "قد": "متوسط",
+        "نوع یقه": "برگردان",
+        "آستین": "بلند",
+        "مناسب فصل": "پاییز، زمستان"
+      }
+    },
+    {
+      "id": 11,
+      "code": "617284",
+      "title": "بافتنی نخی زنانه",
+      "slug": "women-cotton-knitwear",
+      "categoryId": 5,
+      "brandId": 2,
+      "price": 2250000,
+      "discount": 22,
+      "rating": 4.5,
+      "salesCount": 267,
+      "stock": 38,
+      "thumbnail": "/images/products/11/thumb.webp",
+      "gallery": [
+        "/images/products/11/1.webp",
+        "/images/products/11/2.webp",
+        "/images/products/11/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "کرم",
+          "hex": "#d8ccb5"
+        },
+        {
+          "id": 2,
+          "name": "سبز",
+          "hex": "#4caf50"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 7
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "L",
+          "stock": 12
+        },
+        {
+          "size": "XL",
+          "stock": 7
+        }
+      ],
+      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "specifications": {
+        "جنس": "نخ پنبه‌ای",
+        "قد": "متوسط",
+        "نوع یقه": "گرد",
+        "آستین": "بلند",
+        "مناسب فصل": "بهار، پاییز"
       }
     }
   ],

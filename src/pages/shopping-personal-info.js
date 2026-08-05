@@ -36,7 +36,7 @@ const addressNameCodeInput = document.querySelector("#address-name__input");
 
 
 // add discount code input if user had a discount code
-addressNameCodeCheckbox?.addEventListener("change", function () {
+addressNameCodeCheckbox.addEventListener("change", function () {
   if (this.checked) {
     addressNameCodeWrapper.classList.toggle("hidden");
     addressNameCodeInput.removeAttribute("disabled");
@@ -48,7 +48,7 @@ addressNameCodeCheckbox?.addEventListener("change", function () {
   }
 });
 
-shoppingPersonalInfoForm?.addEventListener("input", function () {
+shoppingPersonalInfoForm.addEventListener("input", function () {
   submitHandler(this);
 });
 
@@ -85,7 +85,7 @@ document.querySelectorAll(".return__icon").forEach((returnBtn) =>
   }),
 );
 
-myselfAndPresentWrapper?.addEventListener("change", function (e) {
+myselfAndPresentWrapper.addEventListener("change", function (e) {
   const presentRadio = e.target.closest("#present");
   const myselfRadio = e.target.closest("#myself");
 
@@ -130,18 +130,18 @@ const selectListHandler = function (target) {
 };
 
 //
-provinceBtn?.addEventListener("click", function (e) {
+provinceBtn.addEventListener("click", function (e) {
   selectListHandler(e.target);
 });
 
-provinceSelectionList?.addEventListener("click", function (e) {
+provinceSelectionList.addEventListener("click", function (e) {
   selectListHandler(e.target);
 });
 
-cityBtn?.addEventListener("click", function (e) {
+cityBtn.addEventListener("click", function (e) {
   selectListHandler(e.target);
 });
 
-citySelectionList?.addEventListener("click", function (e) {
+citySelectionList.addEventListener("click", function (e) {
   selectListHandler(e.target);
 });

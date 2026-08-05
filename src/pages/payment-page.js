@@ -1,11 +1,11 @@
-import submitHandler from "./../functionalities/form-activate-with-all-inputs.js";
+import submitHandler from "../functionalities/form-activate-with-all-inputs.js";
 
 const paymentForm = document.querySelector("#payment-form");
 const paymentSubmit = document.querySelector("#payment__submit");
 
 const paymentCardToCardInput = document.querySelector("#payment-cardtocard");
 
-paymentForm?.addEventListener("click", function (e) {
+paymentForm.addEventListener("click", function (e) {
   const inputRadio = e.target.closest(".payment-method__lable");
 
   console.log(inputRadio);
