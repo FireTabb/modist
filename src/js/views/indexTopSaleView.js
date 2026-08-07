@@ -1,7 +1,7 @@
 import View from "./View";
 
-export class indexWonderfulDiscountView extends View {
-  _parent = document.querySelector("#wonderful-discount__swiper");
+export class indexTopSaleView extends View {
+  _parent = document.querySelector("#top-sale__swiper");
 
   _generateMarkup() {
     
@@ -11,7 +11,7 @@ export class indexWonderfulDiscountView extends View {
         <article class="product-card">
           <a href="product-info.html?id=${this._data.id}">
             <img src="${this._data.thumbnail}" alt="" class="product-card__image">
-            <span class="product-card__badge--discount"> % ${this._data.discount} </span>
+            <span class="product-card__badge--discount">% ${this._data.discount} </span>
 
             <div class="product-card__body">
               <p class="p-5-bold">برند گوچی</p>
@@ -33,4 +33,4 @@ export class indexWonderfulDiscountView extends View {
   }
 }
 
-export default new indexWonderfulDiscountView();
+export default new indexTopSaleView();

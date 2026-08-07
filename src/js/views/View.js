@@ -4,7 +4,7 @@ export default class View {
   render(data) {
     this._data = data;
     const markup = this._generateMarkup();
-    
+
     this._parent.insertAdjacentHTML("afterbegin", markup);
     this._form = this._parent.querySelector("form");
   }
@@ -15,7 +15,7 @@ export default class View {
     });
   }
 
-    addFormEvent(handler) {
+  addFormEvent(handler) {
     this._form.addEventListener("change", function () {
       handler(this);
     });

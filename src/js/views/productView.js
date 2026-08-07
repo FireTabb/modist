@@ -9,11 +9,7 @@ export class productView extends View {
       : "disabled";
   }
 
-  addFormEvent(handler) {
-    this._form.addEventListener("change", function () {
-      handler(this);
-    });
-  }
+
 
   _generateMarkup() {
     return `
