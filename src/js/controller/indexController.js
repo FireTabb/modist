@@ -2,6 +2,9 @@ import { model } from "./controller.js";
 import indexWonderfulDiscountView from "../views/indexWonderfulDiscountView.js";
 import indexTopSaleView from "../views/indexTopSaleView.js";
 
+import productsModel from "../../../new-js/models/products/productsModel.js";
+import categoryModel from "../../../new-js/models/category/categoryModel.js";
+
 const controlDiscountProduct = async function () {
   await model.loadDiscountProducts();
 
@@ -21,5 +24,6 @@ const controlTopSaleProduct = async function () {
 const init = async function () {
   await controlDiscountProduct();
   await controlTopSaleProduct();
+  const categories=await categoryModel.getMains()
 };
 init();
