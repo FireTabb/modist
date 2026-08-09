@@ -1,5 +1,5 @@
-import categoryModel from "../../../rsc/models/category/categoryModel"
-import productsModel from "../../../rsc/models/products/productsModel"
+import categoryModel from "../../../new-js/models/category/categoryModel"
+import productsModel from "../../../new-js/models/products/productsModel"
 
 const init=async()=>{
     const url=new URL(location.href)
