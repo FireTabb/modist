@@ -1,14 +1,12 @@
-import { API_CATEGORIES_URL } from "../../../src/js/config";
+import { API } from "../../config";
 import Model from "../model";
 import productsModel from "../products/productsModel";
 
 class CategoryModel extends Model {
-  url = API_CATEGORIES_URL;
+  url = `${API}/categories`;
   async getOne(id) {
     const category = await this.fetch(this.url + `/${id}`);
     category.children = await this.fetch(this.url + `?parentId=${id}`);
-    console.log(category.children);
-    
     return category;
   }
   async getSubWithProducts(id) {

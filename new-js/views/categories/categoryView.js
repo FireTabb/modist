@@ -1,4 +1,4 @@
-import View from "./View.js";
+import View from "../View.js";
 
 export class categoryView extends View {
   _parent = document.querySelector("main");
@@ -278,4 +278,4 @@ export class categoryView extends View {
     `;
   }
 }
-export default new productView();
+export default new categoryView();

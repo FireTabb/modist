@@ -51,6 +51,7 @@ const setCategoryAndBrand = function (category, branId,def_state=state) {
 
 export const loadProduct = async function (id) {
   try {
+    
     const data = await AJAX(API_PRODUCT_URL);
     const product = data.find((products) => +products.id === id);
     state.product = creatProductObj(product);

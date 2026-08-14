@@ -1,8 +1,8 @@
-import { API_PRODUCT_URL } from "../../config";
+import { API } from "../../config";
 import Model from "../model";
 
 class ProductsModel extends Model {
-  url = API_PRODUCT_URL;
+  url = `${API}/products`;
   async getAll() {
     return await this.fetch(this.url);
   }
@@ -10,7 +10,6 @@ class ProductsModel extends Model {
   async getOne(id) {
     const data = await this.fetch(this.url + `/${id}`);
     // data.brand_info = await brandsModel.getOne(data.brandId);
-    
 
     return data;
 

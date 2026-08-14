@@ -4,6 +4,22 @@ import categoryModel from "../../../new-js/models/category/categoryModel.js";
 
 import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountView.js";
 import indexTopSaleView from "../../views/home/indexTopSaleView.js";
+import indexCategoriesView from "../../views/home/indexCategoriesView.js";
+
+
+const controlCategories = async function () {
+  try {
+    const data = await categoryModel.getMains();
+
+    indexCategoriesView.renderCards(data);
+    
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+
 
 const controlDiscounted = async function () {
   try {
@@ -11,7 +27,7 @@ const controlDiscounted = async function () {
 
     const discounted = await data
       .filter((data) => data.discount > 20)
-      .sort((a, b) => a.discount - b.discount)
+      .sort((a, b) => b.discount - a.discount)
       .slice(0, 5);
 
     const discountedProduct = [];
@@ -29,17 +45,13 @@ const controlDiscounted = async function () {
   }
 };
 
-
 const controlTopSale = async function () {
   try {
     const data = await productsModel.getAll();
-    console.log(data);
-    
 
     const topSale = await data
-      .sort((a, b) => b.saleCount - a.saleCount)
+      .sort((a, b) => a.saleCount - b.saleCount)
       .slice(0, 5);
-    console.log(topSale);
 
     const topSaleProduct = [];
 
@@ -58,6 +70,7 @@ const controlTopSale = async function () {
 };
 
 const init = async function () {
+  await controlCategories();;
   await controlDiscounted();
   await controlTopSale();
 };

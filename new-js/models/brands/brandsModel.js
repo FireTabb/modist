@@ -1,8 +1,8 @@
-import { API_BRANDS_URL} from "../../../src/js/config";
+import { API } from "../../config";
 import Model from "../model";
 
 class BrandsModel extends Model {
-  url = API_BRANDS_URL;
+  url = `${API}/brands`;
   async getOne(id) {
     return await this.fetch(this.url + `/${id}`);
   }

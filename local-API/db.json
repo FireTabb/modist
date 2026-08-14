@@ -649,10 +649,30 @@
     }
   ],
   "categories": [
-    { "id": 1, "name": "زنانه", "parentId": null },
-    { "id": 2, "name": "مردانه", "parentId": null },
-    { "id": 3, "name": "کودکان", "parentId": null },
-    { "id": 4, "name": "اکسسوری", "parentId": null },
+    {
+      "id": 1,
+      "name": "زنانه",
+      "parentId": null,
+      "thumbnail": "images/image-women-category.png"
+    },
+    {
+      "id": 2,
+      "name": "مردانه",
+      "parentId": null,
+      "thumbnail": "images/image-men-category.png"
+    },
+    {
+      "id": 3,
+      "name": "کودکان",
+      "parentId": null,
+      "thumbnail": "images/image-childrens-category.png"
+    },
+    {
+      "id": 4,
+      "name": "اکسسوری",
+      "parentId": null,
+      "thumbnail": "images/image-accessory-category.png"
+    },
 
     { "id": 5, "name": "مانتو", "parentId": 1 },
     { "id": 6, "name": "دامن", "parentId": 1 },
