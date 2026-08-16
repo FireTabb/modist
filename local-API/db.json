@@ -646,6 +646,112 @@
         "آستین": "بلند",
         "مناسب فصل": "بهار، پاییز"
       }
+    },
+     {
+      "id": 11,
+      "code": "617284",
+      "title": "بافتنی نخی زنانه",
+      "slug": "women-cotton-knitwear",
+      "categoryId": 6,
+      "brandId": 2,
+      "price": 2250000,
+      "discount": 22,
+      "rating": 4.5,
+      "salesCount": 267,
+      "stock": 38,
+      "thumbnail": "/images/products/11/thumb.webp",
+      "gallery": [
+        "/images/products/11/1.webp",
+        "/images/products/11/2.webp",
+        "/images/products/11/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "کرم",
+          "hex": "#d8ccb5"
+        },
+        {
+          "id": 2,
+          "name": "سبز",
+          "hex": "#4caf50"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 7
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "XL",
+          "stock": 7
+        }
+      ],
+      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "specifications": {
+        "جنس": "نخ پنبه‌ای",
+        "قد": "متوسط",
+        "نوع یقه": "گرد",
+        "آستین": "بلند",
+        "مناسب فصل": "بهار، پاییز"
+      }
+    },
+     {
+      "id": 11,
+      "code": "617284",
+      "title": "بافتنی نخی زنانه",
+      "slug": "women-cotton-knitwear",
+      "categoryId": 7,
+      "brandId": 2,
+      "price": 2250000,
+      "discount": 22,
+      "rating": 4.5,
+      "salesCount": 267,
+      "stock": 38,
+      "thumbnail": "/images/products/11/thumb.webp",
+      "gallery": [
+        "/images/products/11/1.webp",
+        "/images/products/11/2.webp",
+        "/images/products/11/3.webp"
+      ],
+      "colors": [
+        {
+          "id": 1,
+          "name": "کرم",
+          "hex": "#d8ccb5"
+        },
+        {
+          "id": 2,
+          "name": "سبز",
+          "hex": "#4caf50"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 7
+        },
+        {
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "size": "XL",
+          "stock": 7
+        }
+      ],
+      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "specifications": {
+        "جنس": "نخ پنبه‌ای",
+        "قد": "متوسط",
+        "نوع یقه": "گرد",
+        "آستین": "بلند",
+        "مناسب فصل": "بهار، پاییز"
+      }
     }
   ],
   "categories": [

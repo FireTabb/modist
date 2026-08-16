@@ -6,20 +6,16 @@ import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountV
 import indexTopSaleView from "../../views/home/indexTopSaleView.js";
 import indexCategoriesView from "../../views/home/indexCategoriesView.js";
 
-
 const controlCategories = async function () {
   try {
     const data = await categoryModel.getMains();
 
     indexCategoriesView.renderCards(data);
-    
   } catch (err) {
     console.error(err);
     throw err;
   }
 };
-
-
 
 const controlDiscounted = async function () {
   try {
@@ -37,8 +33,6 @@ const controlDiscounted = async function () {
     }
 
     indexWonderfulDiscountView.renderCards(discountedProduct);
-
-    document.dispatchEvent(new CustomEvent("controllerDone"));
   } catch (err) {
     console.error(err);
     throw err;
@@ -61,8 +55,6 @@ const controlTopSale = async function () {
     }
 
     indexTopSaleView.renderCards(topSaleProduct);
-
-    document.dispatchEvent(new CustomEvent("controllerDone"));
   } catch (err) {
     console.error(err);
     throw err;
@@ -70,8 +62,9 @@ const controlTopSale = async function () {
 };
 
 const init = async function () {
-  await controlCategories();;
+  await controlCategories();
   await controlDiscounted();
   await controlTopSale();
+  document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();

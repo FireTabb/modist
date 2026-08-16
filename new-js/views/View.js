@@ -32,13 +32,14 @@ export default class View {
 
   render(data) {
     this._data = data;
+
     const markup = this._generateMarkup();
 
     this._parent.insertAdjacentHTML("beforeend", markup);
     this._form = this._parent.querySelector("form");
   }
 
-  renderCards(dataArr) {
+  async renderCards(dataArr) {
     dataArr.forEach((data) => {
       this.render(data);
     });
