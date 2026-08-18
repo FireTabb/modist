@@ -2,6 +2,7 @@ import View from "./../View";
 
 export class productView extends View {
   _parent = document.querySelector("main");
+  _footer = document.querySelector("footer");
 
   _sizeCheck(sizeValue) {
     return this._data.sizes.find((size) => size.size === sizeValue)
@@ -9,7 +10,44 @@ export class productView extends View {
       : "disabled";
   }
 
+  bindFormValidation() {
+    this._form = this._parent.querySelector(".form");
+    this._submitBtn = this._footer.querySelector('button[type="submit"]');
+    this._form.addEventListener("input", () => {
+      this._toggleSubmitButton();
+    });
+  }
 
+  // submit handler (may be should be in main View)
+  _toggleSubmitButton() {
+    this._submitBtn.disabled = !this._checkValidities();
+  }
+  // submit function (may be should be in main View)
+  _checkValidities() {
+    let status = this._form.checkValidity();
+
+    const shouldCheckFormValidity = this._form.querySelector(
+      "[data-check-validity]",
+    );
+
+    if (shouldCheckFormValidity) {
+      status = this._form.checkValidity();
+    }
+
+    this._form.querySelectorAll("input, textarea").forEach((i) => {
+      if (!i.disabled && i.hasAttribute("required")) {
+        if (!i.value) {
+          status = false;
+        }
+        if (i.getAttribute("id") === "shopping-phone__input") {
+          if (!i.value.startsWith("09") || i.value.length !== 11) {
+            status = false;
+          }
+        }
+      }
+    });
+    return status;
+  }
 
   _generateMarkup() {
     return `
@@ -94,12 +132,12 @@ export class productView extends View {
           <h2>${this._data.title}</h2>
           <div class="product-info__price--wrapper">
           ${
-            this._data.discount
+            this._data.beforeDiscountPrice
               ? `<div>
                    <span> ${this._data.discount}% </span>
-                   <del>${this._data.price.toLocaleString()} تومان</del>
+                   <del>${this._data.beforeDiscountPrice.toLocaleString()} تومان</del>
                  </div>
-                <strong>${this._data.discountedPrice.toLocaleString()} تومان</strong>`
+                <strong>${this._data.price.toLocaleString()} تومان</strong>`
               : `<div>
                  <strong>${this._data.price.toLocaleString()} تومان</strong>
                 </div>`

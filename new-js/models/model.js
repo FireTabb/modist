@@ -18,11 +18,13 @@ export default class Model {
       slug: data.slug,
       categoryId: data.categoryId,
       brandId: data.brandId,
-      price: data.price,
-      discount: data.discount,
-      discountedPrice: data.discount
+      
+      price: data.discount
         ? (data.price * (100 - data.discount)) / 100
-        : undefined,
+        : data.price,
+      discount: data.discount,
+      beforeDiscountPrice: data.discount ? data.price : undefined,
+
       rating: data.rating,
       salesCount: data.salesCount,
       stock: data.stock,

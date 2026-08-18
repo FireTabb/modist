@@ -595,162 +595,329 @@
       }
     },
     {
-      "id": 11,
-      "code": "617284",
-      "title": "بافتنی نخی زنانه",
-      "slug": "women-cotton-knitwear",
+      "id": 12,
+      "code": "839201",
+      "title": "مانتو پشمی زنانه مدل النا",
+      "slug": "manto-pashmi-zanane-elena",
       "categoryId": 5,
-      "brandId": 2,
-      "price": 2250000,
-      "discount": 22,
-      "rating": 4.5,
-      "salesCount": 267,
-      "stock": 38,
-      "thumbnail": "/images/products/11/thumb.webp",
-      "gallery": [
-        "/images/products/11/1.webp",
-        "/images/products/11/2.webp",
-        "/images/products/11/3.webp"
-      ],
+      "brandId": 4,
+      "price": 3500000,
+      "discount": 15,
+      "rating": 4.7,
+      "salesCount": 120,
+      "stock": 22,
+      "thumbnail": "/images/products/12/thumb.webp",
+      "gallery": ["/images/products/12/1.webp", "/images/products/12/2.webp"],
       "colors": [
-        {
-          "id": 1,
-          "name": "کرم",
-          "hex": "#d8ccb5"
-        },
-        {
-          "id": 2,
-          "name": "سبز",
-          "hex": "#4caf50"
-        }
+        { "id": 1, "name": "مشکی", "hex": "#000000" },
+        { "id": 2, "name": "سرمه‌ای", "hex": "#1a253b" }
       ],
       "sizes": [
-        {
-          "size": "S",
-          "stock": 7
-        },
-        {
-          "size": "M",
-          "stock": 12
-        },
-        {
-          "size": "XL",
-          "stock": 7
-        }
+        { "size": "S", "stock": 5 },
+        { "size": "M", "stock": 10 },
+        { "size": "L", "stock": 7 }
       ],
-      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "description": "مانتو پشمی گرم و شیک، مناسب برای فصل پاییز و زمستان.",
       "specifications": {
-        "جنس": "نخ پنبه‌ای",
-        "قد": "متوسط",
-        "نوع یقه": "گرد",
+        "جنس": "پشم و پلی‌استر",
+        "قد": "بلند",
+        "نوع یقه": "هفت",
         "آستین": "بلند",
-        "مناسب فصل": "بهار، پاییز"
+        "مناسب فصل": "پاییز، زمستان"
       }
     },
-     {
-      "id": 11,
-      "code": "617284",
-      "title": "بافتنی نخی زنانه",
-      "slug": "women-cotton-knitwear",
+    {
+      "id": 13,
+      "code": "459832",
+      "title": "دامن پلیسه زنانه میدی",
+      "slug": "daman-pelise-zanane-midi",
       "categoryId": 6,
       "brandId": 2,
-      "price": 2250000,
-      "discount": 22,
-      "rating": 4.5,
-      "salesCount": 267,
-      "stock": 38,
-      "thumbnail": "/images/products/11/thumb.webp",
+      "price": 1200000,
+      "discount": 10,
+      "rating": 4.2,
+      "salesCount": 340,
+      "stock": 45,
+      "thumbnail": "/images/products/13/thumb.webp",
       "gallery": [
-        "/images/products/11/1.webp",
-        "/images/products/11/2.webp",
-        "/images/products/11/3.webp"
+        "/images/products/13/1.webp",
+        "/images/products/13/2.webp",
+        "/images/products/13/3.webp"
       ],
       "colors": [
-        {
-          "id": 1,
-          "name": "کرم",
-          "hex": "#d8ccb5"
-        },
-        {
-          "id": 2,
-          "name": "سبز",
-          "hex": "#4caf50"
-        }
+        { "id": 1, "name": "کرم", "hex": "#d8ccb5" },
+        { "id": 2, "name": "زرد", "hex": "#fdd835" }
       ],
       "sizes": [
-        {
-          "size": "S",
-          "stock": 7
-        },
-        {
-          "size": "M",
-          "stock": 12
-        },
-        {
-          "size": "XL",
-          "stock": 7
-        }
+        { "size": "XS", "stock": 5 },
+        { "size": "S", "stock": 10 },
+        { "size": "M", "stock": 12 },
+        { "size": "L", "stock": 8 }
       ],
-      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "description": "دامن پلیسه با طراحی ساده و کلاسیک، ترکیب عالی برای استایل روزمره.",
       "specifications": {
-        "جنس": "نخ پنبه‌ای",
-        "قد": "متوسط",
-        "نوع یقه": "گرد",
-        "آستین": "بلند",
-        "مناسب فصل": "بهار، پاییز"
+        "جنس": "پلی‌استر",
+        "قد": "میدی (زیر زانو)",
+        "کمر": "کش دار",
+        "مناسب فصل": "بهار، تابستان"
       }
     },
-     {
-      "id": 11,
-      "code": "617284",
-      "title": "بافتنی نخی زنانه",
-      "slug": "women-cotton-knitwear",
+    {
+      "id": 14,
+      "code": "781204",
+      "title": "شلوار جین راسته زنانه",
+      "slug": "shalvar-jin-rasteh-zanane",
       "categoryId": 7,
-      "brandId": 2,
-      "price": 2250000,
-      "discount": 22,
-      "rating": 4.5,
-      "salesCount": 267,
-      "stock": 38,
-      "thumbnail": "/images/products/11/thumb.webp",
-      "gallery": [
-        "/images/products/11/1.webp",
-        "/images/products/11/2.webp",
-        "/images/products/11/3.webp"
-      ],
+      "brandId": 3,
+      "price": 1890000,
+      "discount": 0,
+      "rating": 4.0,
+      "salesCount": 85,
+      "stock": 17,
+      "thumbnail": "/images/products/14/thumb.webp",
+      "gallery": ["/images/products/14/1.webp", "/images/products/14/2.webp"],
       "colors": [
-        {
-          "id": 1,
-          "name": "کرم",
-          "hex": "#d8ccb5"
-        },
-        {
-          "id": 2,
-          "name": "سبز",
-          "hex": "#4caf50"
-        }
+        { "id": 1, "name": "آبی", "hex": "#1976d2" },
+        { "id": 2, "name": "طوسی", "hex": "#757575" }
       ],
       "sizes": [
-        {
-          "size": "S",
-          "stock": 7
-        },
-        {
-          "size": "M",
-          "stock": 12
-        },
-        {
-          "size": "XL",
-          "stock": 7
-        }
+        { "size": "M", "stock": 4 },
+        { "size": "L", "stock": 6 },
+        { "size": "XL", "stock": 5 },
+        { "size": "XXL", "stock": 2 }
       ],
-      "description": "بافتنی نخی نرم و لطیف برای روزهای خنک.",
+      "description": "شلوار جین راسته با بافت کمی کش‌دار برای راحتی بالادر طول روز.",
       "specifications": {
-        "جنس": "نخ پنبه‌ای",
-        "قد": "متوسط",
+        "جنس": "دنیم (الاستیک)",
+        "قد": "بلند",
+        "برش": "راسته (Straight)",
+        "مناسب فصل": "چهار فصل"
+      }
+    },
+    {
+      "id": 15,
+      "code": "102938",
+      "title": "کفش کتانی زنانه ایر مکس",
+      "slug": "kafsh-ketani-zanane-airmax",
+      "categoryId": 8,
+      "brandId": 1,
+      "price": 4200000,
+      "discount": 25,
+      "rating": 4.8,
+      "salesCount": 500,
+      "stock": 15,
+      "thumbnail": "/images/products/15/thumb.webp",
+      "gallery": [
+        "/images/products/15/1.webp",
+        "/images/products/15/2.webp",
+        "/images/products/15/3.webp"
+      ],
+      "colors": [
+        { "id": 1, "name": "سفید", "hex": "#ffffff" },
+        { "id": 2, "name": "صورتی", "hex": "#e91e63" }
+      ],
+      "sizes": [
+        { "size": "S", "stock": 5 },
+        { "size": "M", "stock": 6 },
+        { "size": "L", "stock": 4 }
+      ],
+      "description": "کتانی‌های اسپرت با کفی بسیار نرم، مناسب برای پیاده‌روی و ورزش روزمره.",
+      "specifications": {
+        "جنس رویه": "مش و چرم مصنوعی",
+        "زیره": "فوم ایر مکس",
+        "مناسب فصل": "بهار، تابستان، پاییز"
+      }
+    },
+    {
+      "id": 16,
+      "code": "556677",
+      "title": "تیشرت یقه گرد مردانه درای فیت",
+      "slug": "tshirt-yeghe-gard-mardane-dryfit",
+      "categoryId": 9,
+      "brandId": 1,
+      "price": 650000,
+      "discount": 5,
+      "rating": 4.5,
+      "salesCount": 800,
+      "stock": 120,
+      "thumbnail": "/images/products/16/thumb.webp",
+      "gallery": ["/images/products/16/1.webp", "/images/products/16/2.webp"],
+      "colors": [
+        { "id": 1, "name": "مشکی", "hex": "#000000" },
+        { "id": 2, "name": "سفید", "hex": "#ffffff" },
+        { "id": 3, "name": "طوسی", "hex": "#757575" }
+      ],
+      "sizes": [
+        { "size": "S", "stock": 20 },
+        { "size": "M", "stock": 30 },
+        { "size": "L", "stock": 40 },
+        { "size": "XL", "stock": 20 },
+        { "size": "XXL", "stock": 10 }
+      ],
+      "description": "تیشرت نخی با قابلیت تنفس بالا و جذب عرق، بسیار مناسب برای فصول گرم.",
+      "specifications": {
+        "جنس": "نخ پنبه (درای فیت)",
         "نوع یقه": "گرد",
+        "آستین": "کوتاه",
+        "مناسب فصل": "بهار، تابستان"
+      }
+    },
+    {
+      "id": 17,
+      "code": "987654",
+      "title": "هودی مردانه اسپرت طرحدار",
+      "slug": "hoodi-mardane-sport-tarahdar",
+      "categoryId": 10,
+      "brandId": 3,
+      "price": 2500000,
+      "discount": 12,
+      "rating": 4.7,
+      "salesCount": 210,
+      "stock": 20,
+      "thumbnail": "/images/products/17/thumb.webp",
+      "gallery": ["/images/products/17/1.webp", "/images/products/17/2.webp"],
+      "colors": [
+        { "id": 1, "name": "خاکستری", "hex": "#9e9e9e" },
+        { "id": 2, "name": "مشکی", "hex": "#000000" }
+      ],
+      "sizes": [
+        { "size": "L", "stock": 8 },
+        { "size": "XL", "stock": 7 },
+        { "size": "XXL", "stock": 5 }
+      ],
+      "description": "هودی ضخیم و گرم با جیب جلو، مناسب برای استایل اسپرت و کژوال.",
+      "specifications": {
+        "جنس": "فلیس پشم‌گیر",
+        "نوع یقه": "هودی",
         "آستین": "بلند",
-        "مناسب فصل": "بهار، پاییز"
+        "مناسب فصل": "پاییز، زمستان"
+      }
+    },
+    {
+      "id": 18,
+      "code": "321654",
+      "title": "کفش پیاده‌روی مردانه ایکس لایت",
+      "slug": "kafsh-peyaderavi-mardane-xlight",
+      "categoryId": 11,
+      "brandId": 1,
+      "price": 3900000,
+      "discount": 30,
+      "rating": 4.9,
+      "salesCount": 650,
+      "stock": 12,
+      "thumbnail": "/images/products/18/thumb.webp",
+      "gallery": [
+        "/images/products/18/1.webp",
+        "/images/products/18/2.webp",
+        "/images/products/18/3.webp"
+      ],
+      "colors": [
+        { "id": 1, "name": "آبی", "hex": "#1976d2" },
+        { "id": 2, "name": "مشکی", "hex": "#000000" }
+      ],
+      "sizes": [
+        { "size": "M", "stock": 3 },
+        { "size": "L", "stock": 5 },
+        { "size": "XL", "stock": 4 }
+      ],
+      "description": "کفش پیاده‌روی فوق‌سبک با وزن کم و زیره مقاوم ضد لغزش.",
+      "specifications": {
+        "جنس رویه": "توری تنفس‌پذیر",
+        "زیره": "ای وی ای (EVA)",
+        "وزن": "سبک",
+        "مناسب فصل": "چهار فصل"
+      }
+    },
+    {
+      "id": 19,
+      "code": "741852",
+      "title": "لباس نوزادی سه تکه پشمی",
+      "slug": "lebas-nozadi-se-takhe-pashmi",
+      "categoryId": 12,
+      "brandId": 4,
+      "price": 850000,
+      "discount": 0,
+      "rating": 4.6,
+      "salesCount": 150,
+      "stock": 40,
+      "thumbnail": "/images/products/19/thumb.webp",
+      "gallery": ["/images/products/19/1.webp", "/images/products/19/2.webp"],
+      "colors": [
+        { "id": 1, "name": "صورتی", "hex": "#ffc0cb" },
+        { "id": 2, "name": "آبی روشن", "hex": "#87ceeb" }
+      ],
+      "sizes": [
+        { "size": "XS", "stock": 10 },
+        { "size": "S", "stock": 15 },
+        { "size": "M", "stock": 15 }
+      ],
+      "description": "ست لباس نوزادی شامل کلاه، تاپ و شلوار، با جنس کاملاً نرم و ضد حساسیت.",
+      "specifications": {
+        "جنس": "پنبه ارگانیک",
+        "سن": "۰ تا ۳ ماه",
+        "نوع": "سه تکه",
+        "مناسب فصل": "پاییز، زمستان"
+      }
+    },
+    {
+      "id": 20,
+      "code": "963852",
+      "title": "کیف دستی زنانه چرم",
+      "slug": "kif-dasti-zanane-charm",
+      "categoryId": 13,
+      "brandId": 2,
+      "price": 3100000,
+      "discount": 18,
+      "rating": 4.4,
+      "salesCount": 95,
+      "stock": 12,
+      "thumbnail": "/images/products/20/thumb.webp",
+      "gallery": ["/images/products/20/1.webp", "/images/products/20/2.webp"],
+      "colors": [
+        { "id": 1, "name": "قهوه‌ای", "hex": "#795548" },
+        { "id": 2, "name": "مشکی", "hex": "#000000" }
+      ],
+      "sizes": [
+        { "size": "M", "stock": 5 },
+        { "size": "L", "stock": 7 }
+      ],
+      "description": "کیف دستی چرم طبیعی با ظاهر مینیمال و جیب‌بندی مناسب برای کار و مهمانی.",
+      "specifications": {
+        "جنس": "چرم طبیعی",
+        "نوع": "دستی (Tote)",
+        "تعداد جیب": "۳ عدد",
+        "مناسب فصل": "چهار فصل"
+      }
+    },
+    {
+      "id": 21,
+      "code": "852963",
+      "title": "کمربند چرم مردانه کلاسیک",
+      "slug": "komarbend-charm-mardane-classic",
+      "categoryId": 14,
+      "brandId": 3,
+      "price": 750000,
+      "discount": 8,
+      "rating": 4.3,
+      "salesCount": 300,
+      "stock": 50,
+      "thumbnail": "/images/products/21/thumb.webp",
+      "gallery": ["/images/products/21/1.webp", "/images/products/21/2.webp"],
+      "colors": [
+        { "id": 1, "name": "سیاه", "hex": "#000000" },
+        { "id": 2, "name": "قهوه‌ای", "hex": "#795548" }
+      ],
+      "sizes": [
+        { "size": "L", "stock": 15 },
+        { "size": "XL", "stock": 20 },
+        { "size": "XXL", "stock": 15 }
+      ],
+      "description": "کمربند چرم طبیعی با سگک فلزی ضد زنگ، مناسب برای استایل رسمی و کژوال.",
+      "specifications": {
+        "جنس": "چرم گاوی",
+        "سگک": "استیل ضد زنگ",
+        "عرض": "۳.۵ سانتی‌متر",
+        "مناسب فصل": "چهار فصل"
       }
     }
   ],

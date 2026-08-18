@@ -5,6 +5,9 @@ import categoryModel from "../../../new-js/models/category/categoryModel.js";
 import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountView.js";
 import indexTopSaleView from "../../views/home/indexTopSaleView.js";
 import indexCategoriesView from "../../views/home/indexCategoriesView.js";
+// import search from "../../pages-and-functions/functionalities/search.js";
+// console.log(search);
+
 
 const controlCategories = async function () {
   try {
@@ -65,6 +68,6 @@ const init = async function () {
   await controlCategories();
   await controlDiscounted();
   await controlTopSale();
-  document.dispatchEvent(new CustomEvent("controllerDone"));
+  await document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();

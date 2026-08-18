@@ -3,37 +3,23 @@ import View from "../View.js";
 export class categoryView extends View {
   _parent = document.querySelector("#categories__wrapper");
 
-  categoryRender(categories, productsMap) {
-    // remove categories with no product
-    for (const [key, value] of productsMap) {
-      if (!value.length < 1) continue;
-      const index = categories.findIndex((cat) => +cat.id === key);
-
-      if (index !== -1) {
-        categories.splice(index, 1);
-      }
-    }
-
-    // add categories in the page
-    categories.forEach((category) => {
-      this._data = category;
+  categoryRender(allData) {
+    allData.forEach(({ categoryData, products }) => {
+      // add categories in the page
+      this._data = categoryData;
       const categoryMarkup = this._generateMarkup();
       this._parent.insertAdjacentHTML("beforeend", categoryMarkup);
 
-      // add products in the category (products are sorted by category in the productMap)
-      for (const [key, value] of productsMap) {
-        if (value.length < 1) continue;
-        value.slice(0, 8).forEach((pro) => {
-          if (pro.categoryId === +category.id) {
-            this._data = pro;
-            const productMarkup = this.cardMarkup;
-            const productParent = document.querySelector(
-              `#sub-category__${category.id}`,
-            );
-            productParent.insertAdjacentHTML("beforeend", productMarkup);
-          }
-        });
-      }
+      const productParent = document.querySelector(
+        `#sub-category__${categoryData.id}`,
+      );
+
+      // add products in the category
+      products.forEach((pro) => {
+        this._data = pro;
+        const productMarkup = this.cardMarkup;
+        productParent.insertAdjacentHTML("beforeend", productMarkup);
+      });
     });
   }
 
