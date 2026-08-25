@@ -5,36 +5,7 @@ import brandsModel from "../../../new-js/models/brands/brandsModel.js";
 import categoryModel from "../../../new-js/models/category/categoryModel.js";
 
 import productsObjCreator from "../controllerFunctionalities/productsObj.js";
-
-// // submit handler
-// const submitHandler = function (form, submitBtn) {
-//   // console.log("formed");
-//   submitBtn.disabled = !checkValidities(form);
-// };
-// // submit function
-// function checkValidities(form) {
-//   let status = form?.checkValidity();
-
-//   const shouldCheckFormValidity = form.querySelector("[data-check-validity]");
-
-//   if (shouldCheckFormValidity) {
-//     status = form.checkValidity();
-//   }
-
-//   form.querySelectorAll("input, textarea").forEach((i) => {
-//     if (!i.disabled && i.getAttribute("required") === "") {
-//       if (!i.value) {
-//         status = false;
-//       }
-//       if (i.getAttribute("id") === "shopping-phone__input") {
-//         if (!i.value.startsWith("09") || i.value.length !== 11) {
-//           status = false;
-//         }
-//       }
-//     }
-//   });
-//   return status;
-// }
+import titleView from "../../views/titleView.js";
 
 const controlProduct = async function () {
   try {
@@ -43,9 +14,12 @@ const controlProduct = async function () {
 
     const data = await productsModel.getOne(id);
     const dataObj = await productsObjCreator(data);
-    
-    
-    productView.render(dataObj);
+
+    const subCat = await categoryModel.getOne(data.categoryId);
+
+    await productView.render(dataObj);
+    await titleView.render(subCat.name);
+    await titleView.returnBtnHandler();
   } catch (err) {
     console.error(err);
     throw err;

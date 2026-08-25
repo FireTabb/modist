@@ -20,10 +20,10 @@ export class productView extends View {
 
   // submit handler (may be should be in main View)
   _toggleSubmitButton() {
-    this._submitBtn.disabled = !this._checkValidities();
+    this._submitBtn.disabled = !this._checkValiditiesHandler();
   }
   // submit function (may be should be in main View)
-  _checkValidities() {
+  _checkValiditiesHandler() {
     let status = this._form.checkValidity();
 
     const shouldCheckFormValidity = this._form.querySelector(
@@ -49,25 +49,21 @@ export class productView extends View {
     return status;
   }
 
+  _productSpectsRender() {
+    let tableString = "";
+    Object.entries(this._data.specifications).forEach(
+      ([key, value]) =>
+        (tableString += `
+        <tr>
+          <td class="title-td">${key}</td>
+          <td class="info-td">${value}</td>
+        </tr>`),
+    );
+    return tableString;
+  }
+
   _generateMarkup() {
     return `
-    <!-- toast container -->
-    <div id="toast-container" aria-live="polite" aria-atomic="true" class="toast-wrapper"></div>
-
-    <!-- page title -->
-    <section class="my-5">
-      <div class="container">
-        <div class="page-title">
-          <div class="page-title_wraper">
-            <a href="index.html">
-              <i class="iconsax return__icon" icon-name="arrow-right"></i>
-            </a>
-            <h2 class="title-primary">جزئیات مانتو</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- product images -->
     <section class="">
       <div class="thumb-swiper__styles bg-primary-50 p-6">
@@ -275,39 +271,8 @@ export class productView extends View {
       <!-- ///// tab panels ///// -->
       <!-- ///// specs panel ///// -->
       <table data-panel="specs" class="tabs-specs__wrapper">
-        <tbody><tr>
-          <td class="title-td">جنس</td>
-          <td class="info-td">نخی</td>
-        </tr>
-        <tr>
-          <td class="title-td">طرح</td>
-          <td class="info-td">ساده</td>
-        </tr>
-        <tr>
-          <td class="title-td">یقه</td>
-          <td class="info-td">برگردان</td>
-        </tr>
-        <tr>
-          <td class="title-td">قد</td>
-          <td class="info-td">۱۰۰ سانتی متر</td>
-        </tr>
-        <tr>
-          <td class="title-td">مورد استفاده</td>
-          <td class="info-td">روزمره</td>
-        </tr>
-        <tr>
-          <td class="title-td">نحوه بسته شدن</td>
-          <td class="info-td">دکمه ای</td>
-        </tr>
-        <tr>
-          <td class="title-td">جزئیات</td>
-          <td class="info-td">
-            آستین بند‌دار<br>
-            قد آستین، بلند<br>
-            جیب‌نما<br>
-            دکمه پرسی
-          </td>
-        </tr>
+        <tbody>
+        ${this._productSpectsRender()}
       </tbody></table>
       <!-- ///// review panel ///// -->
       <!-- ///// comments panel ///// -->

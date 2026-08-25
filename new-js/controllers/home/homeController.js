@@ -2,12 +2,13 @@ import productsModel from "../../models/products/productsModel.js";
 import brandsModel from "../../../new-js/models/brands/brandsModel.js";
 import categoryModel from "../../../new-js/models/category/categoryModel.js";
 
+import searchView from "../../behaviors/functionalities/searchView.js"
+
 import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountView.js";
 import indexTopSaleView from "../../views/home/indexTopSaleView.js";
 import indexCategoriesView from "../../views/home/indexCategoriesView.js";
 // import search from "../../pages-and-functions/functionalities/search.js";
 // console.log(search);
-
 
 const controlCategories = async function () {
   try {
@@ -68,6 +69,7 @@ const init = async function () {
   await controlCategories();
   await controlDiscounted();
   await controlTopSale();
+  await searchView.searchHandler();
   await document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();

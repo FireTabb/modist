@@ -16,9 +16,16 @@ export default class View {
               <h2 class="p-2-bold flex">${this._data.title}</h2>
               <del class="product-price__discounted ${this._data.beforeDiscountPrice ? "" : "hide"}"><span>${this._data.beforeDiscountPrice ? this._data.beforeDiscountPrice.toLocaleString() : ""}</span>تومان</del>
               <strong class="product-price__current"><span>${this._data.price.toLocaleString()}</span>تومان</strong>
-              <p class="product-card__stock">
-                تنها <span class="p-5-bold">2</span> عدد موجود است
-              </p>
+              ${
+                this._data.stock < 10
+                  ? `
+                  <p class="product-card__stock">
+                   تنها <span class="p-5-bold">${this._data.stock}</span> عدد موجود است
+                  </p>
+                `
+                  : ""
+              }
+
             </div>
           </a>
 
@@ -31,8 +38,9 @@ export default class View {
   }
 
   render(data) {
+    
     this._data = data;
-
+    
     const markup = this._generateMarkup();
 
     this._parent.insertAdjacentHTML("beforeend", markup);

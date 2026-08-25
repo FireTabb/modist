@@ -21,7 +21,7 @@
 
       "salesCount": 352,
 
-      "stock": 45,
+      "stock": 9,
 
       "thumbnail": "images/image-discount.png",
 
@@ -149,7 +149,7 @@
       "discount": 0,
       "rating": 4.5,
       "salesCount": 243,
-      "stock": 32,
+      "stock": 2,
       "thumbnail": "/images/products/3/thumb.webp",
       "gallery": [
         "/images/products/3/1.webp",
@@ -320,7 +320,7 @@
       "discount": 0,
       "rating": 4.4,
       "salesCount": 298,
-      "stock": 40,
+      "stock": 7,
       "thumbnail": "/images/products/6/thumb.webp",
       "gallery": [
         "/images/products/6/1.webp",
@@ -548,7 +548,7 @@
       "discount": 0,
       "rating": 4.7,
       "salesCount": 203,
-      "stock": 25,
+      "stock": 6,
       "thumbnail": "/images/products/10/thumb.webp",
       "gallery": [
         "/images/products/10/1.webp",

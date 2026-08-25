@@ -28,7 +28,29 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <!-- toast container -->
+      <div
+        id="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+        class="toast-wrapper"
+      ></div>
+
+      <!-- page title -->
+      <section class="my-5">
+        <div class="container">
+          <div class="page-title">
+            <div class="page-title_wraper">
+              <a id="return_btn" class="cursor-pointer">
+                <i class="iconsax return__icon" icon-name="arrow-right"></i>
+              </a>
+              <h2 class="title-primary">جزئیات</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- filler -->
     <div class="my-50"></div>
@@ -41,7 +63,7 @@
             disabled
             type="submit"
             id="product__add-btn"
-            class="main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
+            class="main-btn p-2-bold bg-primary flex items-center justify-center gap-2 px-4 text-nowrap text-white disabled:bg-neutral-800/12 disabled:text-neutral-400 disabled:*:text-neutral-400"
           >
             <!-- will show by default  -->
             <i
@@ -49,11 +71,14 @@
               icon-name="shopping-cart"
             ></i>
             <!-- will show when add one in shopping cart  -->
-            <i class="iconsax t-2-bold hidden text-white" icon-name="add"></i>
+            <i
+              class="iconsax t-2-bold hidden w-full text-white"
+              icon-name="add"
+            ></i>
             افزودن به سبد خرید
             <!-- will show when add one in shopping cart  -->
             <i
-              class="iconsax t-2-bold hidden text-red-500"
+              class="iconsax t-2-bold hidden w-full text-red-500"
               icon-name="trash"
             ></i>
           </button>

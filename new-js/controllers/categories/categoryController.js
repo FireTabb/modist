@@ -4,7 +4,7 @@ import categoryModel from "../../models/category/categoryModel.js";
 
 import categoryWonderfulDiscountView from "../../views/categories/categoryWonderfulDiscountView.js";
 import categoryView from "../../views/categories/categoryView.js";
-import View from "../../views/View.js";
+import titleView from "../../views/titleView.js";
 
 import productsObjCreator from "../controllerFunctionalities/productsObj.js";
 
@@ -81,6 +81,9 @@ const controlCategory = async function () {
     const mainCategoryId = Number(params.get("id"));
 
     const mainCatWithSubCat = await categoryModel.getOne(mainCategoryId);
+
+    await titleView.render(mainCatWithSubCat.name);
+    await titleView.returnBtnHandler();
 
     // here we have super wonderful way to set products to their own category in a object while we are giving them brand and discountPrice
     const categoryProductsMap = new Map();
