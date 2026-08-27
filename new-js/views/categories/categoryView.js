@@ -5,6 +5,7 @@ export class categoryView extends View {
 
   categoryRender(allData) {
     allData.forEach(({ categoryData, products }) => {
+
       // add categories in the page
       this._data = categoryData;
       const categoryMarkup = this._generateMarkup();
@@ -29,7 +30,7 @@ export class categoryView extends View {
       <div class="container">
         <div class="title-showmore">
           <h2 class="title-primary">${this._data.name}</h2>
-          <a href="producs-female-mantos.html" class="show-more">مشاهده بیشتر</a>
+          <a href="producs-shelf.html?id=${this._data.id}" class="show-more">مشاهده بیشتر</a>
         </div>
       </div>
 

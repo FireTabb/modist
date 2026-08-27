@@ -1,8 +1,8 @@
 import productsModel from "../../models/products/productsModel.js";
 import productView from "../../views/product/productView.js";
 
-import brandsModel from "../../../new-js/models/brands/brandsModel.js";
-import categoryModel from "../../../new-js/models/category/categoryModel.js";
+import brandsModel from "../../models/brands/brandsModel.js";
+import categoryModel from "../../models/category/categoryModel.js";
 
 import productsObjCreator from "../controllerFunctionalities/productsObj.js";
 import titleView from "../../views/titleView.js";

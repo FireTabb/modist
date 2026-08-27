@@ -6,6 +6,8 @@ import categoryWonderfulDiscountView from "../../views/categories/categoryWonder
 import categoryView from "../../views/categories/categoryView.js";
 import titleView from "../../views/titleView.js";
 
+import searchView from "../../behaviors/functionalities/searchView.js";
+
 import productsObjCreator from "../controllerFunctionalities/productsObj.js";
 
 // const brandSetter = async function (products) {
@@ -92,7 +94,7 @@ const controlCategory = async function () {
       const productObj = await productsObjCreator(catProducts);
       categoryProductsMap.set(+cat.id, productObj);
     }
-    // creat an opject called viewData to save each category and its produccts in one obj
+    // creat an object called viewData to save each category and its produccts in one obj
     const viewData = mainCatWithSubCat.children
       .filter((category) => {
         const products = categoryProductsMap.get(+category.id) || [];
@@ -116,6 +118,7 @@ const controlCategory = async function () {
 const init = async function () {
   await controlDiscounted();
   await controlCategory();
+  await searchView.searchHandler();
   document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();
