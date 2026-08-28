@@ -12,10 +12,9 @@ const controlTopShelfShelf = async function () {
   try {
     const params = new URLSearchParams(window.location.search);
     const field = params.get("_sort");
-    
 
     const topSale = await productsModel.getByFeild(field);
-    const topSaleProductsObj = await productsObjCreator(topSale.slice(0,20));
+    const topSaleProductsObj = await productsObjCreator(topSale.slice(0, 20));
 
     const title = { name: "20 محصول پر فروش" };
 

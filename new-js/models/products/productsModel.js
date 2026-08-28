@@ -8,17 +8,15 @@ class ProductsModel extends Model {
   }
 
   async getOne(id) {
-    
     const data = await this.fetch(this.url + `/${id}`);
     // data.brand_info = await brandsModel.getOne(data.brandId);
     return data;
-    
+
     // await productsModel.getOne(id);
     // data.category = await categoryModel.getOne(1);
   }
-  
+
   async getByCategory(cat_id) {
-    console.log('mmd');
     return await this.fetch(this.url + `?categoryId=${cat_id}`);
   }
 

@@ -5,6 +5,8 @@ import productsShelf from "../../views/categories/productsShelf.js";
 import titleView from "../../views/titleView.js";
 
 import searchView from "../../behaviors/functionalities/searchView.js";
+import sortAndFilterView from "../../behaviors/functionalities/sortAndFilterView.js";
+import formOneInputActivateView from "../../behaviors/functionalities/formOneInputActivateView.js";
 
 import productsObjCreator from "../controllerFunctionalities/productsObj.js";
 
@@ -35,6 +37,9 @@ const controlproductsShelf = async function () {
 const init = async function () {
   await controlproductsShelf();
   await searchView.searchHandler();
+  await sortAndFilterView.sortAndFilterHandler();
+  await formOneInputActivateView.oneInputActivateHandler()
+  await formOneInputActivateView.priceRangeHandler()
   document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();
