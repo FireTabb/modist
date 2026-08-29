@@ -34,6 +34,10 @@ const controllerJs = {
       return import("./controllers/home/topSaleShelf.js");
     }
 
+    if (params.has("search")) {
+      return import("./controllers/search/searchController.js");
+    }
+
     // when there is id in the browser address
     if (params.has("id")) {
       return import("./controllers/categories/productsShelfController.js");

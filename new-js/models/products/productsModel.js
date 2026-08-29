@@ -23,5 +23,6 @@ class ProductsModel extends Model {
   async getByFeild(field) {
     return await this.fetch(this.url + `?_sort=-${field}`);
   }
+
 }
 export default new ProductsModel();

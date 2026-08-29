@@ -273,7 +273,7 @@ p[data="backend"]{
 }
 
 .search__input {
-  @apply p-2-regular mr-4 h-6 w-full text-neutral-800 outline-none;
+  @apply p-2-regular mr-4 h-6 w-full text-neutral-800 outline-none bg-none;
 }
 
 .search__input-fake {
