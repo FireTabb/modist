@@ -1,5 +1,6 @@
 export default class View {
   _data;
+  _parent;
   _form = null;
 
   get cardMarkup() {
@@ -38,9 +39,8 @@ export default class View {
   }
 
   render(data) {
-    
     this._data = data;
-    
+
     const markup = this._generateMarkup();
 
     this._parent.insertAdjacentHTML("beforeend", markup);

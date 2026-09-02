@@ -3,15 +3,24 @@ import View from "./View";
 export class titleView extends View {
   _parent = document.querySelector(".title-primary");
 
-  returnBtnHandler() {
+  returnBtnHandler(steps) {
     const backButton = document.querySelector("#return_btn");
 
-    if (backButton) {
+    if (steps && backButton) {
+      backButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.history.go(-steps); // برگشت به دو صفحه قبلی
+        return;
+      });
     }
-    backButton.addEventListener("click", function (e) {
-      e.preventDefault(); // جلوگیری از رفتار پیش‌فرض لینک (تغییر URL به #)
-      window.history.back(); // برگشت به صفحه قبلی
-    });
+
+    if (backButton) {
+      backButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.history.back(); // برگشت به صفحه قبلی
+        return;
+      });
+    }
   }
 
   inventoryStock(info) {

@@ -21,9 +21,10 @@ const controlproductsShelf = async function () {
       product.title.toLowerCase().includes(searchedValue),
     );
 
-    // if (matchedProducts.length < 1) {
-    //   productsShelf.searchNotFound();
-    // }
+    if (matchedProducts.length < 1) {
+      window.location.assign("not-fount-page.html");
+      return;
+    }
 
     const productsObj = await productsObjCreator(matchedProducts);
 
