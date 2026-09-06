@@ -38,12 +38,16 @@ export default class View {
     `;
   }
 
-  render(data) {
+  render(data,) {
     this._data = data;
 
     const markup = this._generateMarkup();
 
     this._parent.insertAdjacentHTML("beforeend", markup);
+  }
+
+  _renderTo(data, parent) {
+    parent.insertAdjacentHTML("beforeend", data);
   }
 
   async renderCards(dataArr) {

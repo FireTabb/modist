@@ -1,22 +1,55 @@
 import View from "../View";
 import changeTranslateX from "../../behaviors/functionalities/changeX";
+import {
+  secondsCounter,
+  clearTimer,
+} from "../../behaviors/functionalities/timer";
 
 export class SignupView extends View {
   _phoneNumberInput = document.querySelector("#phone__input");
   _enterPhoneSubmit = document.querySelector("#enter-phone__apply-btn");
   _editPhoneBtn = document.querySelector("#edit-phone__btn");
+  _resendTimerWrapper = document.querySelector("#resend-timer__wrapper");
   _codeInputs = document.querySelectorAll(".phone__input");
   _formApply = document.querySelector(".form__apply-btn");
   _phoneError = document.querySelector("#phone-error");
   _signupWrappers = document.querySelectorAll(".signup_wraper");
-
   _translateButtons = document.querySelectorAll("[data-signup-page]");
+
+  _showPass = document.querySelector("#show-password");
+  _usernameInput = document.querySelector("#username__input");
+  _passwordInput = document.querySelector("#password__input");
+  _signinBtn = document.querySelector("#signin__apply-btn");
 
   getPhoneNumberHandler(handler) {
     this._formApply.addEventListener("click", (e) => {
       e.preventDefault();
       handler(this._phoneNumberInput.value);
     });
+  }
+
+  clearInterval() {
+    clearTimer();
+  }
+
+  resendTimerHandler(time) {
+    secondsCounter(time, (seconds) => {
+      if (seconds > 0) {
+        this._resendTimerWrapper.innerHTML = seconds;
+      }
+    });
+  }
+
+  resetCodeTimerHandler() {
+    this._editPhoneBtn.addEventListener("click", clearTimer);
+    this._resendTimerWrapper.innerHTML = 120;
+  }
+
+  phonePrevieRender(data) {
+    const phonePreviewWrapper = document.querySelector(
+      "#phone-preview__wrapper",
+    );
+    this._renderTo(data, phonePreviewWrapper);
   }
 
   phonNumberCheckHandler() {
@@ -42,16 +75,6 @@ export class SignupView extends View {
       });
     });
   }
-  // // submit and go to code page
-  // enterPhoneSubmit.addEventListener("click", function (e) {
-  //   e.preventDefault();
-  //   changeTranslateX(signupWrappers, 2);
-  // });
-  // // back to enter number page
-  // editPhoneBtn.addEventListener("click", function (e) {
-  //   e.preventDefault();
-  //   changeTranslateX(signupWrappers, 1);
-  // });
 
   codeInputHandler(user) {
     this._codeInputs.forEach((input, i) => {
@@ -62,9 +85,8 @@ export class SignupView extends View {
 
         if (isLastInput) {
           if (user) {
-            console.log(user);
-            
-            window.location.assign(`profile.html?id=${user.id}`);
+            window.location.assign(`welcome-page.html`);
+            // window.location.assign(`profile.html?id=${user.id}`);
             return;
           }
           changeTranslateX(this._signupWrappers, 3);
@@ -78,6 +100,54 @@ export class SignupView extends View {
           this._codeInputs[i - 1].focus();
         }
       });
+    });
+  }
+
+  signupHandlers() {
+    // show password when signing in
+    this._showPass.addEventListener("input", () => {
+      if (this._showPass.checked) {
+        this._passwordInput.type = "text";
+      } else {
+        this._passwordInput.type = "password";
+      }
+    });
+
+    // enable and disable signin btn and show error for username
+    this._usernameInput.addEventListener("input", () => {
+      this.value === ""
+        ? document.querySelector("#username-error").classList.remove("hidden")
+        : document.querySelector("#username-error").classList.add("hidden");
+
+      if (
+        this._usernameInput.value !== "" &&
+        this._passwordInput.value !== ""
+      ) {
+        this._signinBtn.removeAttribute("disabled");
+      } else {
+        this._signinBtn.setAttribute("disabled", "");
+      }
+    });
+    // enable and disable signin btn and show error for password
+    this._passwordInput.addEventListener("input", () => {
+      this.value === ""
+        ? document.querySelector("#password-error").classList.remove("hidden")
+        : document.querySelector("#password-error").classList.add("hidden");
+
+      if (
+        this._usernameInput.value !== "" &&
+        this._passwordInput.value !== ""
+      ) {
+        this._signinBtn.removeAttribute("disabled");
+      } else {
+        this._signinBtn.setAttribute("disabled", "");
+      }
+    });
+
+    // if username and password was correct go to success page
+    this._signinBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
     });
   }
 }

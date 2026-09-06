@@ -27,5 +27,17 @@ class UsersModel extends Model {
     console.log("the password is " + password);
     return await this.fetch(this.url + `?username=-${username}`);
   }
+
+  async login(user) {
+    localStorage.setItem("loggedInUser", user);
+  }
+
+  async getCurrentUser() {
+    return localStorage.getItem("loggedInUser");
+  }
+
+  async logout() {
+    localStorage.removeItem("loggedInUser");
+  }
 }
 export default new UsersModel();
