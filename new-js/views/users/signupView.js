@@ -19,7 +19,7 @@ export class SignupView extends View {
   _showPass = document.querySelector("#show-password");
   _usernameInput = document.querySelector("#username__input");
   _passwordInput = document.querySelector("#password__input");
-  _signinBtn = document.querySelector("#signin__apply-btn");
+  _signupBtn = document.querySelector("#signup__apply-btn");
 
   getPhoneNumberHandler(handler) {
     this._formApply.addEventListener("click", (e) => {
@@ -41,14 +41,15 @@ export class SignupView extends View {
   }
 
   resetCodeTimerHandler() {
-    this._editPhoneBtn.addEventListener("click", clearTimer);
     this._resendTimerWrapper.innerHTML = 120;
+    this._editPhoneBtn.addEventListener("click", clearTimer);
   }
 
   phonePrevieRender(data) {
     const phonePreviewWrapper = document.querySelector(
       "#phone-preview__wrapper",
     );
+    phonePreviewWrapper.innerHTML = "";
     this._renderTo(data, phonePreviewWrapper);
   }
 
@@ -104,7 +105,7 @@ export class SignupView extends View {
   }
 
   signupHandlers() {
-    // show password when signing in
+    // show password when signing up
     this._showPass.addEventListener("input", () => {
       if (this._showPass.checked) {
         this._passwordInput.type = "text";
@@ -113,9 +114,9 @@ export class SignupView extends View {
       }
     });
 
-    // enable and disable signin btn and show error for username
+    // enable and disable signup btn and show error for username
     this._usernameInput.addEventListener("input", () => {
-      this.value === ""
+      this._usernameInput.value === ""
         ? document.querySelector("#username-error").classList.remove("hidden")
         : document.querySelector("#username-error").classList.add("hidden");
 
@@ -123,14 +124,14 @@ export class SignupView extends View {
         this._usernameInput.value !== "" &&
         this._passwordInput.value !== ""
       ) {
-        this._signinBtn.removeAttribute("disabled");
+        this._signupBtn.removeAttribute("disabled");
       } else {
-        this._signinBtn.setAttribute("disabled", "");
+        this._signupBtn.setAttribute("disabled", "");
       }
     });
     // enable and disable signin btn and show error for password
     this._passwordInput.addEventListener("input", () => {
-      this.value === ""
+      this._passwordInput === ""
         ? document.querySelector("#password-error").classList.remove("hidden")
         : document.querySelector("#password-error").classList.add("hidden");
 
@@ -138,16 +139,17 @@ export class SignupView extends View {
         this._usernameInput.value !== "" &&
         this._passwordInput.value !== ""
       ) {
-        this._signinBtn.removeAttribute("disabled");
+        this._signupBtn.removeAttribute("disabled");
       } else {
-        this._signinBtn.setAttribute("disabled", "");
+        this._signupBtn.setAttribute("disabled", "");
       }
     });
 
     // if username and password was correct go to success page
-    this._signinBtn.addEventListener("click", (e) => {
+    this._signupBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
+      window.location.assign(`welcome-page.html`);
+      // changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
     });
   }
 }

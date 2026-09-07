@@ -28,6 +28,8 @@ const controllerJs = {
 
   profileSignup: () => import("./controllers/users/signupController.js"),
 
+  profileSignin: () => import("./controllers/users/signinController.js"),
+  
   welcomePage: () => import("./controllers/users/welcomeController.js"),
 
   // this is why we need to write productsShelf like this 👇

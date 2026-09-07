@@ -3,22 +3,32 @@ import Model from "../model";
 
 class UsersModel extends Model {
   url = `${API}/users`;
+  currentUser = null;
 
-  //   async getAll() {
-  //     return await this.fetch(this.url);
-  //   }
+  constructor() {
+    super();
+    this._loadUserFromStorage();
+  }
+
+  _loadUserFromStorage() {
+    const storedUser = localStorage.getItem("loggedInUser");
+    
+    try {
+      if (storedUser) this.currentUser = JSON.parse(storedUser);
+    } catch {
+      this.currentUser = null;
+    }
+    console.log(this.currentUser);
+    
+  }
 
   async getOne(id) {
     const data = await this.fetch(this.url + `/${id}`);
-    // data.brand_info = await brandsModel.getOne(data.brandId);
     return data;
-
-    // await productsModel.getOne(id);
-    // data.category = await categoryModel.getOne(1);
   }
 
   async getByPhone(phone) {
-    // in phone=p the p is for a json server bug that we should use to be able to search stringed numbers in the database
+    // in phone=n the n is for a json server bug that we should use to be able to search stringed numbers in the database
     const [user] = await this.fetch(this.url + `?phone=n${+phone}`);
     return await user;
   }
@@ -28,16 +38,25 @@ class UsersModel extends Model {
     return await this.fetch(this.url + `?username=-${username}`);
   }
 
-  async login(user) {
-    localStorage.setItem("loggedInUser", user);
+  async login(userId) {
+    const { id, username } = userId;
+    const storingUser = { id, username };
+
+    localStorage.setItem("loggedInUser", JSON.stringify(storingUser));
+    this.currentUser = storingUser;
   }
 
   async getCurrentUser() {
-    return localStorage.getItem("loggedInUser");
+    return this.currentUser;
+  }
+
+  async isLoggedIn() {
+    return this.currentUser !== null;
   }
 
   async logout() {
     localStorage.removeItem("loggedInUser");
+    this.currentUser = null;
   }
 }
 export default new UsersModel();
