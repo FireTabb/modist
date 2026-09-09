@@ -11,7 +11,7 @@ export class SignupView extends View {
   _editPhoneBtn = document.querySelector("#edit-phone__btn");
   _resendTimerWrapper = document.querySelector("#resend-timer__wrapper");
   _codeInputs = document.querySelectorAll(".phone__input");
-  _formApply = document.querySelector(".form__apply-btn");
+  _phoneFormApply = document.querySelector("#enter-phone__apply-btn");
   _phoneError = document.querySelector("#phone-error");
   _signupWrappers = document.querySelectorAll(".signup_wraper");
   _translateButtons = document.querySelectorAll("[data-signup-page]");
@@ -19,10 +19,10 @@ export class SignupView extends View {
   _showPass = document.querySelector("#show-password");
   _usernameInput = document.querySelector("#username__input");
   _passwordInput = document.querySelector("#password__input");
-  _signupBtn = document.querySelector("#signup__apply-btn");
+  _signupFormApply = document.querySelector("#signup__apply-btn");
 
   getPhoneNumberHandler(handler) {
-    this._formApply.addEventListener("click", (e) => {
+    this._phoneFormApply.addEventListener("click", (e) => {
       e.preventDefault();
       handler(this._phoneNumberInput.value);
     });
@@ -58,10 +58,10 @@ export class SignupView extends View {
     this._phoneNumberInput.addEventListener("input", () => {
       if (this._phoneNumberInput.checkValidity()) {
         this._phoneError.classList.add("hidden");
-        this._formApply.removeAttribute("disabled");
+        this._phoneFormApply.removeAttribute("disabled");
       } else {
         this._phoneError.classList.remove("hidden");
-        this._formApply.setAttribute("disabled", "");
+        this._phoneFormApply.setAttribute("disabled", "");
       }
       return this._phoneNumberInput.value;
     });
@@ -124,9 +124,9 @@ export class SignupView extends View {
         this._usernameInput.value !== "" &&
         this._passwordInput.value !== ""
       ) {
-        this._signupBtn.removeAttribute("disabled");
+        this._signupFormApply.removeAttribute("disabled");
       } else {
-        this._signupBtn.setAttribute("disabled", "");
+        this._signupFormApply.setAttribute("disabled", "");
       }
     });
     // enable and disable signin btn and show error for password
@@ -139,17 +139,20 @@ export class SignupView extends View {
         this._usernameInput.value !== "" &&
         this._passwordInput.value !== ""
       ) {
-        this._signupBtn.removeAttribute("disabled");
+        this._signupFormApply.removeAttribute("disabled");
       } else {
-        this._signupBtn.setAttribute("disabled", "");
+        this._signupFormApply.setAttribute("disabled", "");
       }
     });
+  }
 
-    // if username and password was correct go to success page
-    this._signupBtn.addEventListener("click", (e) => {
+  userSignupHandler(handler) {
+    this._signupFormApply.addEventListener("click", (e) => {
+      const username = this._usernameInput.value;
+      const password = this._passwordInput.value;
+      const phone = this._phoneNumberInput;
       e.preventDefault();
-      window.location.assign(`welcome-page.html`);
-      // changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
+      handler(username, password, phone);
     });
   }
 }

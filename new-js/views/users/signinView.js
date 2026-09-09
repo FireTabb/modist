@@ -6,6 +6,17 @@ export class SigninView extends View {
   _passwordInput = document.querySelector("#password__input");
   _signinBtn = document.querySelector("#signin__apply-btn");
 
+  _formApply = document.querySelector(".form__apply-btn");
+
+  getUsernameAndPasswordHandler(handler) {
+    this._formApply.addEventListener("click", (e) => {
+      e.preventDefault();
+      const username = this._usernameInput.value;
+      const password = this._passwordInput.value;
+      handler(username, password);
+    });
+  }
+
   signinHandlers() {
     // show password when signing in
     this._showPass.addEventListener("input", () => {
@@ -18,8 +29,8 @@ export class SigninView extends View {
 
     // enable and disable signin btn and show error for username
     this._usernameInput.addEventListener("input", () => {
-        document.querySelector("#username-error").classList.remove("hidden")
-        
+      document.querySelector("#username-error").classList.remove("hidden");
+
       this._usernameInput.value === ""
         ? document.querySelector("#username-error").classList.remove("hidden")
         : document.querySelector("#username-error").classList.add("hidden");
@@ -47,13 +58,6 @@ export class SigninView extends View {
       } else {
         this._signinBtn.setAttribute("disabled", "");
       }
-    });
-
-    // if username and password was correct go to success page
-    this._signinBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.assign(`welcome-page.html`);
-      // changeTranslateX(document.querySelectorAll(".signin_wraper"), 2);
     });
   }
 }

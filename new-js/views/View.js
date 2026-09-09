@@ -1,3 +1,5 @@
+import showMessage from "../behaviors/functionalities/showMessage";
+
 export default class View {
   _data;
   _parent;
@@ -38,7 +40,7 @@ export default class View {
     `;
   }
 
-  render(data,) {
+  render(data) {
     this._data = data;
 
     const markup = this._generateMarkup();
@@ -54,5 +56,9 @@ export default class View {
     dataArr.forEach((data) => {
       this.render(data);
     });
+  }
+
+  renderMessage(type = "condition", message = "نامشخص") {
+    showMessage(type, message);
   }
 }
