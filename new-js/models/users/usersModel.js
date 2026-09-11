@@ -74,7 +74,7 @@ class UsersModel extends Model {
   }
 
   // check of there is a loged in user
-  async isLoggedIn() {
+  isLoggedIn() {
     return this.currentUser !== null;
   }
 
@@ -89,8 +89,15 @@ class UsersModel extends Model {
     }
   }
 
-  async signUp(username, password, phone){
+  async signUp(username, password, phone) {
+    const newUser = {
+      phone: "n" + Number(phone),
+      username: username,
+      password: "p" + password,
+    };
+    console.log("userAdded", newUser);
 
+    this.fetch(this.url, newUser);
   }
 }
 export default new UsersModel();

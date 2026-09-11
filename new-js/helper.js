@@ -9,14 +9,24 @@ const timeout = function (s) {
   });
 };
 
-export const AJAX = async function (url) {
+export const AJAX = async function (url, requestData) {
   try {
-    const fetchPro = await fetch(url);
+    const fetchPro = requestData
+      ? fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestData),
+        })
+      : fetch(url);
     const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
     const data = await res.json();
 
     if (!res.ok) {
-      throw new AppError("SERVER_ERROR", `خطای سرور : ${res.status}`, res.status);
+      throw new AppError(
+        "SERVER_ERROR",
+        `خطای سرور : ${res.status}`,
+        res.status,
+      );
     }
     return data;
   } catch (err) {

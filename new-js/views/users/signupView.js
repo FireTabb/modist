@@ -147,11 +147,12 @@ export class SignupView extends View {
   }
 
   userSignupHandler(handler) {
+
     this._signupFormApply.addEventListener("click", (e) => {
+      e.preventDefault();
       const username = this._usernameInput.value;
       const password = this._passwordInput.value;
-      const phone = this._phoneNumberInput;
-      e.preventDefault();
+      const phone = this._phoneNumberInput.value;
       handler(username, password, phone);
     });
   }

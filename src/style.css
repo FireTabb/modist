@@ -273,7 +273,7 @@ p[data="backend"]{
 }
 
 .search__input {
-  @apply p-2-regular mr-4 h-6 w-full text-neutral-800 outline-none bg-none;
+  @apply p-2-regular mr-4 h-6 w-full bg-none text-neutral-800 outline-none;
 }
 
 .search__input-fake {
@@ -572,8 +572,9 @@ shopping  cart, info and send
   ul {
     @apply flex flex-col gap-4;
   }
-  a {
-    @apply p-2-bold flex justify-between rounded-lg bg-neutral-50 px-4 py-3;
+  a,
+  button {
+    @apply p-2-bold flex w-full justify-between rounded-lg bg-neutral-50 px-4 py-3;
   }
   div {
     @apply flex items-center gap-2;

@@ -5,18 +5,30 @@ import {
   getErrorMessage,
 } from "../../behaviors/errorHandling/message";
 
+const userSignup = async function (username, password, phone) {
+  try {
+    await usersModel.signUp(username, password, phone);
+    const user = await usersModel.getByPhone(phone);
+    await usersModel.login(user);
+    window.location.replace(`welcome-page.html`);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const userCheck = async function (phoneNumber) {
   // base on the entered phone number in the View we render all signup operation
   try {
     // renderring seconds counter and phone preview
-    if (phoneNumber) {
-      await signupView.phonePrevieRender(phoneNumber);
-    }
+
+    await signupView.phonePrevieRender(phoneNumber);
     await signupView.resendTimerHandler(120);
     await signupView.resetCodeTimerHandler();
 
     // if user exist we just sign in
+
     const user = await usersModel.getByPhone(phoneNumber);
+
     if (user) {
       await signupView.codeInputHandler(user);
       await usersModel.login(user);
@@ -27,16 +39,10 @@ const userCheck = async function (phoneNumber) {
     else {
       await signupView.codeInputHandler();
       await signupView.signupHandlers();
+      await signupView.userSignupHandler(userSignup);
     }
   } catch (err) {
     signupView.renderMessage("error", getErrorMessage(err));
-  }
-};
-
-const userSignup = async function (username, password) {
-  try {
-  } catch (err) {
-    console.log(err);
   }
 };
 
