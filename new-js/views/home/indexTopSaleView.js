@@ -3,6 +3,10 @@ import View from "./../View";
 export class indexTopSaleView extends View {
   _parent = document.querySelector("#top-sale__swiper");
 
+  // setShowAllLink() {
+  //   const showMoreBtn = document.querySelector(".show-more");
+  // }
+
   _generateMarkup() {
     return this.cardMarkup;
   }

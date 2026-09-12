@@ -382,7 +382,7 @@ p[data="backend"]{
   @apply mb-6 flex justify-between;
 
   h2 {
-    @apply t-4-bold;
+    @apply t-4-bold max-w-[50%];
   }
 
   .product-info__price--wrapper {

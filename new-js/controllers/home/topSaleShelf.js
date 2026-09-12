@@ -6,15 +6,16 @@ import titleView from "../../views/titleView.js";
 
 import searchView from "../../behaviors/functionalities/searchView.js";
 
-import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+// import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import getProductsData from "../controllerFunctionalities/productsObj.js";
 
 const controlTopShelfShelf = async function () {
   try {
     const params = new URLSearchParams(window.location.search);
     const field = params.get("_sort");
 
-    const topSale = await productsModel.getByFeild(field);
-    const topSaleProductsObj = await productsObjCreator(topSale.slice(0, 20));
+    const topSale = await productsModel.getByField(field);
+    const topSaleProductsObj = await getProductsData(topSale.slice(0, 20));
 
     const title = { name: "20 محصول پر فروش" };
 

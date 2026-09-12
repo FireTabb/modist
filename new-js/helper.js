@@ -1,10 +1,11 @@
 import { TIMEOUT_SEC } from "./config";
 import { AppError } from "./behaviors/errorHandling/AppError";
+import { ERROR_CODES } from "./config";
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
+      reject(new AppError(ERROR_CODES.TIMEOUT_ERROR));
     }, s * 1000);
   });
 };
@@ -22,15 +23,11 @@ export const AJAX = async function (url, requestData) {
     const data = await res.json();
 
     if (!res.ok) {
-      throw new AppError(
-        "SERVER_ERROR",
-        `خطای سرور : ${res.status}`,
-        res.status,
-      );
+      throw new AppError(ERROR_CODES.NETWORK_ERROR, res.status);
     }
     return data;
   } catch (err) {
     if (err instanceof AppError) throw err;
-    throw new AppError("NETWORK_ERROR", "خطا در ارتباط با سرور");
+    throw new AppError(ERROR_CODES.NETWORK_ERROR);
   }
 };

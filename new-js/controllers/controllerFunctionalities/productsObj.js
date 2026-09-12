@@ -1,10 +1,10 @@
-import productsModel from "../../models/products/productsModel";
+// import productsModel from "../../models/products/productsModel";
 import brandsModel from "../../models/brands/brandsModel";
+import formatProduct from "./formatProduct";
 
 const brandSetter = async function (products) {
   try {
     if (Array.isArray(products)) {
-      
       const brandedProducts = [];
       for (const pro of products) {
         pro.brand_info = await brandsModel.getOne(pro.brandId);
@@ -12,7 +12,6 @@ const brandSetter = async function (products) {
       }
       return brandedProducts;
     } else {
-      const productsObj = await productsModel.creatProductObj(products);
       products.brand_info = await brandsModel.getOne(products.brandId);
       return products;
     }
@@ -22,23 +21,23 @@ const brandSetter = async function (products) {
   }
 };
 
-const productsObjCreator = async function (products) {
+const getProductsData = async function (products, { brand = true } = {}) {
   try {
-    
-    if (Array.isArray(products)) {
-      const promises = products.map(async (pro) => {
-        return await productsModel.creatProductObj(pro);
-      });
-      const producstObj = await Promise.all(promises);
-      return await brandSetter(producstObj);
-    } else {
-      const productsObj = await productsModel.creatProductObj(products);
-      return await brandSetter(products);
+    let productsData;
+
+    Array.isArray(products)
+      ? (productsData = products.map(formatProduct))
+      : (productsData = formatProduct(products));
+
+    if (brand) {
+      productsData = brandSetter(productsData);
     }
+
+    return productsData;
   } catch (err) {
     console.log(err);
     throw err;
   }
 };
 
-export default productsObjCreator;
+export default getProductsData;

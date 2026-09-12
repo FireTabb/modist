@@ -7,7 +7,8 @@ import searchView from "../../behaviors/functionalities/searchView.js";
 import sortAndFilterView from "../../behaviors/functionalities/sortAndFilterView.js";
 import formOneInputActivateView from "../../behaviors/functionalities/formOneInputActivateView.js";
 
-import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+// import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import getProductsData from "../controllerFunctionalities/productsObj.js";
 
 const controlproductsShelf = async function () {
   try {
@@ -26,7 +27,7 @@ const controlproductsShelf = async function () {
       return;
     }
 
-    const productsObj = await productsObjCreator(matchedProducts);
+    const productsObj = await getProductsData(matchedProducts);
 
     const titleInfo = {
       name: "",

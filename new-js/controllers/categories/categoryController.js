@@ -8,7 +8,8 @@ import titleView from "../../views/titleView.js";
 
 import searchView from "../../behaviors/functionalities/searchView.js";
 
-import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+// import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import getProductsData from "../controllerFunctionalities/productsObj.js";
 
 // const brandSetter = async function (products) {
 //   const brandedProducts = [];
@@ -28,7 +29,7 @@ const controlDiscounted = async function () {
       .sort((a, b) => b.discount - a.discount)
       .slice(0, 5);
 
-    const discountedProduct = await productsObjCreator(discounted);
+    const discountedProduct = await getProductsData(discounted);
 
     categoryWonderfulDiscountView.renderCards(discountedProduct);
   } catch (err) {
@@ -91,7 +92,7 @@ const controlCategory = async function () {
     const categoryProductsMap = new Map();
     for (const cat of mainCatWithSubCat.children) {
       const catProducts = await productsModel.getByCategory(cat.id);
-      const productObj = await productsObjCreator(catProducts);
+      const productObj = await getProductsData(catProducts);
       categoryProductsMap.set(+cat.id, productObj);
     }
     // creat an object called viewData to save each category and its produccts in one obj

@@ -3,7 +3,7 @@ import usersModel from "../../models/users/usersModel";
 import {
   messages,
   getErrorMessage,
-} from "../../behaviors/errorHandling/message";
+} from "../../behaviors/errorHandling/uiMessages";
 
 const userSignup = async function (username, password, phone) {
   try {

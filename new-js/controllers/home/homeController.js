@@ -3,7 +3,8 @@ import brandsModel from "../../../new-js/models/brands/brandsModel.js";
 import categoryModel from "../../../new-js/models/category/categoryModel.js";
 
 import searchView from "../../behaviors/functionalities/searchView.js";
-import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import formatProduct from "../controllerFunctionalities/formatProduct.js";
+import getProductsData from "../controllerFunctionalities/productsObj.js";
 
 import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountView.js";
 import indexTopSaleView from "../../views/home/indexTopSaleView.js";
@@ -46,9 +47,9 @@ const controlDiscounted = async function () {
 
 const controlTopSale = async function () {
   try {
-    const topSale = await productsModel.getByFeild("salesCount");
+    const topSale = await productsModel.getByField("salesCount");
 
-    const topSaleProductsObj = await productsObjCreator(topSale.slice(0, 5));
+    const topSaleProductsObj = await getProductsData(topSale.slice(0, 5));
 
     indexTopSaleView.renderCards(topSaleProductsObj);
   } catch (err) {

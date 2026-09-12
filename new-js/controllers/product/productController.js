@@ -1,24 +1,29 @@
 import productsModel from "../../models/products/productsModel.js";
 import productView from "../../views/product/productView.js";
 
-import brandsModel from "../../models/brands/brandsModel.js";
 import categoryModel from "../../models/category/categoryModel.js";
 
-import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+// import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import formatProduct from "../controllerFunctionalities/formatProduct.js";
+
 import titleView from "../../views/titleView.js";
+
 
 const controlProduct = async function () {
   try {
     const params = new URLSearchParams(window.location.search);
     const id = Number(params.get("id"));
 
-    const data = await productsModel.getOne(id);
-    const dataObj = await productsObjCreator(data);
+    const product = await productsModel.getOne(id);
 
-    const subCat = await categoryModel.getOne(data.categoryId);
+    const productsSubCat = await categoryModel.getOne(product.categoryId);
+    const formattedProduct = formatProduct(product);
 
-    await productView.render(dataObj);
-    await titleView.render(subCat.name);
+
+    // const dataObj = await productsObjCreator(product);
+
+    await productView.render(formattedProduct);
+    await titleView.render(productsSubCat.name);
     await titleView.returnBtnHandler();
   } catch (err) {
     console.error(err);
