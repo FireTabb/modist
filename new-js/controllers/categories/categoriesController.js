@@ -6,11 +6,11 @@ import categoryWonderfulDiscountView from "../../views/categories/categoryWonder
 const controlCategories = async function () {
   try {
     const data = await categoryModel.getMains();
-    
+
     categoriesView.renderCards(data);
   } catch (err) {
     console.error(err);
-    throw err;
+    categoriesView.renderMessage("error", getErrorMessage(err));
   }
 };
 controlCategories();

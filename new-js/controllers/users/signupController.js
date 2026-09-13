@@ -13,6 +13,7 @@ const userSignup = async function (username, password, phone) {
     window.location.replace(`welcome-page.html`);
   } catch (err) {
     console.log(err);
+    throw err;
   }
 };
 
@@ -42,7 +43,7 @@ const userCheck = async function (phoneNumber) {
       await signupView.userSignupHandler(userSignup);
     }
   } catch (err) {
-    signupView.renderMessage("error", getErrorMessage(err));
+    throw err;
   }
 };
 
@@ -53,7 +54,7 @@ const init = async function () {
     await signupView.getPhoneNumberHandler(userCheck);
   } catch (err) {
     console.log(err);
-    throw err;
+    signupView.renderMessage("error", getErrorMessage(err));
   }
 };
 init();

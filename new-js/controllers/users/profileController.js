@@ -9,11 +9,11 @@ const usernameController = async function () {
   try {
     const currentUser = await usersModel.getCurrentUser();
     console.log(currentUser);
-    
+
     profileView.render(currentUser);
   } catch (err) {
     console.log(err);
-    
+    profileView.renderMessage("error", getErrorMessage(err));
   }
 };
 

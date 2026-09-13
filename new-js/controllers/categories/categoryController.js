@@ -86,7 +86,6 @@ const controlCategory = async function () {
     const mainCatWithSubCat = await categoryModel.getOne(mainCategoryId);
 
     await titleView.render(mainCatWithSubCat.name);
-    await titleView.returnBtnHandler();
 
     // here we have super wonderful way to set products to their own category in a object while we are giving them brand and discountPrice
     const categoryProductsMap = new Map();
@@ -112,13 +111,14 @@ const controlCategory = async function () {
     await categoryView.categoryRender(viewData);
   } catch (err) {
     console.log(err);
-    throw err;
+    categoryView.renderMessage("error", getErrorMessage(err));
   }
 };
 
 const init = async function () {
   await controlDiscounted();
   await controlCategory();
+  await titleView.returnBtnHandler();
   await searchView.searchHandler();
   document.dispatchEvent(new CustomEvent("controllerDone"));
 };

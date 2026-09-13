@@ -5,6 +5,19 @@ export default class View {
   _parent;
   _form = null;
 
+  get categoryMarkup() {
+    return `
+    <a href="/category.html?id=${this._data.id}" class="categories">
+      <img
+        class="rounded-2xl"
+        src="${this._data.thumbnail}"
+        alt=""
+      >
+      <h3 class="m-4">${this._data.name}</h3>
+    </a>
+  `;
+  }
+
   get cardMarkup() {
     return `
     <div class="swiper-slide">
@@ -40,21 +53,21 @@ export default class View {
     `;
   }
 
-  render(data) {
+  render(data, parent = this._parent) {
     this._data = data;
 
     const markup = this._generateMarkup();
 
-    this._parent.insertAdjacentHTML("beforeend", markup);
+    parent.insertAdjacentHTML("beforeend", markup);
   }
 
   _renderTo(data, parent) {
     parent.insertAdjacentHTML("beforeend", data);
   }
 
-  async renderCards(dataArr) {
+  renderCards(dataArr, parent = this._parent) {
     dataArr.forEach((data) => {
-      this.render(data);
+      this.render(data, parent);
     });
   }
 

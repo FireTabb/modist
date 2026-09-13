@@ -7,7 +7,7 @@ import categoryModel from "../../models/category/categoryModel.js";
 import formatProduct from "../controllerFunctionalities/formatProduct.js";
 
 import titleView from "../../views/titleView.js";
-
+import { getErrorMessage } from "../../behaviors/errorHandling/uiMessages.js";
 
 const controlProduct = async function () {
   try {
@@ -19,7 +19,6 @@ const controlProduct = async function () {
     const productsSubCat = await categoryModel.getOne(product.categoryId);
     const formattedProduct = formatProduct(product);
 
-
     // const dataObj = await productsObjCreator(product);
 
     await productView.render(formattedProduct);
@@ -27,7 +26,7 @@ const controlProduct = async function () {
     await titleView.returnBtnHandler();
   } catch (err) {
     console.error(err);
-    throw err;
+    productView.renderMessage("error", getErrorMessage(err));
   }
 };
 

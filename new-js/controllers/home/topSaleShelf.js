@@ -25,7 +25,7 @@ const controlTopShelfShelf = async function () {
     productsShelf.renderCards(topSaleProductsObj);
   } catch (err) {
     console.error(err);
-    throw err;
+    productsShelf.renderMessage("error", getErrorMessage(err));
   }
 };
 

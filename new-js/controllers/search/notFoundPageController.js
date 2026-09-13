@@ -5,7 +5,6 @@ const notFoundPageController = async function () {
     await titleView.returnBtnHandler(1);
   } catch (err) {
     console.error(err);
-    throw err;
   }
 };
 

@@ -25,12 +25,11 @@ const controlproductsShelf = async function () {
 
     await titleView.render(subcatInfo.name);
     await titleView.inventoryStock(subcatInfo);
-    await titleView.returnBtnHandler();
 
     productsShelf.renderCards(productsObj);
   } catch (err) {
     console.error(err);
-    throw err;
+    await productsShelf.returnBtnHandler();
   }
 };
 
@@ -38,8 +37,9 @@ const init = async function () {
   await controlproductsShelf();
   await searchView.searchHandler();
   await sortAndFilterView.sortAndFilterHandler();
-  await formOneInputActivateView.oneInputActivateHandler()
-  await formOneInputActivateView.priceRangeHandler()
+  await formOneInputActivateView.oneInputActivateHandler();
+  await titleView.returnBtnHandler();
+  await formOneInputActivateView.priceRangeHandler();
   document.dispatchEvent(new CustomEvent("controllerDone"));
 };
 init();

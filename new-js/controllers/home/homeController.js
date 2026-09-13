@@ -6,20 +6,18 @@ import searchView from "../../behaviors/functionalities/searchView.js";
 import formatProduct from "../controllerFunctionalities/formatProduct.js";
 import getProductsData from "../controllerFunctionalities/productsObj.js";
 
-import indexWonderfulDiscountView from "../../views/home/indexWonderfulDiscountView.js";
-import indexTopSaleView from "../../views/home/indexTopSaleView.js";
-import indexCategoriesView from "../../views/home/indexCategoriesView.js";
-// import search from "../../pages-and-functions/functionalities/search.js";
-// console.log(search);
+import indexView from "../../views/home/indexView.js";
+
+import { getErrorMessage } from "../../behaviors/errorHandling/uiMessages.js";
 
 const controlCategories = async function () {
   try {
     const data = await categoryModel.getMains();
 
-    indexCategoriesView.renderCards(data);
+    indexView.renderHomeCategories(data);
   } catch (err) {
     console.error(err);
-    throw err;
+    indexView.renderMessage("error", getErrorMessage(err));
   }
 };
 
@@ -38,10 +36,10 @@ const controlDiscounted = async function () {
       discountedProduct.push(pro);
     }
 
-    indexWonderfulDiscountView.renderCards(discountedProduct);
+    indexView.renderHomeWonderfulDiscount(discountedProduct);
   } catch (err) {
     console.error(err);
-    throw err;
+    indexView.renderMessage("error", getErrorMessage(err));
   }
 };
 
@@ -51,10 +49,10 @@ const controlTopSale = async function () {
 
     const topSaleProductsObj = await getProductsData(topSale.slice(0, 5));
 
-    indexTopSaleView.renderCards(topSaleProductsObj);
+    indexView.renderHomeTopSales(topSaleProductsObj);
   } catch (err) {
     console.error(err);
-    throw err;
+    indexView.renderMessage("error", getErrorMessage(err));
   }
 };
 

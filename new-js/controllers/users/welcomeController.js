@@ -6,14 +6,11 @@ const userCheck = async function (phoneNumber) {
     const user = await usersModel.getCurrentUser();
     if (user) {
       welcomeView.render(user.username);
-      await welcomeView.renderMessage(
-        "success",
-        "با موفقیت وارد شدید",
-      );
+      await welcomeView.renderMessage("success", "با موفقیت وارد شدید");
     }
   } catch (err) {
     console.log(err);
-    throw err;
+    welcomeView.renderMessage("error", getErrorMessage(err));
   }
 };
 userCheck();

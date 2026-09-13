@@ -7,7 +7,8 @@ import searchView from "../../behaviors/functionalities/searchView.js";
 import sortAndFilterView from "../../behaviors/functionalities/sortAndFilterView.js";
 import formOneInputActivateView from "../../behaviors/functionalities/formOneInputActivateView.js";
 
-// import productsObjCreator from "../controllerFunctionalities/productsObj.js";
+import { getErrorMessage } from "../../behaviors/errorHandling/uiMessages.js";
+
 import getProductsData from "../controllerFunctionalities/productsObj.js";
 
 const controlproductsShelf = async function () {
@@ -36,17 +37,17 @@ const controlproductsShelf = async function () {
 
     await titleView.render(searchedValue);
     await titleView.inventoryStock(titleInfo);
-    await titleView.returnBtnHandler();
 
     productsShelf.renderCards(productsObj);
   } catch (err) {
     console.error(err);
-    throw err;
+    productsShelf.renderMessage("error", getErrorMessage(err));
   }
 };
 
 const init = async function () {
   await controlproductsShelf();
+  await titleView.returnBtnHandler();
   await searchView.searchHandler();
   await sortAndFilterView.sortAndFilterHandler();
   await formOneInputActivateView.oneInputActivateHandler();
