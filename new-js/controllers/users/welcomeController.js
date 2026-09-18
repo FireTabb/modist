@@ -14,13 +14,3 @@ const userCheck = async function (phoneNumber) {
   }
 };
 userCheck();
-
-// const init = async function () {
-//   try {
-//
-//   } catch (err) {
-//     console.log(err);
-//     throw err;
-//   }
-// };
-// init();

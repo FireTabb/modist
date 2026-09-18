@@ -9,6 +9,7 @@ export const messages = {
     [ERROR_CODES.TIMEOUT_ERROR]: "پاسخ سرور بیش از حد طول کشید",
     [ERROR_CODES.UNAUTHORIZED]: "لطفاً ابتدا وارد حساب کاربری خود شوید",
     [ERROR_CODES.SERVER_ERROR]: "خطای سرور. لطفاً بعداً تلاش کنید",
+    [ERROR_CODES.INVALID_PRODUCT_ID]: "شناسه محصول نامعتبر است",
   },
 
   success: {

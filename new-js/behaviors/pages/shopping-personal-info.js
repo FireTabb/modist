@@ -1,5 +1,5 @@
 import changeTranslateX from "./../functionalities/changeX.js";
-import submitHandler from "./../functionalities/form-activate-with-all-inputs.js";
+import submitHandler from "./../functionalities/formActivateWithAllInputs.js";
 
 const shoppingPersonalInfoForm = document.querySelector(
   "#shopping-send-info-form",

@@ -6,6 +6,7 @@ import { ERROR_CODES, HTTP_STATUS } from "../../config";
 class UsersModel extends Model {
   url = `${API}/users`;
   currentUser = null;
+  _userKey = "loggedInUser";
 
   constructor() {
     super();
@@ -14,13 +15,13 @@ class UsersModel extends Model {
 
   // always run in the start
   _loadUserFromStorage() {
-    const storedUser = localStorage.getItem("loggedInUser");
+    const storedUser = localStorage.getItem(this._userKey);
     try {
       if (storedUser) this.currentUser = JSON.parse(storedUser);
     } catch {
       this.currentUser = null;
     }
-    // localStorage.removeItem("loggedInUser");
+    // localStorage.removeItem(this._userKey);
     console.log(this.currentUser);
   }
 
@@ -62,10 +63,11 @@ class UsersModel extends Model {
       const { id, username, phone } = user;
       const storingUser = { id, username, phone };
 
-      localStorage.setItem("loggedInUser", JSON.stringify(storingUser));
+      localStorage.setItem(this._userKey, JSON.stringify(storingUser));
       this.currentUser = storingUser;
       // return storingUser;
     } catch (err) {
+      console.error(err);
       throw new AppError(ERROR_CODES.STORAGE_ERROR);
     }
   }
@@ -85,7 +87,7 @@ class UsersModel extends Model {
   // log out the user
   async logout() {
     try {
-      localStorage.removeItem("loggedInUser");
+      localStorage.removeItem(this._userKey);
     } catch (err) {
       console.error("Logout Error:", err);
       throw new AppError(ERROR_CODES.STORAGE_ERROR);

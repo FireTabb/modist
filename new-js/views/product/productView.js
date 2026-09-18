@@ -4,6 +4,10 @@ export class productView extends View {
   _parent = document.querySelector("main");
   _footer = document.querySelector("footer");
 
+  _addProductBtn = document.querySelector("#product__add-btn");
+  _addMoreBtn = document.querySelector('[icon-name="add"]');
+  _removeBtn = document.querySelector('[icon-name="trash"]');
+
   _sizeCheck(sizeValue) {
     return this._data.sizes.find((size) => size.size === sizeValue)
       ? ""
@@ -60,6 +64,67 @@ export class productView extends View {
         </tr>`),
     );
     return tableString;
+  }
+
+  // addProductToCartHandler(handler) {
+  //   this._addProductBtn.addEventListener("click", handler, { once: true });
+  //   this._addProductBtn.addEventListener("click", (e) => {
+  //     // const addMore = e.target.closest(this._addMoreBtn);
+  //     if (e.target === this._addMoreBtn) {
+  //       handler();
+  //     }
+  //   });
+  // }
+
+  // removeProductToCartHandler(handler) {
+  //   this._removeBtn.addEventListener("click", handler);
+  // }
+
+  addProductBtns(addProHandler, removeProHandler, productCount = 0) {
+    const btnText = this._addProductBtn.querySelector("p");
+    const shoppingIcon = this._addProductBtn.querySelector(
+      '[icon-name="shopping-cart"]',
+    );
+    productCount = Number(productCount);
+
+    if (productCount > 0) {
+      btnText.textContent = productCount;
+      shoppingIcon.classList.add("hidden");
+      this._addMoreBtn.classList.remove("hidden");
+      this._removeBtn.classList.remove("hidden");
+    }
+
+    this._addProductBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (productCount === 0) {
+        addProHandler();
+        btnText.textContent = ++productCount;
+
+        shoppingIcon.classList.add("hidden");
+        this._addMoreBtn.classList.remove("hidden");
+        this._removeBtn.classList.remove("hidden");
+        return;
+      }
+
+      if (e.target.closest('[icon-name="trash"]')) {
+        removeProHandler();
+        if (productCount !== 1) {
+          btnText.textContent = --productCount;
+          return;
+        }
+        --productCount;
+        btnText.textContent = "افزودن به سبد خرید";
+        shoppingIcon.classList.remove("hidden");
+        this._addMoreBtn.classList.add("hidden");
+        this._removeBtn.classList.add("hidden");
+        return "remove";
+      }
+      if (e.target.closest('[icon-name="add"]')) {
+        btnText.textContent = ++productCount;
+        addProHandler();
+      }
+    });
   }
 
   _generateMarkup() {

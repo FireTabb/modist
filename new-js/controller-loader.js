@@ -31,8 +31,11 @@ const controllerJs = {
   profileSignin: () => import("./controllers/users/signinController.js"),
 
   welcomePage: () => import("./controllers/users/welcomeController.js"),
-  
+
   profile: () => import("./controllers/users/profileController.js"),
+
+  shoppingCart: () =>
+    import("./controllers/cart/shoppingCartController.js"),
 
   // this is why we need to write productsShelf like this 👇
   // productsShelf page will show more than one set of products and for that there are more than one controller using it
