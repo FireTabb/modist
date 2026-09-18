@@ -334,35 +334,41 @@
     <!-- price -->
     <section class="section-layout">
       <div class="container">
-        <div
-          class="drop-shadow-ds-1 flex flex-col gap-5 rounded-lg bg-white p-3 text-neutral-900"
-        >
-          <div class="m-1 flex items-center justify-between">
-            <div class="p-3-regular">
-              <p>مبلغ کل خرید :</p>
-              <p>مبلغ تخفیف روی کالا :</p>
-
-              <p class="code-discounte__title hidden">
-                مبلغ تخفیف با کد تخفیف <span class="text-success">15%</span> :
-              </p>
-              <p>مبلغ کل با احتساب تخفیف :</p>
-            </div>
-            <div class="p-3-bold">
-              <h3>2,000,000 تومان</h3>
-              <h3 class="text-success">900,0 00 تومان</h3>
-
-              <h3 class="text-success code-discounte__price hidden">
-                165,000 تومان
-              </h3>
-
-              <h3>1,100,000 تومان</h3>
-            </div>
-          </div>
+        <div id="receipt__wrapper">
           <div
-            class="bg-secondary-400 p-2-bold flex justify-between rounded-lg p-2 text-white"
+            class="drop-shadow-ds-1 flex flex-col gap-5 rounded-lg bg-white p-3 text-neutral-900"
           >
-            <p>مبلغ قابل پرداخت</p>
-            <h3>1,100,000 تومان</h3>
+            <div class="m-1 flex items-center justify-between">
+              <div class="p-3-regular">
+                <p>مبلغ کل خرید :</p>
+                <p>مبلغ تخفیف روی کالا :</p>
+
+                <p class="hidden" id="code-discounte__title">
+                  مبلغ تخفیف با کد تخفیف <span class="text-success">15%</span> :
+                </p>
+                <p>مبلغ کل با احتساب تخفیف :</p>
+              </div>
+              <div class="p-3-bold">
+                <h3><span id="total-price__wrapper">2,000,000</span> تومان</h3>
+                <h3 class="text-success">
+                  <span id="products-discount__wrapper">900,000</span> تومان
+                </h3>
+
+                <h3 class="text-success  hidden" id="code-discounte__price">
+                  <span id="code-discount__wrapper">165,000</span> تومان
+                </h3>
+
+                <h3>
+                  <span id="total-with-discount__wrapper">1,100,000</span> تومان
+                </h3>
+              </div>
+            </div>
+            <div
+              class="bg-secondary-400 p-2-bold flex justify-between rounded-lg p-2 text-white"
+            >
+              <p>مبلغ قابل پرداخت</p>
+              <h3 ><strong id="payable-price__wrapper">1,100,000</strong> تومان</h3>
+            </div>
           </div>
         </div>
       </div>

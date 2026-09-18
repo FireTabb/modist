@@ -2,67 +2,100 @@ import shoppingCartView from "../../views/shoppingCart/shoppingCartView";
 import cartModel from "../../models/cart/cartModel";
 import productsModel from "../../models/products/productsModel";
 import getProductsData from "../controllerFunctionalities/productsObj";
+import formatProduct from "../controllerFunctionalities/formatProduct";
 
+const receipt = {
+  total: 0,
+  productsDiscount: 0,
+  codeDiscount: null,
+  payable: 0,
+};
+
+const receiptUpdate = function (state, product = null) {
+  const originalPrice = product.discount
+    ? product.beforeDiscountPrice
+    : product.price;
+
+  const quantity =
+    state === "initial" || state === "clear" ? product.quantity : 1;
+
+  const multiplier = state === "remove" || state === "clear" ? -1 : 1;
+
+  receipt.total += originalPrice * quantity * multiplier;
+  receipt.payable += product.price * quantity * multiplier;
+
+  receipt.productsDiscount = receipt.total - receipt.payable;
+  return receipt;
+};
+
+const controlRenderCart = async function () {
+  const productsCartBasicInfo = cartModel.getCart();
+
+  const productArr =await Promise.all(
+    productsCartBasicInfo.map(async (baseProInfo) => {
+      const product = await productsModel.getOne(baseProInfo.id);
+      const productObj = await getProductsData(product);
+      productObj.quantity = baseProInfo.quantity;
+      return productObj;
+    }),
+  );
+
+  productArr.forEach((product) => {
+    receiptUpdate("initial", product);
+  });
+
+  shoppingCartView.receiptRender(receipt);
+  shoppingCartView.renderCards(productArr);
+};
 const controlCartProductAddHandler = async function (id) {
   try {
-    cartModel.addGusstProduct(+id);
+    const quantity = cartModel.addGusstProduct(+id);
 
-    const quantity = await cartModel.getProductsQuantity(+id);
+    const product = await productsModel.getOne(+id);
+    const formatedProduct = formatProduct(product);
+    receiptUpdate("add", formatedProduct);
 
+    shoppingCartView.receiptRender(receipt);
     return quantity;
   } catch (err) {
     console.error(err);
-    productView.renderMessage("error", getErrorMessage(err));
+    shoppingCartView.renderMessage("error", getErrorMessage(err));
   }
 };
 
 const controlCartProductRemoveHandler = async function (id, clear = false) {
   try {
-    if(clear){
-      cartModel.clearProduct(+id)
-      return
-    }
-    cartModel.removeGusstProduct(+id);
-    const quantity = await cartModel.getProductsQuantity(+id);
+    const product = await productsModel.getOne(+id);
+    const formatedProduct = formatProduct(product);
 
-    return quantity;
+    if (clear) {
+      const quantity = await cartModel.getProductsQuantity(+id);
+      formatedProduct.quantity = quantity;
+      receiptUpdate("clear", formatedProduct);
+      shoppingCartView.receiptRender(receipt);
+      cartModel.clearProduct(+id);
+      return;
+    }
+
+    if (!clear) {
+      cartModel.removeGusstProduct(+id);
+      const quantity = await cartModel.getProductsQuantity(+id);
+
+      receiptUpdate("remove", formatedProduct);
+      shoppingCartView.receiptRender(receipt);
+      return quantity;
+    }
   } catch (err) {
     console.error(err);
-    productView.renderMessage("error", getErrorMessage(err));
+    shoppingCartView.renderMessage("error", getErrorMessage(err));
   }
-};
-
-const controlSendInfo = async function () {
-  const productsCartBasicInfo = cartModel.getCart();
-  console.log(productsCartBasicInfo);
-
-  const productArr = [];
-  for (const baseProInfo of productsCartBasicInfo) {
-    const product = await productsModel.getOne(baseProInfo.id);
-    const productObj = await getProductsData(product);
-    productObj.quantity = baseProInfo.quantity;
-    productArr.push(productObj);
-  }
-  shoppingCartView.renderCards(productArr);
-
-  // // add handlers to btns
-  // for (const pro of productArr) {
-  //   shoppingCartView.addProductsBtns(
-  //     controlCartProductAddHandler,
-  //     controlCartProductRemoveHandler,
-  //     pro,
-  //   );
-  // }
 };
 
 const init = async function () {
-  await controlSendInfo();
+  await controlRenderCart();
   shoppingCartView.addProductsBtns(
     controlCartProductAddHandler,
     controlCartProductRemoveHandler,
   );
-  // await titleView.returnBtnHandler();
-  // await controlProduct();
-  // productView.bindFormValidation();
 };
 init();

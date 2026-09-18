@@ -1,26 +1,50 @@
 import View from "./../View";
 
 export class ShoppingCartView extends View {
-  //   _sendInfoForm = document.querySelector("#shopping-send-info-form");
-  //   _sendInfoSubmitBtn = document.querySelector("#send-info__submit");
   _parent = document.querySelector("#cart-products__wrapper");
 
-  get renderShoppingCardMarkups() {
-    return `
+  _receiptWrapper = document.querySelector("#receipt__wrapper");
+  _totalPriceWrapper = this._receiptWrapper.querySelector(
+    "#total-price__wrapper",
+  );
+  _productsDiscountWrapper = this._receiptWrapper.querySelector(
+    "#products-discount__wrapper",
+  );
+  _totalWithDiscount = this._receiptWrapper.querySelector(
+    "#total-with-discount__wrapper",
+  );
+  _payablePriceWrapper = this._receiptWrapper.querySelector(
+    "#payable-price__wrapper",
+  );
 
-        `;
+  _codeDiscountWrapper = this._receiptWrapper.querySelector(
+    "#code-discount__wrapper",
+  );
+  _discountPrice = this._receiptWrapper.querySelector("#code-discounte__price");
+  _codeDiscountTitle = this._receiptWrapper.querySelector(
+    "#code-discounte__title",
+  );
+  _codeDiscountPercentage = this._codeDiscountTitle.querySelector("span");
+
+  receiptRender(receipt) {
+    if (receipt.codeDiscount) {
+      this._discountPrice.classList.remove("hidden");
+      this._codeDiscountTitle.classList.remove("hidden");
+      this._codeDiscountWrapper.innerText =
+        receipt.codeDiscount.toLocaleString();
+      this._codeDiscountPercentage.innerText = `%${"calculating"}`;
+    }
+
+    this._totalPriceWrapper.innerText = receipt.total.toLocaleString();
+    this._productsDiscountWrapper.innerText =
+      receipt.productsDiscount.toLocaleString();
+
+    this._totalWithDiscount.innerText = receipt.payable.toLocaleString();
+    this._payablePriceWrapper.innerText = receipt.payable.toLocaleString();
   }
 
-  addProductsBtns(
-    addProHandler,
-    removeProHandler,
-    // { productId: id, quantity: productCount },
-  ) {
-    const cardProductsWrapper = document.querySelector(
-      "#cart-products__wrapper",
-    );
-
-    cardProductsWrapper.addEventListener("click", async (e) => {
+  addProductsBtns(addProHandler, removeProHandler) {
+    this._parent.addEventListener("click", async (e) => {
       e.preventDefault();
       const btn = e.target;
 
@@ -36,9 +60,9 @@ export class ShoppingCartView extends View {
       );
 
       if (clearProductBtn) {
-        productArticle.remove();
         const productId = clearProductBtn.dataset.clearProductId;
         removeProHandler(productId, true);
+        productArticle.remove();
         return;
       }
 
@@ -175,16 +199,14 @@ export class ShoppingCartView extends View {
               </button>
               <div class="product-shopping-card-quantity__wrapper">
                 <button
-                  type="submit"
-                  id=""
+                  type="button"
                   class="product-shopping-card__add-quantity"
                 >
                   <i class="iconsax text-white" icon-name="add" data-add-product-id="${this._data.id}"></i>
                 </button>
                 <span class="w-f">${this._data.quantity}</span>
                 <button
-                  type="submit"
-                  id=""
+                  type="button"
                   class="product-shopping-card__remove-quantity"
                 >
                   <i class="iconsax text-red-500" icon-name="trash" data-remove-product-id="${this._data.id}"></i>

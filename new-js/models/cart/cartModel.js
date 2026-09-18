@@ -51,10 +51,13 @@ class CartModel extends Model {
     const cart = this.getCart();
     const product = this._getProductInCart(productId);
 
-    const index = cart.indexOf(product);
+    const index = cart.findIndex(
+      (cartProduct) => cartProduct.id === product.id,
+    );
+
     cart.splice(index, 1);
 
-    this._saveGusstCart(cart)
+    this._saveGusstCart(cart);
   }
 
   addGusstProduct(productId) {
