@@ -40,16 +40,16 @@ addressNameCodeCheckbox.addEventListener("change", function () {
   if (this.checked) {
     addressNameCodeWrapper.classList.toggle("hidden");
     addressNameCodeInput.removeAttribute("disabled");
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   } else {
     addressNameCodeWrapper.classList.toggle("hidden");
     addressNameCodeInput.setAttribute("disabled", "");
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   }
 });
 
 shoppingPersonalInfoForm.addEventListener("input", function () {
-  submitHandler(this);
+  submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
 });
 
 let currentPage = 1;
@@ -64,11 +64,11 @@ shoppingPersonalInfoForm?.addEventListener("submit", function (e) {
     addressNameCodeInput.setAttribute("disabled", "");
     changeTranslateX(sendInfoWrappers, currentPage);
 
-    submitHandler(this);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   }
   if (currentPage === 3) {
     sendInfoSubmit.querySelector("span").innerText = "تایید اطلاعات ارسال";
-    submitHandler(this);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   }
 });
 
@@ -80,7 +80,7 @@ document.querySelectorAll(".return__icon").forEach((returnBtn) =>
       .forEach((input) => input.setAttribute("disabled", ""));
     currentPage--;
     changeTranslateX(sendInfoWrappers, currentPage);
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
     sendInfoSubmit.querySelector("span").innerText = "ادامه خرید";
   }),
 );
@@ -93,12 +93,12 @@ myselfAndPresentWrapper.addEventListener("change", function (e) {
   if (presentRadio) {
     presentPanel.classList.remove("hidden");
     presentPanelInputs.forEach((el) => el.removeAttribute("disabled"));
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   }
   if (myselfRadio) {
     presentPanel.classList.add("hidden");
     presentPanelInputs.forEach((el) => el.setAttribute("disabled", ""));
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
   }
 });
 
@@ -118,7 +118,7 @@ const selectListHandler = function (target) {
     ul.classList.add("hide");
     svg.classList.remove("rotate-180");
     cityBtn.removeAttribute("disabled", "");
-    submitHandler(shoppingPersonalInfoForm);
+    submitHandler(shoppingPersonalInfoForm,sendInfoSubmit);
     return;
   }
 
